@@ -17,7 +17,7 @@ function PS_UNRESERVE_PREFIX___halt_compiler(){}
  * @link https://php.net/manual/en/function.halt-compiler.php
  * @return void
  */
-define("__COMPILER_HALT_OFFSET__",0);
+define('__COMPILER_HALT_OFFSET__',0);
 
 
 /**

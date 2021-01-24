@@ -101,7 +101,7 @@ function abs (int|float $num): int|float
  * usually bigger than that of integer.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "float"], default: "float|false")]
+#[LanguageLevelTypeAware(['8.0' => 'float'], default: 'float|false')]
 function ceil (int|float $num)
 {}
 /**
@@ -116,7 +116,7 @@ function ceil (int|float $num)
  * usually bigger than that of integer.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "float"], default: "float|false")]
+#[LanguageLevelTypeAware(['8.0' => 'float'], default: 'float|false')]
 function floor (int|float $num)
 {}
 
@@ -877,7 +877,7 @@ function sys_getloadavg (): array|false
  * @return string|float
  */
 #[Pure]
-function microtime (#[TypeContract(true: "float", false: "string")] bool $as_float): string|float
+function microtime (#[TypeContract(true: 'float', false: 'string')] bool $as_float): string|float
 {}
 
 /**
@@ -898,12 +898,12 @@ function microtime (#[TypeContract(true: "float", false: "string")] bool $as_flo
  */
 #[Pure]
 #[ArrayShape([
-    "sec" => "int",
-    "usec" => "int",
-    "minuteswest" => "int",
-    "dsttime" => "int"
+    'sec' => 'int',
+    'usec' => 'int',
+    'minuteswest' => 'int',
+    'dsttime' => 'int'
 ])]
-function gettimeofday (#[TypeContract(true: "float", false: "int[]")] bool $as_float): array|float
+function gettimeofday (#[TypeContract(true: 'float', false: 'int[]')] bool $as_float): array|float
 {}
 
 /**
@@ -941,7 +941,7 @@ function getrusage (int $mode): array|false
  * @return string the unique identifier, as a string.
  */
 #[Pure]
-function uniqid (string $prefix = "", bool $more_entropy = false): string
+function uniqid (string $prefix = '', bool $more_entropy = false): string
 {}
 
 /**
@@ -1044,7 +1044,7 @@ function magic_quotes_runtime (bool $new_setting) {}
  * @return bool true on success or false on failure.
  * @removed 7.0
  */
-#[Deprecated(reason: "This function has been DEPRECATED as of PHP 5.4.0. Raises an E_CORE_ERROR", since: "5.3")]
+#[Deprecated(reason: 'This function has been DEPRECATED as of PHP 5.4.0. Raises an E_CORE_ERROR', since: '5.3')]
 function set_magic_quotes_runtime (bool $new_setting): bool
 {}
 
@@ -1100,7 +1100,7 @@ function get_magic_quotes_runtime (): int
  * @return bool true on success or false on failure.
  * @removed 5.4
  */
-#[Deprecated(reason: "This function has been DEPRECATED as of PHP 5.3.0", since: "5.3")]
+#[Deprecated(reason: 'This function has been DEPRECATED as of PHP 5.3.0', since: '5.3')]
 function import_request_variables (string $types, $prefix = null): bool
 {}
 

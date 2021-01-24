@@ -2511,7 +2511,7 @@ define ('SQLT_NTY', 108);
  * Obsolete.
  * @link https://php.net/manual/en/oci8.constants.php
  */
-define ('OCI_SYSDATE', "SYSDATE");
+define ('OCI_SYSDATE', 'SYSDATE');
 
 /**
  * Used with {@see oci_bind_by_name} when binding

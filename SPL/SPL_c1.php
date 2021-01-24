@@ -630,7 +630,7 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, SeekableIt
 	 * comprising a single null field unless using <b>SplFileObject::SKIP_EMPTY | SplFileObject::DROP_NEW_LINE</b>,
          * in which case empty lines are skipped.
          */
-	public function fgetcsv ($separator = ",", $enclosure = "\"", $escape = "\\") {}
+	public function fgetcsv ($separator = ',', $enclosure = "\"", $escape = "\\") {}
 
     /**
      * Write a field array as a CSV line
@@ -662,7 +662,7 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, SeekableIt
          * </p>
          * @return void
          */
-	public function setCsvControl ($separator = ",", $enclosure = "\"", $escape = "\\") {}
+	public function setCsvControl ($separator = ',', $enclosure = "\"", $escape = "\\") {}
 
         /**
          * Get the delimiter and enclosure character for CSV

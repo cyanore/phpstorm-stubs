@@ -169,7 +169,7 @@ function pfsockopen (string $hostname, int $port, &$error_code, &$error_message,
  * @return string|false a binary string containing data or false if the format string contains errors
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function pack (string $format, ...$values)
 {}
 

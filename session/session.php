@@ -209,7 +209,7 @@ function session_destroy (): bool
  * @link https://php.net/manual/en/function.session-unset.php
  * @return void|bool since 7.2.0 returns true on success or false on failure.
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_unset()
 {}
 
@@ -399,7 +399,7 @@ function session_set_cookie_params (array $options): bool
  * </p>
  * @return void|bool since 7.2.0 returns true on success or false on failure.
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_set_cookie_params (array|int $lifetime_or_options, ?string $path, ?string $domain, ?bool $secure = false, ?bool $httponly = false)
 {}
 
@@ -420,12 +420,12 @@ function session_set_cookie_params (array|int $lifetime_or_options, ?string $pat
  * cookie can only be accessed through the HTTP protocol.
  */
 #[ArrayShape([
-    "lifetime" => "int",
-    "path" => "string",
-    "domain" => "string",
-    "secure" => "bool",
-    "httponly" => "bool",
-    "samesite" => "string"
+    'lifetime' => 'int',
+    'path' => 'string',
+    'domain' => 'string',
+    'secure' => 'bool',
+    'httponly' => 'bool',
+    'samesite' => 'string'
 ])]
 function session_get_cookie_params (): array
 {}
@@ -435,7 +435,7 @@ function session_get_cookie_params (): array
  * @link https://php.net/manual/en/function.session-write-close.php
  * @return void|bool since 7.2.0 returns true on success or false on failure.
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_write_close()
 {}
 
@@ -444,7 +444,7 @@ function session_write_close()
  * @link https://php.net/manual/en/function.session-commit.php
  * @return void|bool since 7.2.0 returns true on success or false on failure.
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_commit()
 {}
 
@@ -467,7 +467,7 @@ function session_status (): int
  * @return void|bool since 7.2.0 returns true if a session was successfully reinitialized or false on failure.
  * @since 5.6
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_abort()
 {}
 
@@ -478,7 +478,7 @@ function session_abort()
  * @return void|bool since 7.2.0 returns true if a session was successfully reinitialized or false on failure.
  * @since 5.6
  */
-#[LanguageLevelTypeAware(["7.2" => "bool"], default: "void")]
+#[LanguageLevelTypeAware(['7.2' => 'bool'], default: 'void')]
 function session_reset()
 {}
 

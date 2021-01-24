@@ -660,7 +660,7 @@ function fgetcsv ($stream, ?int $length = 0, string $separator = ',', string $en
  * </p>
  * @return int|false the length of the written string or false on failure.
  */
-function fputcsv ($stream, array $fields, string $separator = ",", string $enclosure = '"', string $escape = "\\"): int|false
+function fputcsv ($stream, array $fields, string $separator = ',', string $enclosure = '"', string $escape = "\\"): int|false
 {}
 
 /**
@@ -790,7 +790,7 @@ function set_file_buffer ($stream, int $size): int
  * @removed 7.0
  * @see stream_set_blocking()
  */
-#[Deprecated(replacement: "stream_set_blocking(%parametersList%)", since: 5.3)]
+#[Deprecated(replacement: 'stream_set_blocking(%parametersList%)', since: 5.3)]
 function set_socket_blocking ($socket, bool $mode): bool
 {}
 
@@ -900,18 +900,18 @@ function socket_set_blocking ($stream, bool $enable): bool
  * </p>
  */
 #[ArrayShape([
-    "timed_out" => "bool",
-    "blocked" => "bool",
-    "eof" => "bool",
-    "unread_bytes" => "int",
-    "stream_type" => "string",
-    "wrapper_type" => "string",
-    "wrapper_data" => "mixed",
-    "mode" => "string",
-    "seekable" => "bool",
-    "uri" => "string",
-    "crypto" => "array",
-    "mediatype" => "string",
+    'timed_out' => 'bool',
+    'blocked' => 'bool',
+    'eof' => 'bool',
+    'unread_bytes' => 'int',
+    'stream_type' => 'string',
+    'wrapper_type' => 'string',
+    'wrapper_data' => 'mixed',
+    'mode' => 'string',
+    'seekable' => 'bool',
+    'uri' => 'string',
+    'crypto' => 'array',
+    'mediatype' => 'string',
 ])]
 function stream_get_meta_data ($stream): array
 {}

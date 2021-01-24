@@ -122,7 +122,7 @@ function libxml_get_errors (): array
  * @return bool the previous value.
  * @since 5.2.11
  */
-#[Deprecated(since: "8.0")]
+#[Deprecated(since: '8.0')]
 function libxml_disable_entity_loader (bool $disable = true): bool
 {}
 
@@ -151,7 +151,7 @@ define ('LIBXML_VERSION', 20901);
  * libxml version like 2.6.5 or 2.6.17
  * @link https://php.net/manual/en/libxml.constants.php
  */
-define ('LIBXML_DOTTED_VERSION', "2.9.1");
+define ('LIBXML_DOTTED_VERSION', '2.9.1');
 define ('LIBXML_LOADED_VERSION', 20901);
 
 /**

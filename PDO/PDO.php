@@ -745,7 +745,7 @@ class PDO  {
 	 */
 	const MYSQL_ATTR_SSL_VERIFY_SERVER_CERT = 1014;
 
-	#[Deprecated("Use PDO::ATTR_EMULATE_PREPARES instead")]
+	#[Deprecated('Use PDO::ATTR_EMULATE_PREPARES instead')]
 	const PGSQL_ASSOC = 1;
 	const PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT = 1000;
 
@@ -815,11 +815,11 @@ class PDO  {
 	const PGSQL_STATUS_LONG = 1;
 	const PGSQL_STATUS_STRING = 2;
 	const PGSQL_TUPLES_OK = 2;
-	const SQLSRV_TXN_READ_UNCOMMITTED = "READ_UNCOMMITTED";
-	const SQLSRV_TXN_READ_COMMITTED = "READ_COMMITTED";
-	const SQLSRV_TXN_REPEATABLE_READ = "REPEATABLE_READ";
-	const SQLSRV_TXN_SNAPSHOT = "SNAPSHOT";
-	const SQLSRV_TXN_SERIALIZABLE = "SERIALIZABLE";
+	const SQLSRV_TXN_READ_UNCOMMITTED = 'READ_UNCOMMITTED';
+	const SQLSRV_TXN_READ_COMMITTED = 'READ_COMMITTED';
+	const SQLSRV_TXN_REPEATABLE_READ = 'REPEATABLE_READ';
+	const SQLSRV_TXN_SNAPSHOT = 'SNAPSHOT';
+	const SQLSRV_TXN_SERIALIZABLE = 'SERIALIZABLE';
 	const SQLSRV_ENCODING_BINARY = 2;
 	const SQLSRV_ENCODING_SYSTEM = 3;
 	const SQLSRV_ENCODING_UTF8 = 65001;
@@ -1122,9 +1122,9 @@ class PDO  {
 	 * information for an operation performed on a particular statement handle.
 	 */
 	#[ArrayShape([
-		0 => "string",
-		1 => "int",
-		2 => "string",
+		0 => 'string',
+		1 => 'int',
+		2 => 'string',
 	])]
 	public function errorInfo () {}
 
@@ -1438,7 +1438,7 @@ class PDOStatement implements IteratorAggregate
 	 * @return mixed an instance of the required class with property names that
 	 * correspond to the column names or <b>FALSE</b> on failure.
 	 */
-	public function fetchObject ($class = "stdClass", array $ctorArgs = array()) {}
+	public function fetchObject ($class = 'stdClass', array $ctorArgs = array()) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
@@ -1476,9 +1476,9 @@ class PDOStatement implements IteratorAggregate
 	 * </tr>
 	 */
 	#[ArrayShape([
-		0 => "string",
-		1 => "int",
-		2 => "string",
+		0 => 'string',
+		1 => 'int',
+		2 => 'string',
 	])]
 	public function errorInfo () {}
 

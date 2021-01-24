@@ -334,7 +334,7 @@ function pcntl_errno (): int
  * @since 5.3.4
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function pcntl_strerror (int $error_code): bool|string
 {}
 

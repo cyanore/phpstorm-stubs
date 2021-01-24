@@ -2941,13 +2941,13 @@ define('CURLOPT_USE_SSL', 119);
  * Custom telnet options
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TELNETOPTIONS.html
  */
-define("CURLOPT_TELNETOPTIONS",10070);
+define('CURLOPT_TELNETOPTIONS',10070);
 /**
  * The download could not be resumed because the specified offset was out of the file boundary.
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_BAD_DOWNLOAD_RESUME",36);
+define('CURLE_BAD_DOWNLOAD_RESUME',36);
 /**
  * A file transfer was shorter or larger than expected.
  * This happens when the server first reports an expected transfer size, and then delivers data
@@ -2955,198 +2955,198 @@ define("CURLE_BAD_DOWNLOAD_RESUME",36);
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_FTP_PARTIAL_FILE",18);
+define('CURLE_FTP_PARTIAL_FILE',18);
 /**
  * This is returned if <b>CURLOPT_FAILONERROR</b> is set <b>TRUE</b> and the HTTP server returns an error code that is >= 400.
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_HTTP_RETURNED_ERROR",22);
+define('CURLE_HTTP_RETURNED_ERROR',22);
 /**
  * Operation timeout. The specified time-out period was reached according to the conditions.
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_OPERATION_TIMEDOUT",28);
+define('CURLE_OPERATION_TIMEDOUT',28);
 /**
  * Failed to match the pinned key specified with <b>CURLOPT_PINNEDPUBLICKEY</b>.
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_SSL_PINNEDPUBKEYNOTMATCH",90);
+define('CURLE_SSL_PINNEDPUBKEYNOTMATCH',90);
 /**
  * @link https://php.net/manual/en/curl.constants.php
  */
-define("CURLINFO_LASTONE",59);
+define('CURLINFO_LASTONE',59);
 /**
  * An easy handle already added to a multi handle was attempted to get added a second time.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLM_ADDED_ALREADY",7);
+define('CURLM_ADDED_ALREADY',7);
 /**
  * @link https://curl.haxx.se/libcurl/c/symbols-in-versions.html
  */
-define("CURLSHOPT_NONE",0);
+define('CURLSHOPT_NONE',0);
 /**
  * Default value for the <b>CURLOPT_TIMECONDITION</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TIMECONDITION.html
  */
-define("CURL_TIMECOND_NONE",0);
+define('CURL_TIMECOND_NONE',0);
 /**
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Allows no authentication.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  */
-define("CURLAUTH_NONE",0);
+define('CURLAUTH_NONE',0);
 /**
  * Problem with reading the SSL CA cert (path? access rights?)
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_SSL_CACERT_BADFILE",77);
+define('CURLE_SSL_CACERT_BADFILE',77);
 /**
  * An unspecified error occurred during the SSH session.
  * @link https://php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
-define("CURLE_SSH",79);
+define('CURLE_SSH',79);
 /**
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Initiate the shutdown and wait for a reply.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
-define("CURLFTPSSL_CCC_ACTIVE",2);
+define('CURLFTPSSL_CCC_ACTIVE',2);
 /**
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Don't attempt to use CCC.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
-define("CURLFTPSSL_CCC_NONE",0);
+define('CURLFTPSSL_CCC_NONE',0);
 /**
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Do not initiate the shutdown, but wait for the server to do it. Do not send a reply.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
-define("CURLFTPSSL_CCC_PASSIVE",1);
+define('CURLFTPSSL_CCC_PASSIVE',1);
 /**
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Require SSL for all communication or fail.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
-define("CURLUSESSL_ALL",3);
+define('CURLUSESSL_ALL',3);
 /**
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Require SSL for the control connection or fail.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
-define("CURLUSESSL_CONTROL",2);
+define('CURLUSESSL_CONTROL',2);
 /**
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Don't attempt to use SSL.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
-define("CURLUSESSL_NONE",0);
+define('CURLUSESSL_NONE',0);
 /**
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Try using SSL, proceed as normal otherwise.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
-define("CURLUSESSL_TRY",1);
+define('CURLUSESSL_TRY',1);
 /**
  * Convenience define that pauses both directions.
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_ALL",5);
+define('CURLPAUSE_ALL',5);
 /**
  * Convenience define that unpauses both directions.
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_CONT",0);
+define('CURLPAUSE_CONT',0);
 /**
  * Pause receiving data. There will be no data received on this connection until this function is called again without this bit set.
  * Thus, the write callback (<b>CURLOPT_WRITEFUNCTION</b>) won't be called.
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_RECV",1);
+define('CURLPAUSE_RECV',1);
 /**
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_RECV_CONT",0);
+define('CURLPAUSE_RECV_CONT',0);
 /**
  * Pause sending data. There will be no data sent on this connection until this function is called again without this bit set.
  * Thus, the read callback (CURLOPT_READFUNCTION) won't be called.
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_SEND",4);
+define('CURLPAUSE_SEND',4);
 /**
  * @link https://php.net/manual/en/curl.constants.php
  * @since 5.5
  */
-define("CURLPAUSE_SEND_CONT",0);
+define('CURLPAUSE_SEND_CONT',0);
 /**
  * Read callback for data uploads.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_READFUNCTION.html
  */
-define("CURL_READFUNC_PAUSE",268435457);
+define('CURL_READFUNC_PAUSE',268435457);
 /**
  * Set callback for writing received data.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
  */
-define("CURL_WRITEFUNC_PAUSE",268435457);
+define('CURL_WRITEFUNC_PAUSE',268435457);
 /**
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.5.23
  */
-define("CURLPROXY_SOCKS4A",6);
+define('CURLPROXY_SOCKS4A',6);
 /**
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * Proxy resolves URL hostname.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.5.23
  */
-define("CURLPROXY_SOCKS5_HOSTNAME",7);
+define('CURLPROXY_SOCKS5_HOSTNAME',7);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_ANY",-1);
+define('CURLSSH_AUTH_ANY',-1);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_DEFAULT",-1);
+define('CURLSSH_AUTH_DEFAULT',-1);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_HOST",4);
+define('CURLSSH_AUTH_HOST',4);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_KEYBOARD",8);
+define('CURLSSH_AUTH_KEYBOARD',8);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_NONE",0);
+define('CURLSSH_AUTH_NONE',0);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_PASSWORD",2);
+define('CURLSSH_AUTH_PASSWORD',2);
 /**
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_PUBLICKEY",1);
+define('CURLSSH_AUTH_PUBLICKEY',1);
 /**
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * HTTP Digest authentication with an IE flavor.
@@ -3156,42 +3156,42 @@ define("CURLSSH_AUTH_PUBLICKEY",1);
  * and that some servers require the client to use.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
  */
-define("CURLAUTH_DIGEST_IE",16);
+define('CURLAUTH_DIGEST_IE',16);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_IMAP",4096);
+define('CURLPROTO_IMAP',4096);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_IMAPS",8192);
+define('CURLPROTO_IMAPS',8192);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_POP3",16384);
+define('CURLPROTO_POP3',16384);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_POP3S",32768);
+define('CURLPROTO_POP3S',32768);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTSP",262144);
+define('CURLPROTO_RTSP',262144);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_SMTP",65536);
+define('CURLPROTO_SMTP',65536);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_SMTPS",131072);
+define('CURLPROTO_SMTPS',131072);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * When sent by a client, this method changes the description of the session.
@@ -3200,7 +3200,7 @@ define("CURLPROTO_SMTPS",131072);
  * <b>ANNOUNCE</b> acts like an HTTP PUT or POST
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_ANNOUNCE",3);
+define('CURL_RTSPREQ_ANNOUNCE',3);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to get the low level description of a stream.
@@ -3209,7 +3209,7 @@ define("CURL_RTSPREQ_ANNOUNCE",3);
  * Time-condition headers will be added to Describe requests if the <b>CURLOPT_TIMECONDITION</b> option is active.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_DESCRIBE",2);
+define('CURL_RTSPREQ_DESCRIBE',2);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Retrieve a parameter from the server.
@@ -3217,7 +3217,7 @@ define("CURL_RTSPREQ_DESCRIBE",2);
  * unless a custom one is set. <B>GET_PARAMETER</b> acts just like an HTTP PUT or POST
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_GET_PARAMETER",8);
+define('CURL_RTSPREQ_GET_PARAMETER',8);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to retrieve the available methods of the server.
@@ -3225,21 +3225,21 @@ define("CURL_RTSPREQ_GET_PARAMETER",8);
  * The session ID is not needed for this method.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_OPTIONS",1);
+define('CURL_RTSPREQ_OPTIONS',1);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Send a Pause command to the server.
  * Use the <b>CURLOPT_RANGE</b> option with a single value to indicate when the stream should be halted. (e.g. npt='25')
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_PAUSE",6);
+define('CURL_RTSPREQ_PAUSE',6);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Send a Play command to the server.
  * Use the <b>CURLOPT_RANGE</b> option to modify the playback time (e.g. 'npt=10-15').
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_PLAY",5);
+define('CURL_RTSPREQ_PLAY',5);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * This is a special request because it does not send any data to the server.
@@ -3247,13 +3247,13 @@ define("CURL_RTSPREQ_PLAY",5);
  * It will return after processing one read buffer of data in order to give the application a chance to run.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_RECEIVE",11);
+define('CURL_RTSPREQ_RECEIVE',11);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to tell the server to record a session. Use the <b>CURLOPT_RANGE</b> option to modify the record time.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_RECORD",10);
+define('CURL_RTSPREQ_RECORD',10);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Set a parameter on the server.
@@ -3261,7 +3261,7 @@ define("CURL_RTSPREQ_RECORD",10);
  * The interaction with SET_PARAMETER is much like an HTTP PUT or POST.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_SET_PARAMETER",9);
+define('CURL_RTSPREQ_SET_PARAMETER',9);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Setup is used to initialize the transport layer for the session.
@@ -3269,74 +3269,74 @@ define("CURL_RTSPREQ_SET_PARAMETER",9);
  * by using the <b>CURLOPT_RTSP_TRANSPORT</b> option prior to calling setup.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_SETUP",4);
+define('CURL_RTSPREQ_SETUP',4);
 /**
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * This command terminates an RTSP session.
  * Simply closing a connection does not terminate the RTSP session since it is valid to control an RTSP session over different connections.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
-define("CURL_RTSPREQ_TEARDOWN",7);
+define('CURL_RTSPREQ_TEARDOWN',7);
 /**
  * Wildcard matching function callback.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
-define("CURLOPT_FNMATCH_FUNCTION",20200);
+define('CURLOPT_FNMATCH_FUNCTION',20200);
 /**
  * Enable directory wildcard transfers.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_WILDCARDMATCH.html
  */
-define("CURLOPT_WILDCARDMATCH",197);
+define('CURLOPT_WILDCARDMATCH',197);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMP",524288);
+define('CURLPROTO_RTMP',524288);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMPE",2097152);
+define('CURLPROTO_RTMPE',2097152);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMPS",8388608);
+define('CURLPROTO_RTMPS',8388608);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMPT",1048576);
+define('CURLPROTO_RTMPT',1048576);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMPTE",4194304);
+define('CURLPROTO_RTMPTE',4194304);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_RTMPTS",16777216);
+define('CURLPROTO_RTMPTS',16777216);
 /**
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if an error was occurred.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
-define("CURL_FNMATCHFUNC_FAIL",2);
+define('CURL_FNMATCHFUNC_FAIL',2);
 /**
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if pattern matches the string.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
-define("CURL_FNMATCHFUNC_MATCH",0);
+define('CURL_FNMATCHFUNC_MATCH',0);
 /**
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if pattern not matches the string.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
-define("CURL_FNMATCHFUNC_NOMATCH",1);
+define('CURL_FNMATCHFUNC_NOMATCH',1);
 /**
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
-define("CURLPROTO_GOPHER",33554432);
+define('CURLPROTO_GOPHER',33554432);
 /**
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * This is a meta symbol.
@@ -3344,57 +3344,57 @@ define("CURLPROTO_GOPHER",33554432);
  * only that single auth algorithm is acceptable.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
  */
-define("CURLAUTH_ONLY",2147483648);
+define('CURLAUTH_ONLY',2147483648);
 /**
  * Password to use for TLS authentication.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TLSAUTH_PASSWORD.html
  */
-define("CURLOPT_TLSAUTH_PASSWORD",10205);
+define('CURLOPT_TLSAUTH_PASSWORD',10205);
 /**
  * Set TLS authentication methods.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TLSAUTH_TYPE.html
  */
-define("CURLOPT_TLSAUTH_TYPE",10206);
+define('CURLOPT_TLSAUTH_TYPE',10206);
 /**
  * User name to use for TLS authentication.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TLSAUTH_USERNAME.html
  */
-define("CURLOPT_TLSAUTH_USERNAME",10204);
+define('CURLOPT_TLSAUTH_USERNAME',10204);
 /**
  * Value for the <b>CURLOPT_TLSAUTH_TYPE</b> option.
  * TLS-SRP authentication.
  * Secure Remote Password authentication for TLS is defined in RFC 5054 and provides mutual authentication if both sides have a shared secret.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TLSAUTH_TYPE.html
  */
-define("CURL_TLSAUTH_SRP",1);
+define('CURL_TLSAUTH_SRP',1);
 /**
  * Value for the <b>CURLOPT_GSSAPI_DELEGATION</b> option.
  * Allow unconditional GSSAPI credential delegation.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_GSSAPI_DELEGATION.html
  */
-define("CURLGSSAPI_DELEGATION_FLAG",2);
+define('CURLGSSAPI_DELEGATION_FLAG',2);
 /**
  * Value for the <b>CURLOPT_GSSAPI_DELEGATION</b> option.
  * Delegate only if the OK-AS-DELEGATE flag is set in the service ticket
  * in case this feature is supported by the GSS-API implementation.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_GSSAPI_DELEGATION.html
  */
-define("CURLGSSAPI_DELEGATION_POLICY_FLAG",1);
+define('CURLGSSAPI_DELEGATION_POLICY_FLAG',1);
 /**
  * Set allowed GSS-API delegation.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_GSSAPI_DELEGATION.html
  */
-define("CURLOPT_GSSAPI_DELEGATION",210);
+define('CURLOPT_GSSAPI_DELEGATION',210);
 /**
  * Timeout waiting for FTP server to connect back
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_ACCEPTTIMEOUT_MS.html
  */
-define("CURLOPT_ACCEPTTIMEOUT_MS",212);
+define('CURLOPT_ACCEPTTIMEOUT_MS',212);
 /**
  * SMTP authentication address
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_MAIL_AUTH.html
  */
-define("CURLOPT_MAIL_AUTH",10217);
+define('CURLOPT_MAIL_AUTH',10217);
 /**
  * Set SSL behavior options, which is a bitmask of any of the following constants:
  *  <b>CURLSSLOPT_ALLOW_BEAST</b>: do not attempt to use any workarounds for a security flaw in the SSL3 and TLS1.0 protocols.
@@ -3402,7 +3402,7 @@ define("CURLOPT_MAIL_AUTH",10217);
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_SSL_OPTIONS",216);
+define('CURLOPT_SSL_OPTIONS',216);
 /**
  * If set to 1, TCP keepalive probes will be sent.
  * The delay and frequency of these probes can be controlled by the <b>CURLOPT_TCP_KEEPIDLE</b> and <b>CURLOPT_TCP_KEEPINTVL</b> options,
@@ -3411,72 +3411,72 @@ define("CURLOPT_SSL_OPTIONS",216);
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 5.5
  */
-define("CURLOPT_TCP_KEEPALIVE",213);
+define('CURLOPT_TCP_KEEPALIVE',213);
 /**
  * Sets the delay, in seconds, that the operating system will wait while the connection is idle before sending keepalive probes,
  * if <b>CURLOPT_TCP_KEEPALIVE</b> is enabled. Not all operating systems support this option. The default is 60.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 5.5
  */
-define("CURLOPT_TCP_KEEPIDLE",214);
+define('CURLOPT_TCP_KEEPIDLE',214);
 /**
  * Sets the interval, in seconds, that the operating system will wait between sending keepalive probes,
  * if <b>CURLOPT_TCP_KEEPALIVE</b> is enabled. Not all operating systems support this option. The default is 60.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 5.5
  */
-define("CURLOPT_TCP_KEEPINTVL",215);
+define('CURLOPT_TCP_KEEPINTVL',215);
 /**
  * Value for the <b>CURLOPT_SSL_OPTIONS</b> option.
  * Do not attempt to use any workarounds for a security flaw in the SSL3 and TLS1.0 protocols.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLSSLOPT_ALLOW_BEAST",1);
+define('CURLSSLOPT_ALLOW_BEAST',1);
 /**
  * Supports HTTP2.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.5.24
  */
-define("CURL_VERSION_HTTP2",65536);
+define('CURL_VERSION_HTTP2',65536);
 /**
  * Value for the <b>CURLOPT_SSL_OPTIONS</b> option.
  * Disable certificate revocation checks for those SSL backends where such behavior is present.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLSSLOPT_NO_REVOKE",2);
+define('CURLSSLOPT_NO_REVOKE',2);
 /**
  * The default protocol to use if the URL is missing a scheme name.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_DEFAULT_PROTOCOL",10238);
+define('CURLOPT_DEFAULT_PROTOCOL',10238);
 /**
  * Set the numerical stream weight (a number between 1 and 256).
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_STREAM_WEIGHT",239);
+define('CURLOPT_STREAM_WEIGHT',239);
 /**
  * <b>TRUE</b> to not send TFTP options requests.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_TFTP_NO_OPTIONS",242);
+define('CURLOPT_TFTP_NO_OPTIONS',242);
 /**
  * Connect to a specific host and port instead of the URL's host and port.
  * Accepts an array of strings with the format HOST:PORT:CONNECT-TO-HOST:CONNECT-TO-PORT.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_CONNECT_TO",10243);
+define('CURLOPT_CONNECT_TO',10243);
 /**
  * <b>TRUE</b> to enable TCP Fast Open.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.0.7
  */
-define("CURLOPT_TCP_FASTOPEN",244);
+define('CURLOPT_TCP_FASTOPEN',244);
 
 /**
  * The server sent data libcurl couldn't parse.

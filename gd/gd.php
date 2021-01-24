@@ -1450,7 +1450,7 @@ function imagesy ($image) {}
  * @see imagesetstyle()
  * @see imageline()
  */
-#[Deprecated("Use combination of imagesetstyle() and imageline() instead")]
+#[Deprecated('Use combination of imagesetstyle() and imageline() instead')]
 function imagedashedline ($image, $x1, $y1, $x2, $y2, $color) {}
 
 /**
@@ -2015,7 +2015,7 @@ function imagetypes () {}
  * @removed 8.0
  * @see imagecreatefromjpeg()
  */
-#[Deprecated(reason: "Use imagecreatefromjpeg() and imagewbmp() instead", since: "7.2")]
+#[Deprecated(reason: 'Use imagecreatefromjpeg() and imagewbmp() instead', since: '7.2')]
 function jpeg2wbmp ($jpegname, $wbmpname, $dest_height, $dest_width, $threshold) {}
 
 /**
@@ -2041,7 +2041,7 @@ function jpeg2wbmp ($jpegname, $wbmpname, $dest_height, $dest_width, $threshold)
  * @see imagecreatefrompng()
  * @see imagewbmp()
  */
-#[Deprecated("Use imagecreatefrompng() and imagewbmp() instead", since: "7.2")]
+#[Deprecated('Use imagecreatefrompng() and imagewbmp() instead', since: '7.2')]
 function png2wbmp ($pngname, $wbmpname, $dest_height, $dest_width, $threshold) {}
 
 /**
@@ -2059,7 +2059,7 @@ function png2wbmp ($pngname, $wbmpname, $dest_height, $dest_width, $threshold) {
  * @removed 8.0
  * @see imagewbmp()
  */
-#[Deprecated(replacement: "imagewbmp(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'imagewbmp(%parametersList%)', since: '7.3')]
 function image2wbmp ($image, $filename = null, $threshold = null) {}
 
 /**
@@ -2515,7 +2515,7 @@ define ('IMG_FILTER_SCATTER', 12);
  * @since 5.2.4
  * @link https://php.net/manual/en/image.constants.php#constant.gd-version
  */
-define ('GD_VERSION', "2.0.35");
+define ('GD_VERSION', '2.0.35');
 
 /**
  * The GD major version PHP was compiled against.
@@ -2543,7 +2543,7 @@ define ('GD_RELEASE_VERSION', 35);
  * @since 5.2.4
  * @link https://php.net/manual/en/image.constants.php#constant.gd-extra-version
  */
-define ('GD_EXTRA_VERSION', "");
+define ('GD_EXTRA_VERSION', '');
 
 
 /**

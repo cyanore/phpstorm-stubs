@@ -760,7 +760,7 @@ function mysql_set_charset ($charset, $link_identifier = null) {}
  * @param $link_identifier [optional]
  * @removed 7.0
  */
-#[Deprecated(replacement: "mysql_db_query(%parametersList%)", since: '5.3')]
+#[Deprecated(replacement: 'mysql_db_query(%parametersList%)', since: '5.3')]
 function mysql ($database_name, $query, $link_identifier) {}
 
 /**

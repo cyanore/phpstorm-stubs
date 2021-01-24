@@ -17,13 +17,13 @@ use JetBrains\PhpStorm\Deprecated;
 class MongoClient
 {
     const VERSION = '3.x';
-    const DEFAULT_HOST = "localhost" ;
+    const DEFAULT_HOST = 'localhost' ;
     const DEFAULT_PORT = 27017 ;
-    const RP_PRIMARY = "primary" ;
-    const RP_PRIMARY_PREFERRED = "primaryPreferred" ;
-    const RP_SECONDARY = "secondary" ;
-    const RP_SECONDARY_PREFERRED = "secondaryPreferred" ;
-    const RP_NEAREST = "nearest" ;
+    const RP_PRIMARY = 'primary' ;
+    const RP_PRIMARY_PREFERRED = 'primaryPreferred' ;
+    const RP_SECONDARY = 'secondary' ;
+    const RP_SECONDARY_PREFERRED = 'secondaryPreferred' ;
+    const RP_NEAREST = 'nearest' ;
 
     /* Properties */
     public $connected = false ;
@@ -102,7 +102,7 @@ class MongoClient
      *         </ul>
      * @throws MongoConnectionException
      */
-    public function __construct($server = "mongodb://localhost:27017", array $options = array("connect" => true), $driver_options) {}
+    public function __construct($server = 'mongodb://localhost:27017', array $options = array('connect' => true), $driver_options) {}
 
     /**
      * (PECL mongo &gt;= 1.3.0)<br/>
@@ -135,7 +135,7 @@ class MongoClient
      * @param mixed $db The database to drop. Can be a MongoDB object or the name of the database.
      * @return array The database response.
      */
-    #[Deprecated(replacement: "%class%->drop()")]
+    #[Deprecated(replacement: '%class%->drop()')]
     public function dropDB($db) {}
 
     /**
@@ -267,7 +267,7 @@ class MongoClient
  * Relying on this feature is highly discouraged. Please use MongoClient instead.
  * @see MongoClient
  */
-#[Deprecated("This class has been DEPRECATED as of version 1.3.0.")]
+#[Deprecated('This class has been DEPRECATED as of version 1.3.0.')]
 class Mongo extends MongoClient {
     /**
      * (PECL mongo &gt;= 1.2.0)<br/>
@@ -360,7 +360,7 @@ class Mongo extends MongoClient {
 	 * @return bool If the connection was successful.
 	 */
     #[Deprecated('Pass array("persist" => $id) to the constructor instead of using this method.')]
-    public function persistConnect($username = "", $password = "") {}
+    public function persistConnect($username = '', $password = '') {}
 
     /**
 	 * Creates a persistent connection with paired database servers
@@ -371,7 +371,7 @@ class Mongo extends MongoClient {
 	 * @return bool If the connection was successful.
 	 */
     #[Deprecated('Pass "mongodb://server1,server2" and array("persist" => $id) to the constructor instead of using this method.')]
-    public function pairPersistConnect($username = "", $password = "") {}
+    public function pairPersistConnect($username = '', $password = '') {}
 
    /**
 	* Connects with a database server
@@ -538,7 +538,7 @@ class MongoDB {
 	 * @param string $prefix [optional] The prefix for the files and chunks collections.
 	 * @return MongoGridFS Returns a new gridfs object for this database.
 	 */
-    public function getGridFS($prefix = "fs") {}
+    public function getGridFS($prefix = 'fs') {}
 
    /**
     * (PECL mongo &gt;= 0.9.0)<br/>
@@ -1715,7 +1715,7 @@ class MongoGridFS extends MongoCollection {
      * @param string $prefix [optional] <p>Optional collection name prefix.</p>
      * @param mixed $chunks  [optional]
      */
-    public function __construct($db, $prefix = "fs", $chunks = "fs") {}
+    public function __construct($db, $prefix = 'fs', $chunks = 'fs') {}
 
     /**
      * Drops the files and chunks collections

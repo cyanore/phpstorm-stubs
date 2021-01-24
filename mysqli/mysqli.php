@@ -1677,7 +1677,7 @@ function mysqli_fetch_field (mysqli_result $result): object|false {}
  * mysqli_store_result() or mysqli_use_result().
  * @return array|false Returns an array of objects which contains field definition information or FALSE if no field information is available.
  */
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function mysqli_fetch_fields (mysqli_result $result) {}
 
 /**
@@ -1810,7 +1810,7 @@ function mysqli_get_cache_stats (mysqli $mysql) {}
  * @param mysqli $mysql A link identifier returned by mysqli_connect() or mysqli_init()
  * @return array|false an array with connection stats if successful, FALSE otherwise.
  */
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function mysqli_get_connection_stats (mysqli $mysql) {}
 
 /**
@@ -1818,7 +1818,7 @@ function mysqli_get_connection_stats (mysqli $mysql) {}
  * @link https://php.net/manual/en/function.mysqli-get-client-stats.php
  * @return array|false an array with client stats if success, false otherwise.
  */
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function mysqli_get_client_stats () {}
 
 /**
@@ -2241,7 +2241,7 @@ function mysqli_stmt_affected_rows (mysqli_stmt $statement): string|int
  * @param int $attribute
  * @return int|false Returns FALSE if the attribute is not found, otherwise returns the value of the attribute.
  */
-#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
+#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
 function mysqli_stmt_attr_get (mysqli_stmt $statement, int $attribute): bool|int
 {}
 

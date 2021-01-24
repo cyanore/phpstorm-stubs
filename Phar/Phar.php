@@ -352,8 +352,8 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * is set to true.
 	 */
 	#[ArrayShape([
-		"hash" => "string",
-		"hash_type" => "string",
+		'hash' => 'string',
+		'hash_type' => 'string',
 	])]
 	public function getSignature () {}
 
@@ -809,7 +809,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	final public static function webPhar ($alias = null, $index = "index.php", $fileNotFoundScript = null, ?array $mimeTypes = null, ?callable $rewrite = null) {}
+	final public static function webPhar ($alias = null, $index = 'index.php', $fileNotFoundScript = null, ?array $mimeTypes = null, ?callable $rewrite = null) {}
 
 	/**
 	 * Returns whether current entry is a directory and not '.' or '..'

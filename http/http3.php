@@ -930,19 +930,19 @@ class Message implements \Countable, \Serializable, \Iterator {
 	 *
 	 * @var string
 	 */
-	protected $requestMethod = "";
+	protected $requestMethod = '';
 	/**
 	 * The request url if the message is of type request.
 	 *
 	 * @var string
 	 */
-	protected $requestUrl = "";
+	protected $requestUrl = '';
 	/**
 	 * The response status phrase if the message is of type response.
 	 *
 	 * @var string
 	 */
-	protected $responseStatus = "";
+	protected $responseStatus = '';
 	/**
 	 * The response code if the message is of type response.
 	 *
@@ -2791,7 +2791,7 @@ class Response extends \http\Message {
 	 * @param string $header_name The request header to test.
 	 * @return int a http\Env\Response::CACHE_* constant.
 	 */
-	function isCachedByEtag(string $header_name = "If-None-Match") {}
+	function isCachedByEtag(string $header_name = 'If-None-Match') {}
 	/**
 	 * Manually test the header $header_name of the environment's request for a cache hit.
 	 * http\Env\Response::send() checks that itself, though.
@@ -2799,7 +2799,7 @@ class Response extends \http\Message {
 	 * @param string $header_name The request header to test.
 	 * @return int a http\Env\Response::CACHE_* constant.
 	 */
-	function isCachedByLastModified(string $header_name = "If-Modified-Since") {}
+	function isCachedByLastModified(string $header_name = 'If-Modified-Since') {}
 	/**
 	 * Send the response through the SAPI or $stream.
 	 * Flushes all output buffers.

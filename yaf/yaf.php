@@ -50,7 +50,7 @@ final class Yaf_Application {
     /**
      * @var string
      */
-    protected $_running = "";
+    protected $_running = '';
     /**
      * @var string
      */
@@ -64,7 +64,7 @@ final class Yaf_Application {
      * @since 2.1.2
      * @var string
      */
-    protected $_err_msg = "";
+    protected $_err_msg = '';
 
     /**
      * @link https://secure.php.net/manual/en/yaf-application.construct.php
@@ -288,11 +288,11 @@ final class Yaf_Dispatcher {
     /**
      * @var string
      */
-    protected $_return_response = "";
+    protected $_return_response = '';
     /**
      * @var string
      */
-    protected $_instantly_flush = "";
+    protected $_instantly_flush = '';
     /**
      * @var string
      */
@@ -1343,19 +1343,19 @@ abstract class Yaf_Request_Abstract {
     /**
      * @var string
      */
-    protected $_base_uri = "";
+    protected $_base_uri = '';
     /**
      * @var string
      */
-    protected $uri = "";
+    protected $uri = '';
     /**
      * @var string
      */
-    protected $dispatched = "";
+    protected $dispatched = '';
     /**
      * @var string
      */
-    protected $routed = "";
+    protected $routed = '';
 
     /**
      * @link https://secure.php.net/manual/en/yaf-request-abstract.isget.php
@@ -1690,7 +1690,7 @@ abstract class Yaf_Plugin_Abstract {
  */
 abstract class Yaf_Response_Abstract {
 
-    const DEFAULT_BODY = "content";
+    const DEFAULT_BODY = 'content';
     /**
      * @var string
      */

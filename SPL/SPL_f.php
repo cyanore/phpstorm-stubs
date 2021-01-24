@@ -86,7 +86,7 @@ function spl_autoload_unregister (callable $callback): bool
  * If no function is registered the return value will be an empty array.
  * @since 5.1.2
  */
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function spl_autoload_functions ()
 {}
 

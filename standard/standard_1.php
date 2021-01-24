@@ -423,7 +423,7 @@ function str_word_count (string $string, int $format = 0, ?string $characters): 
  * </p>
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function str_split (string $string, int $length = 1): array|bool
 {}
 
@@ -577,7 +577,7 @@ function money_format (string $format, float $number): ?string
  * @return string|false the extracted part of string or false on failure.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function substr (string $string, int $offset, ?int $length)
 {}
 
@@ -979,7 +979,7 @@ function ltrim (string $string, string $characters = " \t\n\r\0\x0B"): string
  * @return string the stripped string.
  */
 #[Pure]
-function strip_tags (string $string, #[LanguageLevelTypeAware(["7.4" => "string[]|string|null"], default: "string|null")] $allowed_tags = null): string
+function strip_tags (string $string, #[LanguageLevelTypeAware(['7.4' => 'string[]|string|null'], default: 'string|null')] $allowed_tags = null): string
 {}
 
 /**
@@ -1031,7 +1031,7 @@ function similar_text (string $string1, string $string2, &$percent): int
  * string will be returned.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string[]"], default: "string[]|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string[]'], default: 'string[]|false')]
 function explode (string $separator, string $string, int $limit): array|bool
 {}
 
@@ -1050,7 +1050,7 @@ function explode (string $separator, string $string, int $limit): array|bool
  * elements in the same order, with the glue string between each element.
  */
 #[Pure]
-function implode (array|string $separator = "", ?array $array): string
+function implode (array|string $separator = '', ?array $array): string
 {}
 
 /**
@@ -1069,7 +1069,7 @@ function implode (array|string $separator = "", ?array $array): string
  * elements in the same order, with the glue string between each element.
  */
 #[Pure]
-function join (array|string  $separator = "", ?array $array): string
+function join (array|string  $separator = '', ?array $array): string
 {}
 
 /**
@@ -1262,7 +1262,7 @@ function setlocale (int $category, array|string|int $locales, ...$rest): string|
  * no further grouping is done. If an array element is equal to 0, the previous
  * element should be used.
  */
-#[ArrayShape(["decimal_point" => "string", "thousands_sep" => "string", "grouping" => "array", "int_curr_symbol" => "string", "currency_symbol" => "string", "mon_decimal_point" => "string", "mon_thousands_sep" => "string", "mon_grouping" => "string", "positive_sign" => "string", "negative_sign" => "string", "int_frac_digits" => "string", "frac_digits" => "string", "p_cs_precedes" => "bool", "p_sep_by_space" => "bool", "n_cs_precedes" => "bool", "n_sep_by_space" => "bool", "p_sign_posn" => "int", "n_sign_posn" => "int",])]
+#[ArrayShape(['decimal_point' => 'string', 'thousands_sep' => 'string', 'grouping' => 'array', 'int_curr_symbol' => 'string', 'currency_symbol' => 'string', 'mon_decimal_point' => 'string', 'mon_thousands_sep' => 'string', 'mon_grouping' => 'string', 'positive_sign' => 'string', 'negative_sign' => 'string', 'int_frac_digits' => 'string', 'frac_digits' => 'string', 'p_cs_precedes' => 'bool', 'p_sep_by_space' => 'bool', 'n_cs_precedes' => 'bool', 'n_sep_by_space' => 'bool', 'p_sign_posn' => 'int', 'n_sign_posn' => 'int',])]
 #[Pure]
 function localeconv (): array
 {}

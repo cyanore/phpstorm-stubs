@@ -1431,7 +1431,7 @@ function cubrid_lob2_import ($lob_identifier, $file_name) {}
  * Lob identifier when it is successful. FALSE on failure.
  * </p>
  */
-function cubrid_lob2_new ($conn_identifier = null, $type = "BLOB") {}
+function cubrid_lob2_new ($conn_identifier = null, $type = 'BLOB') {}
 
 /**
  * (PHP 5, CUBRID &gt;= 8.4.1)<br/>

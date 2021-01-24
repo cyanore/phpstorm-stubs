@@ -257,7 +257,7 @@ function parse_str (string $string, &$result): void
  * @return array an indexed array containing the fields read.
  */
 #[Pure]
-function str_getcsv (string $string, string $separator = ",", string $enclosure = '"', string $escape = "\\"): array
+function str_getcsv (string $string, string $separator = ',', string $enclosure = '"', string $escape = "\\"): array
 {}
 
 /**
@@ -286,7 +286,7 @@ function str_getcsv (string $string, string $separator = ",", string $enclosure 
  * @return string the padded string.
  */
 #[Pure]
-function str_pad (string $string, int $length, string $pad_string = " ", int $pad_type = STR_PAD_RIGHT): string
+function str_pad (string $string, int $length, string $pad_string = ' ', int $pad_type = STR_PAD_RIGHT): string
 {}
 
 /**
@@ -447,7 +447,7 @@ function vfprintf ($stream, string $format, array $values): int
  * the function will return the number of assigned values. The optional
  * parameters must be passed by reference.
  */
-function sscanf (string $string, string $format, #[TypeContract(exists: "int|null", notExists: "array|null")] mixed &...$vars): array|int|null
+function sscanf (string $string, string $format, #[TypeContract(exists: 'int|null', notExists: 'array|null')] mixed &...$vars): array|int|null
 {}
 
 /**
@@ -464,7 +464,7 @@ function sscanf (string $string, string $format, #[TypeContract(exists: "int|nul
  * function will return the number of assigned values. The optional
  * parameters must be passed by reference.
  */
-function fscanf ($stream, string $format, #[TypeContract(exists: "int|false|null", notExists: "array|false|null")] mixed &...$vars): array|int|false|null
+function fscanf ($stream, string $format, #[TypeContract(exists: 'int|false|null', notExists: 'array|false|null')] mixed &...$vars): array|int|false|null
 {}
 
 /**
@@ -499,14 +499,14 @@ function fscanf ($stream, string $format, #[TypeContract(exists: "int|false|null
  * string is returned instead of an array.
  */
 #[ArrayShape([
-    "scheme" => "string",
-    "host" => "string",
-    "port" => "int",
-    "user" => "string",
-    "pass" => "string",
-    "query" => "string",
-    "path" => "string",
-    "fragment" => "string",
+    'scheme' => 'string',
+    'host' => 'string',
+    'port' => 'int',
+    'user' => 'string',
+    'pass' => 'string',
+    'query' => 'string',
+    'path' => 'string',
+    'fragment' => 'string',
 ])]
 #[Pure]
 function parse_url (string $url, int $component = -1)
@@ -608,7 +608,7 @@ function rawurldecode (string $string): string
  * @return string a URL-encoded string.
  */
 #[Pure]
-function http_build_query (object|array $data, string $numeric_prefix = "", ?string $arg_separator = "&", int $encoding_type = PHP_QUERY_RFC1738): string
+function http_build_query (object|array $data, string $numeric_prefix = '', ?string $arg_separator = '&', int $encoding_type = PHP_QUERY_RFC1738): string
 {}
 
 /**
@@ -949,16 +949,16 @@ function proc_terminate ($process, int $signal = 15): bool
  * </tr>
  */
 #[ArrayShape([
-    "command" => "string",
-    "pid" => "int",
-    "running" => "bool",
-    "signaled" => "bool",
-    "stopped" => "bool",
-    "exitcode" => "int",
-    "termsig" => "int",
-    "stopsig" => "int",
+    'command' => 'string',
+    'pid' => 'int',
+    'running' => 'bool',
+    'signaled' => 'bool',
+    'stopped' => 'bool',
+    'exitcode' => 'int',
+    'termsig' => 'int',
+    'stopsig' => 'int',
 ])]
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function proc_get_status ($process)
 {}
 

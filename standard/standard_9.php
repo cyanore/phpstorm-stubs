@@ -8,12 +8,12 @@ use JetBrains\PhpStorm\Internal\LanguageLevelTypeAware;
 use JetBrains\PhpStorm\Internal\PhpStormStubsElementAvailable;
 use JetBrains\PhpStorm\Pure;
 
-define ("ARRAY_FILTER_USE_BOTH", 1);
+define ('ARRAY_FILTER_USE_BOTH', 1);
 
 /**
  * @since 5.6
  */
-define ("ARRAY_FILTER_USE_KEY", 2);
+define ('ARRAY_FILTER_USE_KEY', 2);
 
 
 /**
@@ -774,7 +774,7 @@ function array_chunk(array $array, int $length, bool $preserve_keys): array
  * @meta
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function array_combine(array $keys, array $values) { }
 
 /**
@@ -789,7 +789,7 @@ function array_combine(array $keys, array $values) { }
  * @return bool true on success or false on failure.
  */
 #[Pure]
-function array_key_exists($key, #[LanguageLevelTypeAware(["8.0" => "array"], default: "array|ArrayObject")] $array): bool
+function array_key_exists($key, #[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|ArrayObject')] $array): bool
 { }
 
 /**

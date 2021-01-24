@@ -2576,7 +2576,7 @@ namespace MongoDB {}
              * @param string $pattern
              * @param string $flags [optional]
              */
-            public final function __construct($pattern, $flags = "")
+            public final function __construct($pattern, $flags = '')
             {
             }
 

@@ -1524,7 +1524,7 @@ class Memcached  {
  */
 class MemcachedException extends RuntimeException  {
 	#[\JetBrains\PhpStorm\Pure]
-    function __construct($errmsg = "", $errcode  = 0 ) {}
+    function __construct($errmsg = '', $errcode  = 0 ) {}
 }
 // End of memcached v.3.1.5
 ?>

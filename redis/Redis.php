@@ -550,7 +550,7 @@ class Redis
      *
      * @return int Number of keys deleted
      */
-    #[Deprecated(replacement: "%class%->del(%parametersList%)")]
+    #[Deprecated(replacement: '%class%->del(%parametersList%)')]
     public function delete($key1, $key2 = null, $key3 = null)
     {
     }

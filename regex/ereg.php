@@ -35,7 +35,7 @@ use JetBrains\PhpStorm\Deprecated;
  * @removed 7.0
  * @see preg_match()
  */
-#[Deprecated(reason: "Use preg_match() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_match() instead', since: '5.3')]
 function ereg ($pattern, $string, ?array &$regs = null) {}
 
 /**
@@ -61,7 +61,7 @@ function ereg ($pattern, $string, ?array &$regs = null) {}
  * @removed 7.0
  * @see preg_replace()
  */
-#[Deprecated(reason: "Use preg_replace() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_replace() instead', since: '5.3')]
 function ereg_replace ($pattern, $replacement, $string) {}
 
 /**
@@ -95,7 +95,7 @@ function ereg_replace ($pattern, $replacement, $string) {}
  * @removed 7.0
  * @see preg_match()
  */
-#[Deprecated(reason: "Use preg_match() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_match() instead', since: '5.3')]
 function eregi ($pattern, $string, array &$regs = null) {}
 
 /**
@@ -121,7 +121,7 @@ function eregi ($pattern, $string, array &$regs = null) {}
  * @removed 7.0
  * @see preg_replace()
  */
-#[Deprecated(reason: "Use preg_replace() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_replace() instead', since: '5.3')]
 function eregi_replace ($pattern, $replacement, $string) {}
 
 /**
@@ -164,7 +164,7 @@ function eregi_replace ($pattern, $replacement, $string) {}
  * @removed 7.0
  * @see preg_split()
  */
-#[Deprecated(reason: "Use preg_split() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_split() instead', since: '5.3')]
 function split ($pattern, $string, $limit = -1) {}
 
 /**
@@ -207,7 +207,7 @@ function split ($pattern, $string, $limit = -1) {}
  * @removed 7.0
  * @see preg_split()
  */
-#[Deprecated(reason: "Use preg_split() instead", since: "5.3")]
+#[Deprecated(reason: 'Use preg_split() instead', since: '5.3')]
 function spliti ($pattern, $string, $limit = -1) {}
 
 /**

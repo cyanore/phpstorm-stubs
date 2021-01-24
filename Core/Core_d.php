@@ -166,46 +166,46 @@ define ('PHP_WINDOWS_EVENT_CTRL_C', 0);
  * @since 7.4
  */
 define ('PHP_WINDOWS_EVENT_CTRL_BREAK', 1);
-define ('PHP_VERSION', "5.3.6-13ubuntu3.2");
+define ('PHP_VERSION', '5.3.6-13ubuntu3.2');
 define ('PHP_MAJOR_VERSION', 5);
 define ('PHP_MINOR_VERSION', 3);
 define ('PHP_RELEASE_VERSION', 6);
-define ('PHP_EXTRA_VERSION', "-13ubuntu3.2");
+define ('PHP_EXTRA_VERSION', '-13ubuntu3.2');
 define ('PHP_VERSION_ID', 50306);
 define ('PHP_ZTS', 0);
 define ('PHP_DEBUG', 0);
-define ('PHP_OS', "Linux");
+define ('PHP_OS', 'Linux');
 /**
  * The operating system family PHP was built for. Either of 'Windows', 'BSD', 'Darwin', 'Solaris', 'Linux' or 'Unknown'. Available as of PHP 7.2.0.
  * @since 7.2
  */
-define ('PHP_OS_FAMILY', "Linux");
-define ('PHP_SAPI', "cli");
+define ('PHP_OS_FAMILY', 'Linux');
+define ('PHP_SAPI', 'cli');
 /**
  * @since 7.4
  */
 define ('PHP_CLI_PROCESS_TITLE', 1);
-define ('DEFAULT_INCLUDE_PATH', ".:/usr/share/php:/usr/share/pear");
-define ('PEAR_INSTALL_DIR', "/usr/share/php");
-define ('PEAR_EXTENSION_DIR', "/usr/lib/php5/20090626");
-define ('PHP_EXTENSION_DIR', "/usr/lib/php5/20090626");
+define ('DEFAULT_INCLUDE_PATH', '.:/usr/share/php:/usr/share/pear');
+define ('PEAR_INSTALL_DIR', '/usr/share/php');
+define ('PEAR_EXTENSION_DIR', '/usr/lib/php5/20090626');
+define ('PHP_EXTENSION_DIR', '/usr/lib/php5/20090626');
 /**
  * Specifies where the binaries were installed into.
  * @link https://php.net/manual/en/reserved.constants.php
  */
 define ('PHP_BINARY', '/usr/local/php/bin/php');
-define ('PHP_PREFIX', "/usr");
-define ('PHP_BINDIR', "/usr/bin");
-define ('PHP_LIBDIR', "/usr/lib/php5");
-define ('PHP_DATADIR', "/usr/share");
-define ('PHP_SYSCONFDIR', "/etc");
-define ('PHP_LOCALSTATEDIR', "/var");
-define ('PHP_CONFIG_FILE_PATH', "/etc/php5/cli");
-define ('PHP_CONFIG_FILE_SCAN_DIR', "/etc/php5/cli/conf.d");
-define ('PHP_SHLIB_SUFFIX', "so");
+define ('PHP_PREFIX', '/usr');
+define ('PHP_BINDIR', '/usr/bin');
+define ('PHP_LIBDIR', '/usr/lib/php5');
+define ('PHP_DATADIR', '/usr/share');
+define ('PHP_SYSCONFDIR', '/etc');
+define ('PHP_LOCALSTATEDIR', '/var');
+define ('PHP_CONFIG_FILE_PATH', '/etc/php5/cli');
+define ('PHP_CONFIG_FILE_SCAN_DIR', '/etc/php5/cli/conf.d');
+define ('PHP_SHLIB_SUFFIX', 'so');
 define ('PHP_EOL', "\n");
 define ('SUHOSIN_PATCH', 1);
-define ('SUHOSIN_PATCH_VERSION', "0.9.10");
+define ('SUHOSIN_PATCH_VERSION', '0.9.10');
 define ('PHP_MAXPATHLEN', 4096);
 define ('PHP_INT_MAX', 9223372036854775807);
 define ('PHP_INT_MIN', -9223372036854775808);

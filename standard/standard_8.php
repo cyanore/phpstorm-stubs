@@ -113,7 +113,7 @@ function getimagesizefromstring (string $string , &$image_info): array|false
  * @link https://secure.php.net/manual/en/function.stream-set-chunk-size.php
  * @since 5.4
  */
-#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
+#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
 function stream_set_chunk_size ($stream , int $size)
 {}
 
@@ -147,7 +147,7 @@ function lcg_value (): float
  * @return string|false the metaphone key as a string, or FALSE on failure
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function metaphone (string $string, int $max_phonemes = 0): bool|string
 {}
 
@@ -378,7 +378,7 @@ function ob_get_contents (): string|false
  * </p>
  * @return void
  */
-function ob_implicit_flush (#[LanguageLevelTypeAware(["8.0" => "bool"], default: "int")] $enable): void {}
+function ob_implicit_flush (#[LanguageLevelTypeAware(['8.0' => 'bool'], default: 'int')] $enable): void {}
 
 /**
  * List all output handlers in use

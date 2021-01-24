@@ -361,7 +361,7 @@ class StubsTest extends TestCase
         $arrayParameter = array_pop($arrayParameters);
         self::assertCount(2, $implodeParameters);
         self::assertEquals(['array','string'], $separatorParameter->types);
-        self::assertEquals("", $separatorParameter->defaultValue->value);
+        self::assertEquals('', $separatorParameter->defaultValue->value);
         self::assertEquals(['?array'], $arrayParameter->types);
         self::assertEquals(['string'], $implodeFunction->returnTypesFromSignature);
         self::assertEquals(['string'], $implodeFunction->returnTypesFromPhpDoc);

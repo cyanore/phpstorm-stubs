@@ -158,7 +158,7 @@ function bin2hex (string $string): string
  * by a signal, sleep returns the number of seconds left
  * to sleep.
  */
-#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
+#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
 function sleep (int $seconds)
 {}
 
@@ -722,7 +722,7 @@ function htmlspecialchars_decode (string $string, int $flags): string
  * @return array the translation table as an array.
  */
 #[Pure]
-function get_html_translation_table (int $table, int $flags, string $encoding = "UTF-8"): array
+function get_html_translation_table (int $table, int $flags, string $encoding = 'UTF-8'): array
 {}
 
 /**

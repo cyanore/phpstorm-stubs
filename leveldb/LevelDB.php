@@ -1,9 +1,9 @@
 <?php
 
 
-define("LEVELDB_NO_COMPRESSION", 0);
+define('LEVELDB_NO_COMPRESSION', 0);
 
-define("LEVELDB_SNAPPY_COMPRESSION", 1);
+define('LEVELDB_SNAPPY_COMPRESSION', 1);
 
 
 class LevelDB{

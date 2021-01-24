@@ -510,7 +510,7 @@ function gmp_sign ($a) {}
  * @see gmp_random_range()
  * @removed 8.0
  */
-#[Deprecated(reason: "Use see gmp_random_bits() or see gmp_random_range() instead", since: "7.2")]
+#[Deprecated(reason: 'Use see gmp_random_bits() or see gmp_random_range() instead', since: '7.2')]
 #[Pure]
 function gmp_random ($limiter = 20) {}
 
@@ -795,7 +795,7 @@ define ('GMP_NATIVE_ENDIAN', 16);
  * The GMP library version
  * @link https://php.net/manual/en/gmp.constants.php
  */
-define ('GMP_VERSION', "");
+define ('GMP_VERSION', '');
 
 define ('GMP_MPIR_VERSION', '3.0.0');
 

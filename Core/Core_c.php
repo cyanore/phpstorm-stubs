@@ -276,7 +276,7 @@ class Exception implements Throwable {
      * @param null|Throwable $previous [optional] The previous throwable used for the exception chaining.
      */
     #[Pure]
-    public function __construct($message = "", $code = 0, Throwable $previous = null) { }
+    public function __construct($message = '', $code = 0, Throwable $previous = null) { }
 
     /**
      * Gets the Exception message
@@ -371,7 +371,7 @@ class Error implements Throwable {
      * @param int $code [optional] The Error code.
      * @param null|Throwable $previous [optional] The previous throwable used for the exception chaining.
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null)
+    public function __construct($message = '', $code = 0, Throwable $previous = null)
     {
     }
 
@@ -548,7 +548,7 @@ class ErrorException extends Exception {
      * @param Exception $previous [optional] The previous exception used for the exception chaining.
      */
     #[\JetBrains\PhpStorm\Pure]
-    public function __construct($message = "", $code = 0, $severity = 1, $filename = __FILE__, $line = __LINE__, $previous = null) { }
+    public function __construct($message = '', $code = 0, $severity = 1, $filename = __FILE__, $line = __LINE__, $previous = null) { }
 
     /**
      * Gets the exception severity

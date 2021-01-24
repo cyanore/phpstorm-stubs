@@ -62,7 +62,7 @@ function ob_iconv_handler (string $contents, int $status): string
  * </p>
  */
 #[Pure]
-function iconv_get_encoding (string $type = "all"): array|string|false
+function iconv_get_encoding (string $type = 'all'): array|string|false
 {}
 
 /**
@@ -431,7 +431,7 @@ function iconv_mime_decode_headers (string $headers, int $mode = 0, ?string $enc
  * string
  * @link https://php.net/manual/en/iconv.constants.php
  */
-define ('ICONV_IMPL', "unknown");
+define ('ICONV_IMPL', 'unknown');
 
 /**
  * string

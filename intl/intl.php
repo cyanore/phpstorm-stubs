@@ -1127,27 +1127,27 @@ class Normalizer {
      * Default normalization options
      * @link https://secure.php.net/manual/en/class.normalizer.php
      */
-    const OPTION_DEFAULT = "";
+    const OPTION_DEFAULT = '';
 
     /**
      * No decomposition/composition
      * @link https://secure.php.net/manual/en/class.normalizer.php
      * @removed 8.0
      */
-    const NONE = "1";
+    const NONE = '1';
 
     /**
      * Normalization Form D (NFD) - Canonical Decomposition
      * @link https://secure.php.net/manual/en/class.normalizer.php
      */
-    const FORM_D = "2";
+    const FORM_D = '2';
     const NFD = 2;
 
     /**
      * Normalization Form KD (NFKD) - Compatibility Decomposition
      * @link https://secure.php.net/manual/en/class.normalizer.php
      */
-    const FORM_KD = "3";
+    const FORM_KD = '3';
     const NFKD = 3;
 
     /**
@@ -1216,43 +1216,43 @@ class Locale {
      * Language subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const LANG_TAG = "language";
+    const LANG_TAG = 'language';
 
     /**
      * Extended language subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const EXTLANG_TAG = "extlang";
+    const EXTLANG_TAG = 'extlang';
 
     /**
      * Script subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const SCRIPT_TAG = "script";
+    const SCRIPT_TAG = 'script';
 
     /**
      * Region subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const REGION_TAG = "region";
+    const REGION_TAG = 'region';
 
     /**
      * Variant subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const VARIANT_TAG = "variant";
+    const VARIANT_TAG = 'variant';
 
     /**
      * Grandfathered Language subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const GRANDFATHERED_LANG_TAG = "grandfathered";
+    const GRANDFATHERED_LANG_TAG = 'grandfathered';
 
     /**
      * Private subtag
      * @link https://php.net/manual/en/class.numberformatter.php#intl.numberformatter-constants
      */
-    const PRIVATE_TAG = "private";
+    const PRIVATE_TAG = 'private';
 
 
     /**
@@ -1829,7 +1829,7 @@ class IntlDateFormatter {
      * @removed 7.0
      * @see IntlDateFormatter::setTimeZone()
      */
-    #[Deprecated(replacement: "%class%->setTimeZone(%parametersList%)" ,since: "5.5")]
+    #[Deprecated(replacement: '%class%->setTimeZone(%parametersList%)' ,since: '5.5')]
     public function setTimeZoneId($zone) { }
 
     /**
@@ -4339,7 +4339,7 @@ function datefmt_get_timezone() { }
  * @removed 7.0
  * @see datefmt_set_timezone()
  */
-#[Deprecated(replacement: "datefmt_set_timezone(%parametersList%)", since: "5.5")]
+#[Deprecated(replacement: 'datefmt_set_timezone(%parametersList%)', since: '5.5')]
 function datefmt_set_timezone_id(MessageFormatter $mf, $zone) { }
 
 /**
@@ -6257,8 +6257,8 @@ function intlcal_set_minimal_days_in_first_week(IntlCalendar $calendar, $numberO
  * @link https://php.net/manual/en/intl.constants.php
  */
 define ('INTL_MAX_LOCALE_LEN', 80);
-define ('INTL_ICU_VERSION', "4.8.1.1");
-define ('INTL_ICU_DATA_VERSION', "4.8.1");
+define ('INTL_ICU_VERSION', '4.8.1.1');
+define ('INTL_ICU_DATA_VERSION', '4.8.1');
 define ('ULOC_ACTUAL_LOCALE', 0);
 define ('ULOC_VALID_LOCALE', 1);
 define ('GRAPHEME_EXTR_COUNT', 0);

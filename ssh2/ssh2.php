@@ -762,7 +762,7 @@ define ('SSH2_TERM_UNIT_PIXELS', 1);
  * by ssh2_shell.
  * @link https://php.net/manual/en/ssh2.constants.php
  */
-define ('SSH2_DEFAULT_TERMINAL', "vanilla");
+define ('SSH2_DEFAULT_TERMINAL', 'vanilla');
 
 /**
  * Default terminal width requested by ssh2_shell.

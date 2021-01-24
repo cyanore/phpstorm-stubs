@@ -524,7 +524,7 @@ class DOMDocument extends DOMNode implements DOMParentNode {
      * @var string
      * @link https://php.net/manual/en/class.domdocument.php#domdocument.props.actualencoding
      */
-    #[Deprecated("Actual encoding of the document, is a readonly equivalent to encoding.")]
+    #[Deprecated('Actual encoding of the document, is a readonly equivalent to encoding.')]
     public $actualEncoding;
 
     /**
@@ -532,7 +532,7 @@ class DOMDocument extends DOMNode implements DOMParentNode {
      * @link https://php.net/manual/en/class.domdocument.php#domdocument.props.config
      * @see DOMDocument::normalizeDocument()
      */
-    #[Deprecated("Configuration used when DOMDocument::normalizeDocument() is invoked.")]
+    #[Deprecated('Configuration used when DOMDocument::normalizeDocument() is invoked.')]
     public $config;
 
     /**
@@ -607,7 +607,7 @@ class DOMDocument extends DOMNode implements DOMParentNode {
      * @var bool
      * @link https://php.net/manual/en/class.domdocument.php#domdocument.props.standalone
      */
-    #[Deprecated("Whether or not the document is standalone, as specified by the XML declaration, corresponds to xmlStandalone.")]
+    #[Deprecated('Whether or not the document is standalone, as specified by the XML declaration, corresponds to xmlStandalone.')]
     public $standalone ;
 
     /**

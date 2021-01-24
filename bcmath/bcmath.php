@@ -193,7 +193,7 @@ function bcpow (string $num, string $exponent, ?int $scale = 0): string
  * <i>operand</i> is negative.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "?string")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: '?string')]
 function bcsqrt (string $num, ?int $scale)
 {}
 
@@ -263,6 +263,6 @@ function bccomp (string $num1, string $num2, ?int $scale = 0): int
  * is 0 or <i>exponent</i> is negative.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "?string")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: '?string')]
 function bcpowmod (string $num, string $exponent, string $modulus, ?int $scale = 0)
 {}

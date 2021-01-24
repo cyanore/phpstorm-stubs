@@ -613,7 +613,7 @@ define ('PREG_UNMATCHED_AS_NULL', 512);
  * PCRE version and release date (e.g. "7.0 18-Dec-2006").
  * @link https://php.net/manual/en/pcre.constants.php
  */
-define ('PCRE_VERSION', "8.31 2012-07-06");
+define ('PCRE_VERSION', '8.31 2012-07-06');
 
 /**
  * @since 7.3

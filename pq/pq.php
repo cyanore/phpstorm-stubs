@@ -386,7 +386,7 @@ class Connection  {
 	 * @throws \pq\Exception\BadMethodCallException
 	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct(string $dsn = "", int $flags = 0) {}
+	function __construct(string $dsn = '', int $flags = 0) {}
 	/**
 	 * Declare a cursor for a query.
 	 *
@@ -866,7 +866,7 @@ class Cursor  {
 	 * @throws \pq\Exception\RuntimeException
 	 * @return \pq\Result the fetched row(s).
 	 */
-	function fetch(string $spec = "1") {}
+	function fetch(string $spec = '1') {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.
 	 * See pq\Cursor::fetch().
@@ -878,7 +878,7 @@ class Cursor  {
 	 * @throws \pq\Exception\BadMethodCallException
 	 * @throws \pq\Exception\RuntimeException
 	 */
-	function fetchAsync(string $spec = "1", callable $callback = null) {}
+	function fetchAsync(string $spec = '1', callable $callback = null) {}
 	/**
 	 * Move the cursor.
 	 * See pq\Cursor::fetch().
@@ -893,7 +893,7 @@ class Cursor  {
 	 * @throws \pq\Exception\RuntimeException
 	 * @return \pq\Result command status.
 	 */
-	function move(string $spec = "1") {}
+	function move(string $spec = '1') {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.
 	 * See pq\Cursor::move().
@@ -905,7 +905,7 @@ class Cursor  {
 	 * @throws \pq\Exception\BadMethodCallException
 	 * @throws \pq\Exception\RuntimeException
 	 */
-	function moveAsync(string $spec = "1", callable $callback = null) {}
+	function moveAsync(string $spec = '1', callable $callback = null) {}
 	/**
 	 * Reopen a cursor.
 	 * This is a no-op on already open cursors.
@@ -938,7 +938,7 @@ class DateTime extends \DateTime implements \JsonSerializable {
 	 * @public
 	 * @var string
 	 */
-	public $format = "Y-m-d H:i:s.uO";
+	public $format = 'Y-m-d H:i:s.uO';
 	/**
 	 * Stringify the DateTime instance according to pq\DateTime::$format.
 	 *

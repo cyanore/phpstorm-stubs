@@ -188,7 +188,7 @@ function str_contains(string $haystack, string $needle) : bool {}
  * false.
  * @removed 8.0
  */
-#[Deprecated(reason: "Use a foreach loop instead", since: "7.2")]
+#[Deprecated(reason: 'Use a foreach loop instead', since: '7.2')]
 function each (&$array): array
 {}
 
@@ -785,7 +785,7 @@ function get_defined_vars (): array
  * @return string|false a unique function name as a string, or false on error.
  * @removed 8.0
  */
-#[Deprecated(reason: "Use anonymous functions instead", since: "7.2")]
+#[Deprecated(reason: 'Use anonymous functions instead', since: '7.2')]
 function create_function (string $args, string $code): false|string
 {}
 
@@ -1109,10 +1109,10 @@ function gc_disable (): void {}
  * @since 7.3
  */
 #[ArrayShape([
-    "runs" => "int",
-    "collected" => "int",
-    "threshold" => "int",
-    "roots" => "int"
+    'runs' => 'int',
+    'collected' => 'int',
+    'threshold' => 'int',
+    'roots' => 'int'
 ])]
 #[Pure]
 function gc_status (): array

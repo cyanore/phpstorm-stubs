@@ -20,7 +20,7 @@ function enchant_broker_init () {}
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @since 5.3
  */
-#[Deprecated(reason: "Unset the object instead", since: '8.0')]
+#[Deprecated(reason: 'Unset the object instead', since: '8.0')]
 function enchant_broker_free ($broker) {}
 
 /**
@@ -103,7 +103,7 @@ function enchant_broker_request_pwl_dict ($broker, $filename) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-#[Deprecated("Unset the object instead",since: '8.0')]
+#[Deprecated('Unset the object instead',since: '8.0')]
 function enchant_broker_free_dict ($dict) {}
 
 /**

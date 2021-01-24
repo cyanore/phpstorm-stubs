@@ -385,7 +385,7 @@ final class RarEntry
      *
      * @return bool TRUE on success or FALSE on failure
      */
-    public function  extract($dir, $filepath = "", $password = null, $extended_data = false)
+    public function  extract($dir, $filepath = '', $password = null, $extended_data = false)
     {
     }
     /**

@@ -759,8 +759,8 @@ define ('CRYPT_MD5', 1);
 define ('CRYPT_BLOWFISH', 1);
 define ('CRYPT_SHA256', 1);
 define ('CRYPT_SHA512', 1);
-define ('DIRECTORY_SEPARATOR', "/");
-define ('PATH_SEPARATOR', ":");
+define ('DIRECTORY_SEPARATOR', '/');
+define ('PATH_SEPARATOR', ':');
 define ('GLOB_BRACE', 1024);
 define ('GLOB_MARK', 2);
 define ('GLOB_NOSORT', 4);
@@ -1130,7 +1130,7 @@ define('PHP_MANDIR', '/usr/local/php/php/man');
  * @see session_id()
  * @link https://php.net/manual/en/session.constants.php
  */
-define('SID', "name=ID");
+define('SID', 'name=ID');
 /**
  * Return value of session_status() if sessions are disabled.
  * @since 5.4
@@ -1239,40 +1239,40 @@ define('STREAM_CRYPTO_METHOD_SSLv3_SERVER', 4);
 define('STREAM_CRYPTO_METHOD_SSLv23_SERVER', 120);
 define('STREAM_CRYPTO_METHOD_TLS_SERVER', 120);
 
-define("STREAM_CRYPTO_METHOD_ANY_CLIENT", 127);
-define("STREAM_CRYPTO_METHOD_ANY_SERVER", 126);
-define("STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT", 9);
-define("STREAM_CRYPTO_METHOD_TLSv1_0_SERVER", 8);
-define("STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT", 17);
-define("STREAM_CRYPTO_METHOD_TLSv1_1_SERVER", 16);
-define("STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT", 33);
-define("STREAM_CRYPTO_METHOD_TLSv1_2_SERVER", 32);
+define('STREAM_CRYPTO_METHOD_ANY_CLIENT', 127);
+define('STREAM_CRYPTO_METHOD_ANY_SERVER', 126);
+define('STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT', 9);
+define('STREAM_CRYPTO_METHOD_TLSv1_0_SERVER', 8);
+define('STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT', 17);
+define('STREAM_CRYPTO_METHOD_TLSv1_1_SERVER', 16);
+define('STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT', 33);
+define('STREAM_CRYPTO_METHOD_TLSv1_2_SERVER', 32);
 /**
  * @since 7.4
  */
-define("STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT", 65);
+define('STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT', 65);
 /**
  * @since 7.4
  */
-define("STREAM_CRYPTO_METHOD_TLSv1_3_SERVER", 64);
+define('STREAM_CRYPTO_METHOD_TLSv1_3_SERVER', 64);
 
-define("STREAM_CRYPTO_PROTO_SSLv3", 4);
-define("STREAM_CRYPTO_PROTO_TLSv1_0", 8);
-define("STREAM_CRYPTO_PROTO_TLSv1_1", 16);
-define("STREAM_CRYPTO_PROTO_TLSv1_2", 32);
+define('STREAM_CRYPTO_PROTO_SSLv3', 4);
+define('STREAM_CRYPTO_PROTO_TLSv1_0', 8);
+define('STREAM_CRYPTO_PROTO_TLSv1_1', 16);
+define('STREAM_CRYPTO_PROTO_TLSv1_2', 32);
 /**
  * @since 7.4
  */
-define("STREAM_CRYPTO_PROTO_TLSv1_3", 64);
+define('STREAM_CRYPTO_PROTO_TLSv1_3', 64);
 
 /**
  * @since 7.1
  */
-define("MT_RAND_MT19937", 0);
+define('MT_RAND_MT19937', 0);
 /**
  * @since 7.1
  */
-define("MT_RAND_PHP", 1);
+define('MT_RAND_PHP', 1);
 
 /**
  * system is unusable

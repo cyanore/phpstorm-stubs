@@ -222,7 +222,7 @@ function imap_headerinfo ($stream_id, $msg_no, $from_length = 0, $subject_length
  * <b>imap_header</b>, except for the flags and other
  * properties that come from the IMAP server.
  */
-function imap_rfc822_parse_headers ($headers, $defaulthost = "UNKNOWN") {}
+function imap_rfc822_parse_headers ($headers, $defaulthost = 'UNKNOWN') {}
 
 /**
  * Returns a properly formatted email address given the mailbox, host, and personal info
@@ -351,7 +351,7 @@ function imap_fetchmime ($imap_stream, $msg_number, $section, $options = 0) {}
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @since 5.1.3
  */
-function imap_savebody ($imap_stream, $file, $msg_number, $part_number = "", $options = 0) {}
+function imap_savebody ($imap_stream, $file, $msg_number, $part_number = '', $options = 0) {}
 
 /**
  * Returns header for a message

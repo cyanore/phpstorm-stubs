@@ -1118,7 +1118,7 @@ function pg_copy_from ($connection, $table_name, array $rows, $delimiter = null,
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function pg_trace ($pathname, $mode = "w", $connection = null) {}
+function pg_trace ($pathname, $mode = 'w', $connection = null) {}
 
 /**
  * Disable tracing of a PostgreSQL connection
@@ -1821,8 +1821,8 @@ function pg_clientencoding ($connection) {}
  */
 function pg_setclientencoding ($connection, $encoding) {}
 
-define ('PGSQL_LIBPQ_VERSION', "9.1.10");
-define ('PGSQL_LIBPQ_VERSION_STR', "PostgreSQL 9.1.10 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.8.1-10ubuntu7) 4.8.1, 64-bit");
+define ('PGSQL_LIBPQ_VERSION', '9.1.10');
+define ('PGSQL_LIBPQ_VERSION_STR', 'PostgreSQL 9.1.10 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.8.1-10ubuntu7) 4.8.1, 64-bit');
 
 /**
  * Passed to <b>pg_connect</b> to force the creation of a new connection,

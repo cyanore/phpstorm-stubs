@@ -654,7 +654,7 @@ function mb_list_encodings (): array
  * @link https://php.net/manual/en/function.mb-encoding-aliases.php
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function mb_encoding_aliases (string $encoding)
 {}
 
@@ -1031,7 +1031,7 @@ function mb_ereg (string $pattern, string $string, &$matches): bool
  * </p>
  * @return bool|int
  */
-#[LanguageLevelTypeAware(["8.0" => "bool"], default: "false|int")]
+#[LanguageLevelTypeAware(['8.0' => 'bool'], default: 'false|int')]
 function mb_eregi (string $pattern, string $string, &$matches): bool
 {}
 
@@ -1064,7 +1064,7 @@ function mb_eregi (string $pattern, string $string, &$matches): bool
  * @return string|false|null The resultant string on success, or false on error.
  */
 #[Pure]
-function mb_ereg_replace (string $pattern, string $replacement, string $string, ?string $options = "msr"): string|false|null
+function mb_ereg_replace (string $pattern, string $replacement, string $string, ?string $options = 'msr'): string|false|null
 {}
 
 /**
@@ -1110,7 +1110,7 @@ function mb_ereg_replace (string $pattern, string $replacement, string $string, 
  * </p>
  * @since 5.4.1
  */
-function mb_ereg_replace_callback (string $pattern, callable $callback, string $string, ?string $options = "msr"): string|false|null
+function mb_ereg_replace_callback (string $pattern, callable $callback, string $string, ?string $options = 'msr'): string|false|null
 {}
 
 /**
@@ -1131,7 +1131,7 @@ function mb_ereg_replace_callback (string $pattern, callable $callback, string $
  * @return string|false|null The resultant string or false on error.
  */
 #[Pure]
-function mb_eregi_replace (string $pattern, string $replacement, string $string, ?string $options = "msr"): string|false|null
+function mb_eregi_replace (string $pattern, string $replacement, string $string, ?string $options = 'msr'): string|false|null
 {}
 
 /**
@@ -1279,7 +1279,7 @@ function mb_ereg_search_setpos (int $offset): bool
  * @see mb_regex_encoding
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_regex_encoding(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_regex_encoding(%parametersList%)', since: '7.3')]
 function mbregex_encoding ($encoding) {}
 
 /**
@@ -1299,7 +1299,7 @@ function mbereg (string $pattern, string $string, array &$registers) {}
  * @see mb_eregi
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_eregi(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_eregi(%parametersList%)', since: '7.3')]
 function mberegi (string $pattern, string $string, array &$registers) {}
 
 /**
@@ -1322,8 +1322,8 @@ function mbereg_replace ($pattern, $replacement, $string, $option) {}
  * @see mb_eregi_replace
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_eregi_replace(%parametersList%)", since: "7.3")]
-function mberegi_replace ($pattern, $replacement, $string, string $option = "msri"): string
+#[Deprecated(replacement: 'mb_eregi_replace(%parametersList%)', since: '7.3')]
+function mberegi_replace ($pattern, $replacement, $string, string $option = 'msri'): string
 {}
 
 /**
@@ -1343,7 +1343,7 @@ function mbsplit ($pattern, $string, $limit) {}
  * @see mb_ereg_match
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_ereg_match(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_ereg_match(%parametersList%)', since: '7.3')]
 function mbereg_match ($pattern, $string, $option) {}
 
 /**
@@ -1352,7 +1352,7 @@ function mbereg_match ($pattern, $string, $option) {}
  * @see mb_ereg_search
  * @removed 8.0
  */
-#[Deprecated("use mb_ereg_search instead", replacement: "mb_ereg_search(%parametersList%)", since: "7.3")]
+#[Deprecated('use mb_ereg_search instead', replacement: 'mb_ereg_search(%parametersList%)', since: '7.3')]
 function mbereg_search ($pattern, $option) {}
 
 /**
@@ -1361,7 +1361,7 @@ function mbereg_search ($pattern, $option) {}
  * @see mb_ereg_search_pos
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_ereg_search_pos(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_ereg_search_pos(%parametersList%)', since: '7.3')]
 function mbereg_search_pos ($pattern, $option) {}
 
 /**
@@ -1380,7 +1380,7 @@ function mbereg_search_regs ($pattern, $option) {}
  * @see mb_ereg_search_init
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_ereg_search_init(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_ereg_search_init(%parametersList%)', since: '7.3')]
 function mbereg_search_init ($string, $pattern, $option) {}
 
 /**
@@ -1394,7 +1394,7 @@ function mbereg_search_getregs () {}
  * @see mb_ereg_search_getpos
  * @removed 8.0
  */
-#[Deprecated(replacement: "mb_ereg_search_getpos()", since: "7.3")]
+#[Deprecated(replacement: 'mb_ereg_search_getpos()', since: '7.3')]
 function mbereg_search_getpos () {}
 
 /**
@@ -1430,7 +1430,7 @@ function mb_ord (string $string, ?string $encoding): int|false
  * @since 7.2
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function mb_scrub (string $string, ?string $encoding): bool|string
 {}
 
@@ -1438,7 +1438,7 @@ function mb_scrub (string $string, ?string $encoding): bool|string
  * @param $position
  * @see mb_ereg_search_setpos
  */
-#[Deprecated(replacement: "mb_ereg_search_setpos(%parametersList%)", since: "7.3")]
+#[Deprecated(replacement: 'mb_ereg_search_setpos(%parametersList%)', since: '7.3')]
 #[Pure]
 function mbereg_search_setpos ($position) {}
 
@@ -1458,7 +1458,7 @@ function mbereg_search_setpos ($position) {}
  * @since 7.4
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
 function mb_str_split (string $string, int $length = 1, ?string $encoding)
 {}
 

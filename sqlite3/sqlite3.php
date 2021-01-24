@@ -93,7 +93,7 @@ class SQLite3  {
 	 * @return array an associative array with the keys "versionString" and
 	 * "versionNumber".
 	 */
-	#[ArrayShape(["versionString" => "string", "versionNumber" => "int"])]
+	#[ArrayShape(['versionString' => 'string', 'versionNumber' => 'int'])]
 	public static function version () {}
 
 	/**

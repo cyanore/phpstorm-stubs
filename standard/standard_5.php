@@ -156,7 +156,7 @@ function gettype(mixed $value): string
  * </ul>
  * @return bool true on success or false on failure.
  */
-function settype (mixed &$var, #[ExpectedValues(["bool", "boolean", "int", "integer", "float", "double", "string", "array", "object", "null"])] string $type): bool
+function settype (mixed &$var, #[ExpectedValues(['bool', 'boolean', 'int', 'integer', 'float', 'double', 'string', 'array', 'object', 'null'])] string $type): bool
 {}
 
 /**
@@ -760,7 +760,7 @@ function fopen (string $filename, string $mode, bool $use_include_path = false, 
  * the number of characters read from handle
  * and passed through to the output.
  */
-#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
+#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
 function fpassthru ($stream)
 {}
 

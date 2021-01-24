@@ -98,7 +98,7 @@ function gzgets ($stream, int $length): string|false {}
  * @return string|false The uncompressed and striped string, or <b>FALSE</b> on error.
  * @removed 8.0
  */
-#[Deprecated(since: "7.3")]
+#[Deprecated(since: '7.3')]
 function gzgetss ($zp, int $length, $allowable_tags)
 {}
 
@@ -439,7 +439,7 @@ function ob_gzhandler (string $data, int $flags): string|false {}
  * @since 7.0
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "DeflateContext|false"], default: "resource|false")]
+#[LanguageLevelTypeAware(['8.0' => 'DeflateContext|false'], default: 'resource|false')]
 function deflate_init (int $encoding, array $options = array()) {}
 
 /**
@@ -463,7 +463,7 @@ function deflate_init (int $encoding, array $options = array()) {}
  * </p>
  * @since 7.0
  */
-function deflate_add (#[LanguageLevelTypeAware(["8.0" => "DeflateContext"], default: "resource")] $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false {}
+function deflate_add (#[LanguageLevelTypeAware(['8.0' => 'DeflateContext'], default: 'resource')] $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false {}
 
 /**
  * Initialize an incremental inflate context
@@ -487,7 +487,7 @@ function deflate_add (#[LanguageLevelTypeAware(["8.0" => "DeflateContext"], defa
  * @since 7.0
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "InflateContext|false"], default: "resource|false")]
+#[LanguageLevelTypeAware(['8.0' => 'InflateContext|false'], default: 'resource|false')]
 function inflate_init (int $encoding, array $options = array()) {}
 
 /**
@@ -511,7 +511,7 @@ function inflate_init (int $encoding, array $options = array()) {}
  * </p>
  * @since 7.0
  */
-function inflate_add (#[LanguageLevelTypeAware(["8.0" => "InflateContext"], default: "resource")] $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false {}
+function inflate_add (#[LanguageLevelTypeAware(['8.0' => 'InflateContext'], default: 'resource')] $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false {}
 
 /**
  * Get number of bytes read so far
@@ -520,7 +520,7 @@ function inflate_add (#[LanguageLevelTypeAware(["8.0" => "InflateContext"], defa
  * @since 7.2
  */
 #[Pure]
-function inflate_get_read_len (#[LanguageLevelTypeAware(["8.0" => "InflateContext"], default: "resource")] $context): int{}
+function inflate_get_read_len (#[LanguageLevelTypeAware(['8.0' => 'InflateContext'], default: 'resource')] $context): int{}
 
 /**
  * Get decompression status
@@ -529,7 +529,7 @@ function inflate_get_read_len (#[LanguageLevelTypeAware(["8.0" => "InflateContex
  * @since 7.2
  */
 #[Pure]
-function  inflate_get_status(#[LanguageLevelTypeAware(["8.0" => "InflateContext"], default: "resource")] $context): int {}
+function  inflate_get_status(#[LanguageLevelTypeAware(['8.0' => 'InflateContext'], default: 'resource')] $context): int {}
 
 /**
  * @since 8.0

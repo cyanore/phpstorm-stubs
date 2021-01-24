@@ -187,7 +187,7 @@ define ('LIBXSLT_VERSION', 10128);
  * libxslt version like 1.1.17. Available as of PHP 5.1.2.
  * @link https://php.net/manual/en/xsl.constants.php
  */
-define ('LIBXSLT_DOTTED_VERSION', "1.1.28");
+define ('LIBXSLT_DOTTED_VERSION', '1.1.28');
 
 /**
  * libexslt version like 813. Available as of PHP 5.1.2.
@@ -199,7 +199,7 @@ define ('LIBEXSLT_VERSION', 817);
  * libexslt version like 1.1.17. Available as of PHP 5.1.2.
  * @link https://php.net/manual/en/xsl.constants.php
  */
-define ('LIBEXSLT_DOTTED_VERSION', "1.1.28");
+define ('LIBEXSLT_DOTTED_VERSION', '1.1.28');
 
 // End of xsl v.0.1
 ?>

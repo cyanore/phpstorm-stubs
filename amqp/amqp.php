@@ -164,20 +164,20 @@ class AMQPBasicProperties
      * @param string $cluster_id
      */
     public function __construct(
-        $content_type = "",
-        $content_encoding = "",
+        $content_type = '',
+        $content_encoding = '',
         array $headers = [],
         $delivery_mode = 2,
         $priority = 0,
-        $correlation_id = "",
-        $reply_to = "",
-        $expiration = "",
-        $message_id = "",
+        $correlation_id = '',
+        $reply_to = '',
+        $expiration = '',
+        $message_id = '',
         $timestamp = 0,
-        $type = "",
-        $user_id = "",
-        $app_id = "",
-        $cluster_id = ""
+        $type = '',
+        $user_id = '',
+        $app_id = '',
+        $cluster_id = ''
     ) {
     }
 
@@ -770,7 +770,7 @@ class AMQPConnection
      *
      * @return bool
      */
-    #[Deprecated(replacement: "%class%->setReadTimout(%parameter0%)")]
+    #[Deprecated(replacement: '%class%->setReadTimout(%parameter0%)')]
     public function setTimeout($timeout) { }
 
     /**
@@ -1697,8 +1697,8 @@ class AMQPQueueException extends AMQPException
  */
 final class AMQPTimestamp
 {
-    const MIN = "0";
-    const MAX = "18446744073709551616";
+    const MIN = '0';
+    const MAX = '18446744073709551616';
 
     /**
      * @param string $timestamp

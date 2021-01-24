@@ -1072,69 +1072,69 @@ function svn_fs_abort_txn ($txn) {}
  * Property for default username to use when performing basic authentication
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_AUTH_PARAM_DEFAULT_USERNAME', "svn:auth:username");
+define ('SVN_AUTH_PARAM_DEFAULT_USERNAME', 'svn:auth:username');
 
 /**
  * Property for default password to use when performing basic authentication
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_AUTH_PARAM_DEFAULT_PASSWORD', "svn:auth:password");
-define ('SVN_AUTH_PARAM_NON_INTERACTIVE', "svn:auth:non-interactive");
-define ('SVN_AUTH_PARAM_DONT_STORE_PASSWORDS', "svn:auth:dont-store-passwords");
-define ('SVN_AUTH_PARAM_NO_AUTH_CACHE', "svn:auth:no-auth-cache");
-define ('SVN_AUTH_PARAM_SSL_SERVER_FAILURES', "svn:auth:ssl:failures");
-define ('SVN_AUTH_PARAM_SSL_SERVER_CERT_INFO', "svn:auth:ssl:cert-info");
-define ('SVN_AUTH_PARAM_CONFIG', "svn:auth:config-category-servers");
-define ('SVN_AUTH_PARAM_SERVER_GROUP', "svn:auth:server-group");
-define ('SVN_AUTH_PARAM_CONFIG_DIR', "svn:auth:config-dir");
+define ('SVN_AUTH_PARAM_DEFAULT_PASSWORD', 'svn:auth:password');
+define ('SVN_AUTH_PARAM_NON_INTERACTIVE', 'svn:auth:non-interactive');
+define ('SVN_AUTH_PARAM_DONT_STORE_PASSWORDS', 'svn:auth:dont-store-passwords');
+define ('SVN_AUTH_PARAM_NO_AUTH_CACHE', 'svn:auth:no-auth-cache');
+define ('SVN_AUTH_PARAM_SSL_SERVER_FAILURES', 'svn:auth:ssl:failures');
+define ('SVN_AUTH_PARAM_SSL_SERVER_CERT_INFO', 'svn:auth:ssl:cert-info');
+define ('SVN_AUTH_PARAM_CONFIG', 'svn:auth:config-category-servers');
+define ('SVN_AUTH_PARAM_SERVER_GROUP', 'svn:auth:server-group');
+define ('SVN_AUTH_PARAM_CONFIG_DIR', 'svn:auth:config-dir');
 
 /**
  * Custom property for ignoring SSL cert verification errors
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('PHP_SVN_AUTH_PARAM_IGNORE_SSL_VERIFY_ERRORS', "php:svn:auth:ignore-ssl-verify-errors");
+define ('PHP_SVN_AUTH_PARAM_IGNORE_SSL_VERIFY_ERRORS', 'php:svn:auth:ignore-ssl-verify-errors');
 
 /**
  * Configuration key that determines filesystem type
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_FS_CONFIG_FS_TYPE', "fs-type");
+define ('SVN_FS_CONFIG_FS_TYPE', 'fs-type');
 
 /**
  * Filesystem is Berkeley-DB implementation
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_FS_TYPE_BDB', "bdb");
+define ('SVN_FS_TYPE_BDB', 'bdb');
 
 /**
  * Filesystem is native-filesystem implementation
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_FS_TYPE_FSFS', "fsfs");
+define ('SVN_FS_TYPE_FSFS', 'fsfs');
 
 /**
  * svn:date
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_PROP_REVISION_DATE', "svn:date");
+define ('SVN_PROP_REVISION_DATE', 'svn:date');
 
 /**
  * svn:original-date
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_PROP_REVISION_ORIG_DATE', "svn:original-date");
+define ('SVN_PROP_REVISION_ORIG_DATE', 'svn:original-date');
 
 /**
  * svn:author
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_PROP_REVISION_AUTHOR', "svn:author");
+define ('SVN_PROP_REVISION_AUTHOR', 'svn:author');
 
 /**
  * svn:log
  * @link https://php.net/manual/en/svn.constants.php
  */
-define ('SVN_PROP_REVISION_LOG', "svn:log");
+define ('SVN_PROP_REVISION_LOG', 'svn:log');
 define ('SVN_REVISION_INITIAL', 1);
 
 /**

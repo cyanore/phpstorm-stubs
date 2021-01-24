@@ -168,7 +168,7 @@ class DateTimeImmutable implements DateTimeInterface {
      * </p> <p></p></blockquote>
      * @throws Exception Emits Exception in case of an error.
      */
-    public function __construct($datetime = "now", DateTimeZone $timezone = null) { }
+    public function __construct($datetime = 'now', DateTimeZone $timezone = null) { }
 
     /**
      * (PHP 5 &gt;=5.5.0)<br/>
@@ -205,10 +205,10 @@ class DateTimeImmutable implements DateTimeInterface {
      * @return array|false Returns array containing info about warnings and errors.
      */
     #[ArrayShape([
-        "warning_count" => "int",
-        "warnings" => "string[]",
-        "error_count" => "int",
-        "errors" => "string[]",
+        'warning_count' => 'int',
+        'warnings' => 'string[]',
+        'error_count' => 'int',
+        'errors' => 'string[]',
     ])]
     public static function getLastErrors() { }
 
@@ -618,10 +618,10 @@ class DateTime implements DateTimeInterface {
      * @link https://php.net/manual/en/datetime.getlasterrors.php
      */
     #[ArrayShape([
-        "warning_count" => "int",
-        "warnings" => "string[]",
-        "error_count" => "int",
-        "errors" => "string[]",
+        'warning_count' => 'int',
+        'warnings' => 'string[]',
+        'error_count' => 'int',
+        'errors' => 'string[]',
     ])]
     public static function getLastErrors () {}
 

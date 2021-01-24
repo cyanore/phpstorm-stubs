@@ -27,7 +27,7 @@ class PDFlib
 	 * @link https://secure.php.net/manual/en/function.pdf-add-launchlink.php
 	 * @see PDF_create_action()
 	 */
-	#[Deprecated(" This function is deprecated since PDFlib version 6, use PDF_create_action() with type=Launch and PDF_create_annotation() with type=Link instead.")]
+	#[Deprecated(' This function is deprecated since PDFlib version 6, use PDF_create_action() with type=Launch and PDF_create_annotation() with type=Link instead.')]
 	function add_launchlink($llx, $lly, $urx, $ury, $filename){}
 
 	/**

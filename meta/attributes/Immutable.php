@@ -19,9 +19,9 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_CLASS)]
 class Immutable
 {
-    const CONSTRUCTOR_WRITE_SCOPE = "constructor";
-    const PRIVATE_WRITE_SCOPE = "private";
-    const PROTECTED_WRITE_SCOPE = "protected";
+    const CONSTRUCTOR_WRITE_SCOPE = 'constructor';
+    const PRIVATE_WRITE_SCOPE = 'private';
+    const PROTECTED_WRITE_SCOPE = 'protected';
 
     public function __construct(#[ExpectedValues(valuesFromClass: Immutable::class)]
                                 $allowedWriteScope = self::CONSTRUCTOR_WRITE_SCOPE)

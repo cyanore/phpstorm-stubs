@@ -135,7 +135,7 @@ function hash_hmac_file (string $algo, string $data, string $key, bool $binary =
  * and <b>hash_final</b>.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["7.2" => "HashContext"], default: "resource")]
+#[LanguageLevelTypeAware(['7.2' => 'HashContext'], default: 'resource')]
 function hash_init (string $algo, int $flags = 0, string $key)
 {}
 
@@ -151,7 +151,7 @@ function hash_init (string $algo, int $flags = 0, string $key)
  * </p>
  * @return bool <b>TRUE</b>.
  */
-function hash_update (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default: "resource")] $context, string $data): bool
+function hash_update (#[LanguageLevelTypeAware(['8.0' => 'HashContext'], default: 'resource')] $context, string $data): bool
 {}
 
 /**
@@ -170,7 +170,7 @@ function hash_update (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default
  * </p>
  * @return int Actual number of bytes added to the hashing context from <i>handle</i>.
  */
-function hash_update_stream (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default: "resource")] $context, $stream, int $length = -1): int
+function hash_update_stream (#[LanguageLevelTypeAware(['8.0' => 'HashContext'], default: 'resource')] $context, $stream, int $length = -1): int
 {}
 
 /**
@@ -188,7 +188,7 @@ function hash_update_stream (#[LanguageLevelTypeAware(["8.0" => "HashContext"], 
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function hash_update_file (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default: "resource")] $context, string $filename, $stream_context): bool
+function hash_update_file (#[LanguageLevelTypeAware(['8.0' => 'HashContext'], default: 'resource')] $context, string $filename, $stream_context): bool
 {}
 
 /**
@@ -206,7 +206,7 @@ function hash_update_file (#[LanguageLevelTypeAware(["8.0" => "HashContext"], de
  * unless <i>raw_output</i> is set to true in which case the raw
  * binary representation of the message digest is returned.
  */
-function hash_final (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default: "resource")] $context, bool $binary = false): string
+function hash_final (#[LanguageLevelTypeAware(['8.0' => 'HashContext'], default: 'resource')] $context, bool $binary = false): string
 {}
 
 /**
@@ -218,8 +218,8 @@ function hash_final (#[LanguageLevelTypeAware(["8.0" => "HashContext"], default:
  * @return HashContext|resource a copy of Hashing Context resource.
  */
 #[Pure]
-#[LanguageLevelTypeAware(["7.2" => "HashContext"], default: "resource")]
-function hash_copy (#[LanguageLevelTypeAware(["7.2" => "HashContext"], default: "resource")] $context)
+#[LanguageLevelTypeAware(['7.2' => 'HashContext'], default: 'resource')]
+function hash_copy (#[LanguageLevelTypeAware(['7.2' => 'HashContext'], default: 'resource')] $context)
 {}
 
 /**
@@ -255,7 +255,7 @@ function hash_algos (): array
  * @link https://php.net/manual/en/function.hash-hkdf.php
  */
 #[Pure]
-#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
 function hash_hkdf(string $algo , string $key, int $length = 0, string $info = '', string $salt = '')
 {}
 

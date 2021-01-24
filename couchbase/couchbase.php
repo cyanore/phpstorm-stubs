@@ -320,7 +320,7 @@ namespace Couchbase {
          *
          * @see \Couchbase\Authenticator
          */
-        public function openBucket($name = "default", $password = "") {}
+        public function openBucket($name = 'default', $password = '') {}
 
         /**
          * Open management connection to the Couchbase cluster.
@@ -3507,17 +3507,17 @@ namespace Couchbase {
      * Sort by a field in the hits.
      */
     class SearchSortField extends SearchSort implements \JsonSerializable {
-        const TYPE_AUTO = "auto";
-        const TYPE_STRING = "string";
-        const TYPE_NUMBER = "number";
-        const TYPE_DATE = "date";
+        const TYPE_AUTO = 'auto';
+        const TYPE_STRING = 'string';
+        const TYPE_NUMBER = 'number';
+        const TYPE_DATE = 'date';
 
-        const MODE_DEFAULT = "default";
-        const MODE_MIN = "min";
-        const MODE_MAX = "max";
+        const MODE_DEFAULT = 'default';
+        const MODE_MIN = 'min';
+        const MODE_MAX = 'max';
 
-        const MISSING_FIRST = "first";
-        const MISSING_LAST = "last";
+        const MISSING_FIRST = 'first';
+        const MISSING_LAST = 'last';
 
 
         private function __construct() {}

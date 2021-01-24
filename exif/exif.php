@@ -89,7 +89,7 @@ function exif_read_data ($file, ?string $required_sections, bool $as_arrays = fa
  * @param $thumbnail [optional]
  * @removed 8.0
  */
-#[Deprecated(replacement: "exif_read_data(%parametersList%)", since: "7.2")]
+#[Deprecated(replacement: 'exif_read_data(%parametersList%)', since: '7.2')]
 function read_exif_data ($filename, $sections = null, $arrays = false, $thumbnail = false) {}
 
 /**

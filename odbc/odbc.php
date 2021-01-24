@@ -905,7 +905,7 @@ function odbc_do ($connection_id, $query, $flags) {}
  */
 function odbc_field_precision ($result_id, $field_number) {}
 
-define ('ODBC_TYPE', "unixODBC");
+define ('ODBC_TYPE', 'unixODBC');
 define ('ODBC_BINMODE_PASSTHRU', 0);
 define ('ODBC_BINMODE_RETURN', 1);
 define ('ODBC_BINMODE_CONVERT', 2);
