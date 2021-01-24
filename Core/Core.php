@@ -1024,7 +1024,21 @@ function get_defined_constants (bool $categorize = false): array
  * </tr>
  * </table>
  */
-function debug_backtrace (int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit = 0): array
+#[ArrayShape( shape: [
+	//	"int" => [
+	'function' => 'string',
+	'line'     => 'int',
+	'file'     => 'string',
+	'class'    => 'string',
+	'object'   => 'object',
+	'type'     => 'string',
+	'args'     => 'string',
+	//	],
+] )]
+function debug_backtrace (#[\JetBrains\PhpStorm\ExpectedValues( values: [
+	DEBUG_BACKTRACE_PROVIDE_OBJECT,
+	DEBUG_BACKTRACE_IGNORE_ARGS,
+] )]int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit = 0): array
 {}
 
 /**
