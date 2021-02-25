@@ -42,7 +42,7 @@ class StubMethodsProvider
             StubProblemType::TYPE_IN_PHPDOC_DIFFERS_FROM_SIGNATURE);
         foreach ($filteredMethods as $methodName => $method) {
             if ($method instanceof PHPMethod) {
-                yield "method {$method->parentName}::$methodName" => [$method];
+                yield "method $method->parentName::$methodName" => [$method];
             } else {
                 yield "function $methodName" => [$method];
             }
@@ -52,19 +52,22 @@ class StubMethodsProvider
     public static function methodsForReturnTypeHintTestsProvider(): ?Generator
     {
         $filterFunction = EntitiesFilter::getFilterFunctionForLanguageLevel(7);
-        return self::yieldFilteredMethods($filterFunction, StubProblemType::FUNCTION_HAS_RETURN_TYPEHINT);
+        return self::yieldFilteredMethods($filterFunction, StubProblemType::FUNCTION_HAS_RETURN_TYPEHINT,
+            StubProblemType::WRONG_RETURN_TYPEHINT);
     }
 
     public static function methodsForNullableReturnTypeHintTestsProvider(): ?Generator
     {
         $filterFunction = EntitiesFilter::getFilterFunctionForLanguageLevel(7.1);
-        return self::yieldFilteredMethods($filterFunction, StubProblemType::HAS_NULLABLE_TYPEHINT);
+        return self::yieldFilteredMethods($filterFunction, StubProblemType::HAS_NULLABLE_TYPEHINT,
+            StubProblemType::WRONG_RETURN_TYPEHINT);
     }
 
     public static function methodsForUnionReturnTypeHintTestsProvider(): ?Generator
     {
         $filterFunction = EntitiesFilter::getFilterFunctionForLanguageLevel(8);
-        return self::yieldFilteredMethods($filterFunction, StubProblemType::HAS_UNION_TYPEHINT);
+        return self::yieldFilteredMethods($filterFunction, StubProblemType::HAS_UNION_TYPEHINT,
+            StubProblemType::WRONG_RETURN_TYPEHINT);
     }
 
     private static function yieldFilteredMethods(callable $filterFunction, int ...$problemTypes): ?Generator
@@ -76,7 +79,7 @@ class StubMethodsProvider
                 fn(PHPMethod $method) => $method->parentName === '___PHPSTORM_HELPERS\object', ...$problemTypes) as $methodName => $method) {
                 $firstSinceVersion = Utils::getDeclaredSinceVersion($method);
                 if ($filterFunction($class, $method, $firstSinceVersion) === true) {
-                    yield "method {$className}::{$methodName}" => [$method];
+                    yield "method $className::$methodName" => [$method];
                 }
             }
         }

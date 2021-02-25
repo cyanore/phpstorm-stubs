@@ -1115,6 +1115,12 @@
       ]
     },
     {
+      "name": "join",
+      "problems": [
+        "parameter mismatch"
+      ]
+    },
+    {
       "name": "mysqli_stmt_bind_result",
       "problems": [
         "parameter mismatch"
@@ -1277,6 +1283,89 @@
       "problems": [
         "has type mismatch in signature and phpdoc"
       ]
+    },
+    {
+      "name": "timezone_transitions_get",
+      "parameters": [
+        {
+          "name": "timestampBegin",
+          "problems": [
+            "wrong default value"
+          ]
+        },
+        {
+          "name": "timestampEnd",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mb_encode_mimeheader",
+      "parameters": [
+        {
+          "name": "newline",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "trim",
+      "parameters": [
+        {
+          "name": "characters",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rtrim",
+      "parameters": [
+        {
+          "name": "characters",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "chop",
+      "parameters": [
+        {
+          "name": "characters",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ltrim",
+      "parameters": [
+        {
+          "name": "characters",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "explode",
+      "parameters": [
+        {
+          "name": "limit",
+          "problems": [
+            "wrong default value"
+          ]
+        }
+      ]
     }
   ],
   "classes": [
@@ -1301,6 +1390,49 @@
           "name": "export",
           "problems": [
             "wrong parmeter type in docs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReflectionFunctionAbstract",
+      "methods": [
+        {
+          "name": "getReturnType",
+          "problems": [
+            "wrong return typehint"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReflectionReference",
+      "methods": [
+        {
+          "name": "fromArrayElement",
+          "parameters": [
+            {
+              "name": "key",
+              "problems": [
+                "parameter type mismatch"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReflectionClassConstant",
+      "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "class",
+              "problems": [
+                "parameter type mismatch"
+              ]
+            }
           ]
         }
       ]
@@ -1676,12 +1808,34 @@
           "problems": [
             "missing method"
           ]
+        },
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "flags",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "name": "PharData",
       "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "flags",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
+        },
         {
           "name": "__destruct",
           "problems": [
@@ -2053,6 +2207,23 @@
           "problems": [
             "parameter mismatch"
           ]
+        },
+        {
+          "name": "getType",
+          "problems": [
+            "wrong return typehint"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ReflectionParameter",
+      "methods": [
+        {
+          "name": "getType",
+          "problems": [
+            "wrong return typehint"
+          ]
         }
       ]
     },
@@ -2173,6 +2344,87 @@
           "name": "__set_state",
           "problems": [
             "parameter mismatch"
+          ]
+        },
+        {
+          "name": "getTransitions",
+          "parameters": [
+            {
+              "name": "timestampBegin",
+              "problems": [
+                "wrong default value"
+              ]
+            },
+            {
+              "name": "timestampEnd",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecursiveCachingIterator",
+      "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "flags",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecursiveTreeIterator",
+      "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "mode",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FilesystemIterator",
+      "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "flags",
+              "problems": [
+                "wrong default value"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MultipleIterator",
+      "methods": [
+        {
+          "name": "__construct",
+          "parameters": [
+            {
+              "name": "flags",
+              "problems": [
+                "wrong default value"
+              ]
+            }
           ]
         }
       ]
@@ -2341,6 +2593,17 @@
           "name": "read",
           "problems": [
             "parameter mismatch"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntlCalendar",
+      "methods": [
+        {
+          "name": "set",
+          "problems": [
+            "has duplicate in stubs"
           ]
         }
       ]

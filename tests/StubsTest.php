@@ -4,6 +4,14 @@ declare(strict_types=1);
 namespace StubTests;
 
 use JetBrains\PhpStorm\Pure;
+use PhpParser\Node\Expr\BinaryOp\BitwiseOr;
+use PhpParser\Node\Expr\ClassConstFetch;
+use PhpParser\Node\Expr\ConstFetch;
+use PhpParser\Node\Expr\UnaryMinus;
+use PhpParser\Node\Scalar\DNumber;
+use PhpParser\Node\Scalar\LNumber;
+use PhpParser\Node\Scalar\String_;
+use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\TestCase;
 use StubTests\Model\PHPClass;
 use StubTests\Model\PHPConst;
@@ -16,11 +24,20 @@ use StubTests\Model\StubProblemType;
 use StubTests\Parsers\Utils;
 use StubTests\TestData\Providers\EntitiesFilter;
 use StubTests\TestData\Providers\PhpStormStubsSingleton;
+use StubTests\TestData\Providers\ReflectionStubsSingleton;
 
 class StubsTest extends TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        parent::setUpBeforeClass();
+        PhpStormStubsSingleton::getPhpStormStubs();
+        ReflectionStubsSingleton::getReflectionStubs();
+    }
+
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionConstantsProvider::constantProvider
+     * @throws Exception
      */
     public function testConstants(PHPConst $constant): void
     {
@@ -52,6 +69,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionConstantsProvider::classConstantProvider
+     * @throws Exception
      */
     public function testClassConstants(PHPClass|PHPInterface $class, PHPConst $constant): void
     {
@@ -91,6 +109,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionFunctionsProvider::allFunctionsProvider
+     * @throws Exception
      */
     public function testFunctionsExist(PHPFunction $function): void
     {
@@ -116,6 +135,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionFunctionsProvider::functionsForParamsAmountTestsProvider
+     * @throws Exception
      */
     public function testFunctionsParametersAmount(PHPFunction $function)
     {
@@ -130,6 +150,9 @@ class StubsTest extends TestCase
         );
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFunctionsDuplicates()
     {
         $filtered = EntitiesFilter::getFiltered(
@@ -143,7 +166,76 @@ class StubsTest extends TestCase
     }
 
     /**
+     * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionParametersProvider::functionOptionalParametersProvider
+     */
+    public function testFunctionsOptionalParameters(PHPFunction $function, PHPParameter $parameter)
+    {
+        $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getFunctions()[$function->name];
+        $stubParameters = array_filter($phpstormFunction->parameters, fn(PHPParameter $stubParameter) => $stubParameter->name === $parameter->name);
+        /** @var PHPParameter $stubOptionalParameter */
+        $stubOptionalParameter = array_pop($stubParameters);
+        self::assertEquals($parameter->isOptional, $stubOptionalParameter->isOptional,
+            sprintf('Reflection function %s has optional parameter %s', $function->name, $parameter->name));
+    }
+
+    /**
+     * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionParametersProvider::functionOptionalParametersWithDefaultValueProvider
+     * @throws Exception
+     */
+    public function testFunctionsDefaultParametersValue(PHPFunction $function, PHPParameter $parameter)
+    {
+        $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getFunctions()[$function->name];
+        $stubParameters = array_filter($phpstormFunction->parameters, fn(PHPParameter $stubParameter) => $stubParameter->name === $parameter->name);
+        /** @var PHPParameter $stubOptionalParameter */
+        $stubOptionalParameter = array_pop($stubParameters);
+        $reflectionValue = self::getStringRepresentationOfDefaultParameterValue($parameter->defaultValue);
+        $stubValue = self::getStringRepresentationOfDefaultParameterValue($stubOptionalParameter->defaultValue);
+        self::assertEquals($reflectionValue, $stubValue,
+            sprintf('Reflection function %s has optional parameter %s with default value %s but stub parameter has value %s',
+                $function->name, $parameter->name, $reflectionValue, $stubValue));
+    }
+
+    /**
+     * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionParametersProvider::methodOptionalParametersWithDefaultValueProvider
+     * @throws Exception
+     */
+    public function testMethodsDefaultParametersValue(PHPClass|PHPInterface $class, PHPMethod $method, PHPParameter $parameter)
+    {
+        if ($class instanceof PHPClass) {
+            $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getClass($class->name)->methods[$method->name];
+        } else {
+            $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($class->name)->methods[$method->name];
+        }
+        $stubParameters = array_filter($phpstormFunction->parameters, fn(PHPParameter $stubParameter) => $stubParameter->name === $parameter->name);
+        /** @var PHPParameter $stubOptionalParameter */
+        $stubOptionalParameter = array_pop($stubParameters);
+        $reflectionValue = self::getStringRepresentationOfDefaultParameterValue($parameter->defaultValue);
+        $stubValue = self::getStringRepresentationOfDefaultParameterValue($stubOptionalParameter->defaultValue, $class);
+        self::assertEquals($reflectionValue, $stubValue,
+            sprintf('Reflection method %s::%s has optional parameter %s with default value %s but stub parameter has value %s',
+                $class->name, $method->name, $parameter->name, $reflectionValue, $stubValue));
+    }
+
+    /**
+     * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionParametersProvider::methodOptionalParametersProvider
+     */
+    public function testMethodsOptionalParameters(PHPClass|PHPInterface $class, PHPMethod $method, PHPParameter $parameter)
+    {
+        if ($class instanceof PHPClass) {
+            $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getClass($class->name)->methods[$method->name];
+        } else {
+            $phpstormFunction = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($class->name)->methods[$method->name];
+        }
+        $stubParameters = array_filter($phpstormFunction->parameters, fn(PHPParameter $stubParameter) => $stubParameter->name === $parameter->name);
+        /** @var PHPParameter $stubOptionalParameter */
+        $stubOptionalParameter = array_pop($stubParameters);
+        self::assertEquals($parameter->isOptional, $stubOptionalParameter->isOptional,
+            sprintf('Reflection method %s::%s has optional parameter %s', $class->name, $method->name, $parameter->name));
+    }
+
+    /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionClassesTestDataProviders::classWithParentProvider
+     * @throws Exception
      */
     public function testClassesParent(PHPClass|PHPInterface $class)
     {
@@ -170,6 +262,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionMethodsProvider::classMethodsProvider
+     * @throws Exception
      */
     public function testClassesMethodsExist(PHPClass|PHPInterface $class, PHPMethod $method)
     {
@@ -242,6 +335,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionMethodsProvider::classMethodsWithParametersProvider
+     * @throws Exception
      */
     public function testClassesParametersCount(PHPClass|PHPInterface $class, PHPMethod $method)
     {
@@ -261,6 +355,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionClassesTestDataProviders::classesWithInterfacesProvider
+     * @throws Exception
      */
     public function testClassInterfaces(PHPClass $class)
     {
@@ -277,6 +372,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionPropertiesProvider::classPropertiesProvider
+     * @throws Exception
      */
     public function testClassProperties(PHPClass $class, PHPProperty $property)
     {
@@ -333,6 +429,7 @@ class StubsTest extends TestCase
 
     /**
      * @dataProvider \StubTests\TestData\Providers\Reflection\ReflectionClassesTestDataProviders::allClassesProvider
+     * @throws Exception
      */
     public function testClassesExist(PHPClass|PHPInterface $class): void
     {
@@ -345,6 +442,9 @@ class StubsTest extends TestCase
         static::assertArrayHasKey($className, $stubClasses, "Missing class $className: class $className {}");
     }
 
+    /**
+     * @throws Exception
+     */
     public function testImplodeFunctionIsCorrect()
     {
         $implodeFunctions = array_filter(PhpStormStubsSingleton::getPhpStormStubs()->getFunctions(),
@@ -360,9 +460,13 @@ class StubsTest extends TestCase
         /** @var PHPParameter $arrayParameter */
         $arrayParameter = array_pop($arrayParameters);
         self::assertCount(2, $implodeParameters);
-        self::assertEquals(['array','string'], $separatorParameter->types);
-        self::assertEquals('', $separatorParameter->defaultValue->value);
-        self::assertEquals(['?array'], $arrayParameter->types);
+        self::assertEquals(['array', 'string'], $separatorParameter->typesFromSignature);
+        if (property_exists($separatorParameter->defaultValue, 'value')) {
+            self::assertEquals('', $separatorParameter->defaultValue->value);
+        } else {
+            self::fail("Couldn't read default value");
+        }
+        self::assertEquals(['?array'], $arrayParameter->typesFromSignature);
         self::assertEquals(['string'], $implodeFunction->returnTypesFromSignature);
         self::assertEquals(['string'], $implodeFunction->returnTypesFromPhpDoc);
     }
@@ -391,9 +495,7 @@ class StubsTest extends TestCase
     private static function getAllDuplicatesOfFunction(?string $name): array
     {
         return array_filter(PhpStormStubsSingleton::getPhpStormStubs()->getFunctions(),
-            function ($duplicateValue, $duplicateKey) use ($name) {
-                return str_contains($duplicateValue->name, $name) && str_contains($duplicateKey, 'duplicated');
-            }, ARRAY_FILTER_USE_BOTH);
+            fn($duplicateValue, $duplicateKey) => str_contains($duplicateValue->name, $name) && str_contains($duplicateKey, 'duplicated'), ARRAY_FILTER_USE_BOTH);
     }
 
     private static function getDuplicatedFunctions(array $filtered): array
@@ -403,21 +505,83 @@ class StubsTest extends TestCase
                 $duplicatesOfFunction = self::getAllDuplicatesOfFunction($value->name);
                 $functionVersions[] = Utils::getAvailableInVersions(
                     PhpStormStubsSingleton::getPhpStormStubs()->getFunctions()[$value->name]);
-                array_push($functionVersions, ...array_values(array_map(function (PHPFunction $function) {
-                    return Utils::getAvailableInVersions($function);
-                }, $duplicatesOfFunction)));
+                array_push($functionVersions, ...array_values(array_map(fn(PHPFunction $function) => Utils::getAvailableInVersions($function), $duplicatesOfFunction)));
                 $hasDuplicates = false;
                 $current = array_pop($functionVersions);
-                while (($next = array_pop($functionVersions))) {
+                $next = array_pop($functionVersions);
+                while ($next !== null) {
                     if (!empty(array_intersect($current, $next))) {
                         $hasDuplicates = true;
                     }
                     $current = array_merge($current, $next);
+                    $next = array_pop($functionVersions);
                 }
                 return $hasDuplicates;
             }
             return false;
         }, ARRAY_FILTER_USE_BOTH);
         return array_unique(array_map(fn(PHPFunction $function) => $function->name, $duplicatedFunctions));
+    }
+
+    /**
+     * @param mixed $defaultValue
+     * @param PHPClass|PHPInterface|null $contextClass
+     * @return bool|float|int|string|null
+     * @throws Exception
+     */
+    private static function getStringRepresentationOfDefaultParameterValue(mixed $defaultValue, PHPClass|PHPInterface $contextClass = null): float|bool|int|string|null
+    {
+        if ($defaultValue instanceof ConstFetch) {
+            $defaultValueName = (string)$defaultValue->name;
+            if ($defaultValueName !== 'false' && $defaultValueName !== 'true' && $defaultValueName !== 'null') {
+                $constants = array_filter(PhpStormStubsSingleton::getPhpStormStubs()->getConstants(),
+                    function (PHPConst $const) use ($defaultValue) {
+                        return $const->name === (string)$defaultValue->name;
+                    });
+                /** @var PHPConst $constant */
+                $constant = array_pop($constants);
+                $value = $constant->value;
+            } else {
+                $value = $defaultValueName;
+            }
+        } elseif ($defaultValue instanceof String_ || $defaultValue instanceof LNumber || $defaultValue instanceof DNumber) {
+            $value = strval($defaultValue->value);
+        } elseif ($defaultValue instanceof BitwiseOr) {
+            if ($defaultValue->left instanceof ConstFetch && $defaultValue->right instanceof ConstFetch) {
+                $constants = array_filter(PhpStormStubsSingleton::getPhpStormStubs()->getConstants(),
+                    fn(PHPConst $const) => property_exists($defaultValue->left, 'name') &&
+                        $const->name === (string)$defaultValue->left->name);
+                /** @var PHPConst $leftConstant */
+                $leftConstant = array_pop($constants);
+                $constants = array_filter(PhpStormStubsSingleton::getPhpStormStubs()->getConstants(),
+                    fn(PHPConst $const) => property_exists($defaultValue->right, 'name') &&
+                        $const->name === (string)$defaultValue->right->name);
+                /** @var PHPConst $rightConstant */
+                $rightConstant = array_pop($constants);
+                $value = $leftConstant->value | $rightConstant->value;
+            }
+        } elseif ($defaultValue instanceof UnaryMinus && property_exists($defaultValue->expr, 'value')) {
+            $value = '-' . strval($defaultValue->expr->value);
+        } elseif ($defaultValue instanceof ClassConstFetch) {
+            $class = (string)$defaultValue->class;
+            if ($class === 'self' && $contextClass !== null) {
+                $class = $contextClass->name;
+            }
+            $parentClass = PhpStormStubsSingleton::getPhpStormStubs()->getClass($class) ?? PhpStormStubsSingleton::getPhpStormStubs()->getInterface($class);
+            if ($parentClass === null) {
+                throw new Exception("Class $class not found in stubs");
+            }
+            if ((string)$defaultValue->name === 'class') {
+                $value = (string)$defaultValue->class;
+            } else {
+                $constants = array_filter($parentClass->constants, fn(PHPConst $const) => $const->name === (string)$defaultValue->name);
+                /** @var PHPConst $constant */
+                $constant = array_pop($constants);
+                $value = $constant->value;
+            }
+        } else {
+            $value = strval($defaultValue);
+        }
+        return $value;
     }
 }

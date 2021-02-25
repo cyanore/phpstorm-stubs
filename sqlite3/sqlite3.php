@@ -284,7 +284,7 @@ class SQLite3  {
 	 * <p>Either <b>SQLITE3_OPEN_READONLY</b> or <b>SQLITE3_OPEN_READWRITE</b> to open the stream for reading only, or for reading and writing, respectively.</p>
 	 * @return resource|false Returns a stream resource, or FALSE on failure.
 	 */
-	public function openBlob ($table, $column, $rowid, $database, int $flags = SQLITE3_OPEN_READONLY) {}
+	public function openBlob ($table, $column, $rowid, $database = 'main', int $flags = SQLITE3_OPEN_READONLY) {}
 
 	/**
 	 * Enable throwing exceptions
@@ -292,7 +292,7 @@ class SQLite3  {
 	 * @param bool $enable
 	 * @return bool Returns the old value; true if exceptions were enabled, false otherwise.
 	 */
-	public function enableExceptions ($enable) {}
+	public function enableExceptions ($enable = false) {}
 
 	/**
 	 * Instantiates an SQLite3 object and opens an SQLite 3 database
@@ -313,7 +313,7 @@ class SQLite3  {
 	 * SQLite database.
 	 * </p>
 	 */
-	public function __construct ($filename, $flags = null, $encryptionKey = null) {}
+	public function __construct ($filename, $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, $encryptionKey = null) {}
 
 	/**
 	 * @return int
@@ -322,18 +322,18 @@ class SQLite3  {
 	public function lastExtendedErrorCode(){}
 
 	/**
-	 * @param $enable
+	 * @param bool $enable
 	 * @since 7.4
 	 */
-	public function enableExtendedResultCodes($enable){}
+	public function enableExtendedResultCodes(bool $enable = true){}
 
 	/**
-	 * @param $destination
-	 * @param $sourceDatabase
-	 * @param $destinationDatabase
+	 * @param SQLite3 $destination
+	 * @param string $sourceDatabase
+	 * @param string $destinationDatabase
 	 * @since 7.4
 	 */
-	public function backup($destination, $sourceDatabase, $destinationDatabase){}
+	public function backup(SQLite3 $destination, string $sourceDatabase = 'main', string $destinationDatabase = 'main'){}
 
 	/**
 	 * @param null|callable $callback
@@ -408,7 +408,7 @@ class SQLite3Stmt  {
 	 * @return bool <b>TRUE</b> if the parameter is bound to the statement variable, <b>FALSE</b>
 	 * on failure.
 	 */
-	public function bindParam ($param, &$var, $type = null) {}
+	public function bindParam ($param, &$var, $type = SQLITE3_TEXT) {}
 
 	/**
 	 * Binds the value of a parameter to a statement variable
@@ -431,7 +431,7 @@ class SQLite3Stmt  {
 	 * @return bool <b>TRUE</b> if the value is bound to the statement variable, <b>FALSE</b>
 	 * on failure.
 	 */
-	public function bindValue ($param, $value, $type = null) {}
+	public function bindValue ($param, $value, $type = SQLITE3_TEXT) {}
 
 	public function readOnly () {}
 
@@ -448,7 +448,7 @@ class SQLite3Stmt  {
 	 * @return string|false Returns the SQL of the prepared statement, or FALSE on failure.
 	 * @since 7.4
 	 */
-	public function getSQL($expand = false){}
+	public function getSQL(bool $expand = false){}
 
 }
 

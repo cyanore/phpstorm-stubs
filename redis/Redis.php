@@ -41,6 +41,16 @@ class Redis
     const SCAN_RETRY            = 1;
 
     /**
+     * @since 5.3.0
+     */
+    const SCAN_PREFIX           = 2;
+
+    /**
+     * @since 5.3.0
+     */
+    const SCAN_NOPREFIX         = 3;
+
+    /**
      * Serializers
      */
     const SERIALIZER_NONE       = 0;
@@ -589,7 +599,7 @@ class Redis
      * a Redis::PIPELINE block is simply transmitted faster to the server, but without any guarantee of atomicity.
      * discard cancels a transaction.
      *
-     * @return Redis returns the Redis instance and enters multi-mode.
+     * @return static returns the Redis instance and enters multi-mode.
      * Once in multi-mode, all subsequent method calls return the same object until exec() is called.
      *
      * @link    https://redis.io/commands/multi
@@ -2207,7 +2217,7 @@ class Redis
      * Authenticate the connection using a password.
      * Warning: The password is sent in plain-text over the network.
      *
-     * @param string $password
+     * @param string|string[] $password
      *
      * @return bool TRUE if the connection is authenticated, FALSE otherwise
      *

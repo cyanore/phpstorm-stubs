@@ -113,7 +113,7 @@ function getimagesizefromstring (string $string , &$image_info): array|false
  * @link https://secure.php.net/manual/en/function.stream-set-chunk-size.php
  * @since 5.4
  */
-#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
+#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
 function stream_set_chunk_size ($stream , int $size)
 {}
 
@@ -147,8 +147,8 @@ function lcg_value (): float
  * @return string|false the metaphone key as a string, or FALSE on failure
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
-function metaphone (string $string, int $max_phonemes = 0): bool|string
+#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
+function metaphone (string $string, int $max_phonemes = 0): false|string
 {}
 
 /**
@@ -357,7 +357,7 @@ function ob_get_level (): int
  * <tr><td>blocksize</td><td>...</td></tr>
  * </table>
  */
-function ob_get_status (bool $full_status): array
+function ob_get_status (bool $full_status = false): array
 {}
 
 /**
@@ -378,7 +378,7 @@ function ob_get_contents (): string|false
  * </p>
  * @return void
  */
-function ob_implicit_flush (#[LanguageLevelTypeAware(['8.0' => 'bool'], default: 'int')] $enable): void {}
+function ob_implicit_flush (#[LanguageLevelTypeAware(["8.0" => "bool"], default: "int")] $enable = true): void {}
 
 /**
  * List all output handlers in use
@@ -834,7 +834,7 @@ function in_array (mixed $needle, array $haystack, bool $strict = false): bool
  * search_value parameter instead.
  */
 #[Pure]
-function array_search (mixed $needle, array $haystack, bool $strict): string|int|false
+function array_search (mixed $needle, array $haystack, bool $strict = false): string|int|false
 {}
 
 /**
@@ -1095,10 +1095,11 @@ function array_slice (array $array, int $offset, ?int $length, bool $preserve_ke
 {}
 
 /**
- * Merge one or more arrays
+ * Merges the elements of one or more arrays together (if the input arrays have the same string keys, then the later value for that key will overwrite the previous one; if the arrays contain numeric keys, the later value will be appended)
+ * Since 7.4.0 this function can be called without any parameter, and it will return empty array.
  * @link https://php.net/manual/en/function.array-merge.php
  * @param array ...$arrays <p>
- * Initial array to merge.
+ * Variable list of arrays to merge.
  * </p>
  * @return array the resulting array.
  * @meta

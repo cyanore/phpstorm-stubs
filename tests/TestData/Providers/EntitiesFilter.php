@@ -29,13 +29,9 @@ class EntitiesFilter
                     $hasProblem = true;
                 }
             }
-            if ($entity->hasMutedProblem(StubProblemType::STUB_IS_MISSED)) {
-                $hasProblem = true;
-            }
-            if ($entity->hasMutedProblem(StubProblemType::HAS_DUPLICATION)) {
-                $hasProblem = true;
-            }
-            if ($additionalFilter !== null && $additionalFilter($entity) === true) {
+            if ($entity->hasMutedProblem(StubProblemType::STUB_IS_MISSED) ||
+                $entity->hasMutedProblem(StubProblemType::HAS_DUPLICATION) ||
+                $additionalFilter !== null && $additionalFilter($entity) === true) {
                 $hasProblem = true;
             }
             if ($hasProblem) {
@@ -63,11 +59,11 @@ class EntitiesFilter
         return $resultArray;
     }
 
-    public static function getFilteredParameters(PHPFunction $function, int ...$problemType): array
+    public static function getFilteredParameters(PHPFunction $function, callable $additionalFilter = null, int ...$problemType): array
     {
         /** @var PHPParameter[] $resultArray */
         $resultArray = [];
-        foreach (EntitiesFilter::getFiltered($function->parameters, null,
+        foreach (EntitiesFilter::getFiltered($function->parameters, $additionalFilter,
             StubProblemType::PARAMETER_NAME_MISMATCH, ...$problemType) as $parameter) {
             $resultArray[] = $parameter;
         }
@@ -76,9 +72,22 @@ class EntitiesFilter
 
     public static function getFilterFunctionForLanguageLevel(float $languageVersion): callable
     {
-        return function (PHPClass|PHPInterface $class, PHPMethod $method, ?string $firstSinceVersion) use ($languageVersion) {
-            return $class !== null && !$method->isFinal && !$class->isFinal && $firstSinceVersion !== null &&
-                (float)$firstSinceVersion < $languageVersion;
+        return fn(PHPClass|PHPInterface $class, PHPMethod $method, ?float $firstSinceVersion) =>
+            $class !== null && !$method->isFinal && !$class->isFinal && $firstSinceVersion !== null &&
+            $firstSinceVersion < $languageVersion;
+    }
+
+    public static function getFilterFunctionForAllowedTypeHintsInLanguageLevel(float $languageVersion): callable
+    {
+        return function (PHPClass|PHPInterface $stubClass, PHPMethod $stubMethod, ?float $firstSinceVersion) use ($languageVersion) {
+            $reflectionClass = ReflectionStubsSingleton::getReflectionStubs()->getClass($stubClass->name);
+            $reflectionMethod = null;
+            if ($reflectionClass !== null) {
+                $reflectionMethods = array_filter($reflectionClass->methods, fn(PHPMethod $method) => $stubMethod->name === $method->name);
+                $reflectionMethod = array_pop($reflectionMethods);
+            }
+            return $reflectionMethod !== null && ($stubMethod->isFinal || $stubClass->isFinal || $firstSinceVersion !== null &&
+                $firstSinceVersion > $languageVersion);
         };
     }
 }

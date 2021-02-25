@@ -294,7 +294,7 @@ function strtotime (string $datetime, ?int $baseTimestamp): int|false
  * E_WARNING level error is emitted.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
+#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
 function date (string $format, ?int $timestamp)
 {}
 
@@ -408,7 +408,7 @@ function idate (string $format, ?int $timestamp): int|false
  * E_WARNING level error is emitted.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
+#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
 function gmdate (string $format, ?int $timestamp)
 {}
 
@@ -816,7 +816,7 @@ function time (): int
  * @return array
  */
 #[Pure]
-function localtime (?int $timestamp, bool $associative): array
+function localtime (?int $timestamp, bool $associative = false): array
 {}
 
 /**
@@ -914,7 +914,7 @@ function getdate (?int $timestamp): array
  * @return DateTime|false DateTime object on success or false on failure.
  */
 #[Pure]
-function date_create (string $datetime, ?DateTimeZone $timezone ): DateTime|false
+function date_create (string $datetime = 'now', ?DateTimeZone $timezone ): DateTime|false
 {}
 
 /**
@@ -933,7 +933,7 @@ function date_create (string $datetime, ?DateTimeZone $timezone ): DateTime|fals
  * @return DateTimeImmutable|false DateTime object on success or false on failure.
  */
 #[Pure]
-function date_create_immutable (string $datetime, ?DateTimeZone $timezone): DateTimeImmutable|false
+function date_create_immutable (string $datetime = 'now', ?DateTimeZone $timezone): DateTimeImmutable|false
 {}
 
 /**
@@ -975,8 +975,8 @@ function date_create_from_format (string $format, string $datetime, ?DateTimeZon
  * on success or false on failure.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
-function date_parse (string $datetime): bool|array
+#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
+function date_parse (string $datetime): false|array
 {}
 
 /**
@@ -1002,10 +1002,10 @@ function date_parse_from_format (string $format, string $datetime): array
  * @return array|false <p>Returns array containing info about warnings and errors.</p>
  */
 #[ArrayShape([
-    'warning_count' => 'int',
-    'warnings' => 'string[]',
-    'error_count' => 'int',
-    'errors' => 'string[]',
+    "warning_count" => "int",
+    "warnings" => "string[]",
+    "error_count" => "int",
+    "errors" => "string[]",
 ])]
 #[Pure]
 function date_get_last_errors (): array|false
@@ -1020,7 +1020,7 @@ function date_get_last_errors (): array|false
  * @return string|false formatted date string on success or <b>FALSE</b> on failure.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false')]
+#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
 function date_format (DateTimeInterface $object, string $format)
 {}
 
@@ -1049,7 +1049,7 @@ function date_modify (DateTime $object, string $modifier): DateTime|false
  * @return DateTime|false <p>Returns the
  * {@see DateTime} object for method chaining or <b>FALSE</b> on failure.</p>
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
 function date_add (DateTime $object, DateInterval $interval)
 {}
 
@@ -1066,7 +1066,7 @@ function date_add (DateTime $object, DateInterval $interval)
  * @return DateTime|false <p>Returns the
  * {@see DateTime} object for method chaining or <b>FALSE</b> on failure.</p>
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
 function date_sub (DateTime $object, DateInterval $interval)
 {}
 
@@ -1094,7 +1094,7 @@ function date_timezone_get (DateTimeInterface $object): DateTimeZone|false
  * Alias:
  * {@see DateTime::setTimezone}
  * @link https://php.net/manual/en/function.date-timezone-set.php
- * @param DateTimeInterface $object <p>A
+ * @param DateTime|DateTimeInterface $object <p>A
  * {@see DateTime} object returned by
  * {@see date_create()}. The function modifies this object.</p>
  * @param DateTimeZone $timezone <p>A
@@ -1102,8 +1102,8 @@ function date_timezone_get (DateTimeInterface $object): DateTimeZone|false
  * @return DateTime|false <p>Returns the
  * {@see DateTime} object for method chaining or <b>FALSE</b> on failure.</p>
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
-function date_timezone_set (DateTimeInterface $object, DateTimeZone $timezone)
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
+function date_timezone_set (#[LanguageLevelTypeAware(["8.0.2" => "DateTime"], default: "DateTimeInterface")] $object, DateTimeZone $timezone)
 {}
 
 /**
@@ -1115,7 +1115,7 @@ function date_timezone_set (DateTimeInterface $object, DateTimeZone $timezone)
  * @return int|false <p>Returns the timezone offset in seconds from UTC on success or <b>FALSE</b> on failure.</p>
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
+#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
 function date_offset_get (DateTimeInterface $object)
 {}
 
@@ -1130,7 +1130,7 @@ function date_offset_get (DateTimeInterface $object)
  * @return DateInterval|false The DateInterval object representing the difference between the two dates or FALSE on failure.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'DateInterval'], default: 'DateInterval|false')]
+#[LanguageLevelTypeAware(["8.0" => "DateInterval"], default: "DateInterval|false")]
 function date_diff (DateTimeInterface $baseObject, DateTimeInterface $targetObject, bool $absolute = false)
 {}
 
@@ -1164,8 +1164,8 @@ function date_time_set (DateTime $object, int $hour, int $minute, int $second = 
  * {@see DateTime} object for method chaining or <b>FALSE</b> on failure.
  * </p>
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
-function date_date_set (DateTime $object, int $year, int $month, int $day): DateTime|bool
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
+function date_date_set (DateTime $object, int $year, int $month, int $day): DateTime|false
 {}
 
 /**
@@ -1180,7 +1180,7 @@ function date_date_set (DateTime $object, int $year, int $month, int $day): Date
  * Returns the {@see DateTime} object for method chaining or <strong><code>FALSE</code></strong> on failure.
  * </p>
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
 function date_isodate_set (DateTime $object, int $year, int $week, int $dayOfWeek = 1)
 {}
 
@@ -1196,8 +1196,8 @@ function date_isodate_set (DateTime $object, int $year, int $week, int $dayOfWee
  * @return DateTime|false
  * {@see DateTime} object for call chaining or <b>FALSE</b> on failure
  */
-#[LanguageLevelTypeAware(['8.0' => 'DateTime'], default: 'DateTime|false')]
-function date_timestamp_set (DateTime $object, int $timestamp): DateTime|bool
+#[LanguageLevelTypeAware(["8.0" => "DateTime"], default: "DateTime|false")]
+function date_timestamp_set (DateTime $object, int $timestamp): DateTime|false
 {}
 
 /**
@@ -1258,7 +1258,7 @@ function timezone_name_get (DateTimeZone $object): string
  * @since 5.1.3
  */
 #[Pure]
-function timezone_name_from_abbr (string $abbr, int $utcOffset, int $isDST): string|false
+function timezone_name_from_abbr (string $abbr, int $utcOffset = -1, int $isDST = -1): string|false
 {}
 
 /**
@@ -1273,7 +1273,7 @@ function timezone_name_from_abbr (string $abbr, int $utcOffset, int $isDST): str
  * @return int|false <p>Returns time zone offset in seconds on success or <b>FALSE</b> on failure.</p>
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
+#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
 function timezone_offset_get (DateTimeZone $object, DateTimeInterface $datetime)
 {}
 
@@ -1315,7 +1315,7 @@ function timezone_location_get (DateTimeZone $object): array|false
  * Note: This option is only used when what is set to DateTimeZone::PER_COUNTRY.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
+#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
 function timezone_identifiers_list (int $timezoneGroup = DateTimeZone::ALL, ?string $countryCode)
 {}
 
@@ -1327,7 +1327,7 @@ function timezone_identifiers_list (int $timezoneGroup = DateTimeZone::ALL, ?str
  * @return array|false Array on success or <b>FALSE</b> on failure.
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
+#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
 function timezone_abbreviations_list ()
 {}
 
@@ -1434,12 +1434,12 @@ function date_default_timezone_get (): string
  * @param float|null $zenith [optional] <p>
  * Default: date.sunrise_zenith
  * </p>
- * @param float $utcOffset [optional]
+ * @param float|null $utcOffset [optional]
  * @return string|int|float|false the sunrise time in a specified format on
  * success or false on failure.
  */
 #[Pure]
-function date_sunrise (int $timestamp, int $returnFormat, ?float $latitude, ?float $longitude, ?float $zenith, float $utcOffset): string|int|float|false
+function date_sunrise (int $timestamp, int $returnFormat = SUNFUNCS_RET_STRING, ?float $latitude, ?float $longitude, ?float $zenith, ?float $utcOffset): string|int|float|false
 {}
 
 /**
@@ -1485,12 +1485,12 @@ function date_sunrise (int $timestamp, int $returnFormat, ?float $latitude, ?flo
  * @param float|null $zenith [optional] <p>
  * Default: date.sunset_zenith
  * </p>
- * @param float $utcOffset [optional]
+ * @param float|null $utcOffset [optional]
  * @return string|int|float|false the sunset time in a specified format on
  * success or false on failure.
  */
 #[Pure]
-function date_sunset (int $timestamp, int $returnFormat, ?float $latitude, ?float $longitude, ?float $zenith, float $utcOffset): string|int|float|false
+function date_sunset (int $timestamp, int $returnFormat = SUNFUNCS_RET_STRING, ?float $latitude, ?float $longitude, ?float $zenith, ?float $utcOffset): string|int|float|false
 {}
 
 /**
@@ -1509,7 +1509,7 @@ function date_sunset (int $timestamp, int $returnFormat, ?float $latitude, ?floa
  * @since 5.1.2
  */
 #[Pure]
-#[LanguageLevelTypeAware(['8.0' => 'array'], default: 'array|false')]
+#[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]
 function date_sun_info (int $timestamp, float $latitude, float $longitude)
 {}
 

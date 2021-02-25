@@ -28,4 +28,6 @@ interface StubProblemType
     public const HAS_UNION_TYPEHINT = 20;
     public const HAS_DUPLICATION = 21;
     public const TYPE_IN_PHPDOC_DIFFERS_FROM_SIGNATURE = 22;
+    public const WRONG_PARAMETER_DEFAULT_VALUE = 23;
+    public const WRONG_RETURN_TYPEHINT = 24;
 }

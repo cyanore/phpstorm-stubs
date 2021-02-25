@@ -15,6 +15,11 @@ class ReflectionMethodsProvider
         return self::yieldFilteredMethods();
     }
 
+    public static function classMethodsWithReturnTypeHintProvider(): ?Generator
+    {
+        return self::yieldFilteredMethods(StubProblemType::WRONG_RETURN_TYPEHINT);
+    }
+
     public static function classMethodsWithAccessProvider(): ?Generator
     {
         return self::yieldFilteredMethods(StubProblemType::FUNCTION_ACCESS);
@@ -41,7 +46,7 @@ class ReflectionMethodsProvider
             ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
         foreach (EntitiesFilter::getFiltered($classesAndInterfaces) as $class) {
             foreach (EntitiesFilter::getFiltered($class->methods, null, ...$problemTypes) as $method) {
-                yield "Method {$class->name}::{$method->name}" => [$class, $method];
+                yield "Method $class->name::$method->name" => [$class, $method];
             }
         }
     }

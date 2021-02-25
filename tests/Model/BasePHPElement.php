@@ -28,7 +28,7 @@ abstract class BasePHPElement
     public bool $stubBelongsToCore = false;
     public ?Exception $parseError = null;
     public array $mutedProblems = [];
-    #[ArrayShape(['from' => 'string', 'to' => 'string'])]
+    #[ArrayShape(['from' => 'float', 'to' => 'float'])]
     public array $availableVersionsRangeFromAttribute = [];
 
     abstract public function readObjectFromReflection(Reflector $reflectionObject): static;
@@ -116,13 +116,13 @@ abstract class BasePHPElement
         foreach ($attrGroups as $attrGroup) {
             foreach ($attrGroup->attrs as $attr) {
                 if ($attr->name->toString() === LanguageLevelTypeAware::class) {
-                    $arg = $attr->args[0]->value;
-                    if ($arg instanceof Array_) {
-                        $value = $arg->items[0]->value;
-                        if ($value instanceof String_) {
-                            return explode('|', preg_replace('/\w+\[]/', 'array', $value->value));
-                        }
+                    $types = [];
+                    $versionTypesMap = $attr->args[0]->value->items;
+                    foreach ($versionTypesMap as $item) {
+                        $types[$item->key->value] = explode('|', preg_replace('/\w+\[]/', 'array', $item->value->value));
                     }
+                    $types[$attr->args[1]->name->name] = explode('|', preg_replace('/\w+\[]/', 'array', $attr->args[1]->value->value));
+                    return $types;
                 }
             }
         }
@@ -133,6 +133,7 @@ abstract class BasePHPElement
      * @param AttributeGroup[] $attrGroups
      * @return array
      */
+    #[ArrayShape(['from' => 'float', 'to' => 'float'])]
     protected static function findAvailableVersionsRangeFromAttribute(array $attrGroups): array
     {
         $versionRange = [];
@@ -141,20 +142,20 @@ abstract class BasePHPElement
                 if ($attr->name->toString() === PhpStormStubsElementAvailable::class) {
                     if (count($attr->args) == 2) {
                         foreach ($attr->args as $arg) {
-                            $versionRange[$arg->name->name] = $arg->value->value;
+                            $versionRange[$arg->name->name] = (float)$arg->value->value;
                         }
                     } else {
                         $arg = $attr->args[0]->value;
                         if ($arg instanceof Array_) {
                             $value = $arg->items[0]->value;
                             if ($value instanceof String_) {
-                                return ['from' => $value->value];
+                                return ['from' => (float)$value->value];
                             }
                         } else {
                             $rangeName = $attr->args[0]->name;
                             return $rangeName === null || $rangeName->name == 'from' ?
-                                ['from' => $arg->value, 'to' => PhpVersions::getLatest()] :
-                                ['from' => PhpVersions::getFirst(), 'to' => $arg->value];
+                                ['from' => (float)$arg->value, 'to' => PhpVersions::getLatest()] :
+                                ['from' => PhpVersions::getFirst(), 'to' => (float)$arg->value];
                         }
                     }
                 }

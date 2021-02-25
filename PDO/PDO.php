@@ -2,9 +2,9 @@
 
 // Start of PDO v.1.0.4dev
 use JetBrains\PhpStorm\ArrayShape;
+use JetBrains\PhpStorm\Deprecated;
 use JetBrains\PhpStorm\Internal\PhpStormStubsElementAvailable;
 use JetBrains\PhpStorm\Pure;
-use JetBrains\PhpStorm\Deprecated;
 
 /**
  * Represents an error raised by PDO. You should not throw a
@@ -846,6 +846,40 @@ class PDO  {
 	const SQLITE_ATTR_EXTENDED_RESULT_CODES = 1002;
 
 	/**
+	 * Provides a way to specify the action on the database session.
+	 * @since 7.2.16
+	 * @since 7.3.3
+	 */
+	const OCI_ATTR_ACTION = 1000;
+
+	/**
+	 * Provides a way to specify the client info on the database session.
+	 * @since 7.2.16
+	 * @since 7.3.3
+	 */
+	const OCI_ATTR_CLIENT_INFO = 1001;
+
+	/**
+	 * Provides a way to specify the client identifier on the database session.
+	 * @since 7.2.16
+	 * @since 7.3.3
+	 */
+	const OCI_ATTR_CLIENT_IDENTIFIER = 1002;
+
+	/**
+	 * Provides a way to specify the module on the database session.
+	 * @since 7.2.16
+	 * @since 7.3.3
+	 */
+	const OCI_ATTR_MODULE = 1003;
+
+	/**
+	 * The number of milliseconds to wait for individual round trips to the database to complete before timing out.
+	 * @since 8.0
+	 */
+	const OCI_ATTR_CALL_TIMEOUT = 1004;
+
+	/**
 	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Creates a PDO instance representing a connection to a database
 	 * @link https://php.net/manual/en/pdo.construct.php
@@ -1273,7 +1307,7 @@ class PDOStatement implements IteratorAggregate
 	 * @return mixed The return value of this function on success depends on the fetch type. In
 	 * all cases, <b>FALSE</b> is returned on failure.
 	 */
-	public function fetch ($mode = null, $cursorOrientation = PDO::FETCH_ORI_NEXT, $cursorOffset = 0) {}
+	public function fetch ($mode = PDO::FETCH_BOTH, $cursorOrientation = PDO::FETCH_ORI_NEXT, $cursorOffset = 0) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
@@ -1410,10 +1444,11 @@ class PDOStatement implements IteratorAggregate
 	 * Arguments of custom class constructor when the <i>fetch_style</i>
 	 * parameter is <b>PDO::FETCH_CLASS</b>.
 	 * </p>
-	 * @return array <b>PDOStatement::fetchAll</b> returns an array containing
+	 * @return array|false <b>PDOStatement::fetchAll</b> returns an array containing
 	 * all of the remaining rows in the result set. The array represents each
 	 * row as either an array of column values or an object with properties
 	 * corresponding to each column name.
+	 * An empty array is returned if there are zero results to fetch, or false on failure.
 	 * </p>
 	 * <p>
 	 * Using this method to fetch large result sets will result in a heavy

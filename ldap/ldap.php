@@ -15,7 +15,7 @@ use JetBrains\PhpStorm\Internal\LanguageLevelTypeAware;
  * @return string|bool Returns the generated password if newpw is empty or omitted. Otherwise returns TRUE on success and FALSE on failure.
  * @since 7.2
  */
-function ldap_exop_passwd ($ldap , string $user = '' , string $old_password = '' , string $new_password = '' , &$controls = []): string|bool
+function ldap_exop_passwd ($ldap , string $user = "" , string $old_password = "" , string $new_password = "" , &$controls = []): string|bool
 {}
 
 /**
@@ -52,7 +52,7 @@ function ldap_exop_whoami ($ldap): string|false
  * @return resource|bool When used with retdata, returns TRUE on success or FALSE on error. When used without retdata, returns a result identifier or FALSE on error.
  * @since 7.2
  */
-function ldap_exop ($ldap , string $request_oid , ?string $request_data , #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [], &$response_data, &$response_oid)
+function ldap_exop ($ldap , string $request_oid , ?string $request_data , #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [], &$response_data, &$response_oid)
 {}
 
 /**
@@ -146,7 +146,7 @@ function ldap_bind ($ldap, ?string $dn, ?string $password): bool
  * @return resource|false
  * @since 7.3
  */
-function ldap_bind_ext ($ldap, ?string $dn, ?string $password, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_bind_ext ($ldap, ?string $dn, ?string $password, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 
@@ -239,7 +239,7 @@ function ldap_unbind ($ldap): bool
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return resource|false a search result identifier or <b>FALSE</b> on error.
  */
-function ldap_read ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit, int $timelimit, int $deref, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_read ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit = -1, int $timelimit = -1, int $deref, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -298,7 +298,7 @@ function ldap_read ($ldap, array|string $base, array|string $filter, array $attr
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return resource|false a search result identifier or <b>FALSE</b> on error.
  */
-function ldap_list ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit, int $timelimit, int $deref, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_list ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit = -1, int $timelimit = -1, int $deref, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -361,7 +361,7 @@ function ldap_list ($ldap, array|string $base, array|string $filter, array $attr
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return resource|false a search result identifier or <b>FALSE</b> on error.
  */
-function ldap_search ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit, int $timelimit, int $deref, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_search ($ldap, array|string $base, array|string $filter, array $attributes, int $attributes_only, int $sizelimit = -1, int $timelimit = -1, int $deref, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -384,7 +384,7 @@ function ldap_free_result ($ldap): bool
  * </p>
  * @return int|false number of entries in the result or <b>FALSE</b> on error.
  */
-#[LanguageLevelTypeAware(['8.0' => 'int'], default: 'int|false')]
+#[LanguageLevelTypeAware(["8.0" => "int"], default: "int|false")]
 function ldap_count_entries ($ldap, $result)
 {}
 
@@ -589,7 +589,7 @@ function ldap_dn2ufn (string $dn): string|false
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -617,7 +617,7 @@ function ldap_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8
  * @return resource|false
  * @since 7.3
  */
-function ldap_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -632,7 +632,7 @@ function ldap_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_delete ($ldap, string $dn, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_delete ($ldap, string $dn, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -649,7 +649,7 @@ function ldap_delete ($ldap, string $dn, #[LanguageLevelTypeAware(['8.0' => 'nul
  * @return resource|false
  * @since 7.3
  */
-function ldap_delete_ext ($ldap, string $dn, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_delete_ext ($ldap, string $dn, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -667,7 +667,7 @@ function ldap_delete_ext ($ldap, string $dn, #[LanguageLevelTypeAware(['8.0' => 
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @since 7.0
  */
-function ldap_modify ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_modify ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -683,7 +683,7 @@ function ldap_modify ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_mod_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_mod_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -701,7 +701,7 @@ function ldap_mod_add ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware
  * @return resource|false
  * @since 7.3
  */
-function ldap_mod_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_mod_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -717,7 +717,7 @@ function ldap_mod_add_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeA
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_mod_replace ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_mod_replace ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -735,7 +735,7 @@ function ldap_mod_replace ($ldap, string $dn, array $entry, #[LanguageLevelTypeA
  * @return resource|false
  * @since 7.3
  */
-function ldap_mod_replace_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_mod_replace_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -751,7 +751,7 @@ function ldap_mod_replace_ext ($ldap, string $dn, array $entry, #[LanguageLevelT
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_mod_del ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_mod_del ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -769,7 +769,7 @@ function ldap_mod_del ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware
  * @return resource|false
  * @since 7.3
  */
-function ldap_mod_del_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_mod_del_ext ($ldap, string $dn, array $entry, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -825,7 +825,7 @@ function ldap_error ($ldap): string
  * @return int|bool <b>TRUE</b> if <i>value</i> matches otherwise returns
  * <b>FALSE</b>. Returns -1 on error.
  */
-function ldap_compare ($ldap, string $dn, string $attribute, string $value, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): int|bool
+function ldap_compare ($ldap, string $dn, string $attribute, string $value, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): int|bool
 {}
 
 /**
@@ -844,7 +844,7 @@ function ldap_compare ($ldap, string $dn, string $attribute, string $value, #[La
  * @removed 8.0
  * @return bool
  */
-#[Deprecated(since: '7.0')]
+#[Deprecated(since: "7.0")]
 function ldap_sort ($ldap, $result, string $sortfilter): bool
 {}
 
@@ -870,7 +870,7 @@ function ldap_sort ($ldap, $result, string $sortfilter): bool
  * @param array|null $controls [optional] Array of LDAP Controls to send with the request.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_rename ($ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_rename ($ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -897,7 +897,7 @@ function ldap_rename ($ldap, string $dn, string $new_rdn, string $new_parent, bo
  * @return resource|false
  * @since 7.3
  */
-function ldap_rename_ext ($ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = [])
+function ldap_rename_ext ($ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = [])
 {}
 
 /**
@@ -970,7 +970,7 @@ function ldap_rename_ext ($ldap, string $dn, string $new_rdn, string $new_parent
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function ldap_get_option ($ldap, int $option, &$value): bool
+function ldap_get_option ($ldap, int $option, &$value = null): bool
 {}
 
 /**
@@ -1160,8 +1160,8 @@ function ldap_set_rebind_proc ($ldap, ?callable $callback): bool
  * @since 5.4
  * @removed 8.0
  */
-#[Deprecated(since: '7.4')]
-function ldap_control_paged_result ($ldap, int $pagesize, $iscritical = false, $cookie = ''): bool
+#[Deprecated(since: "7.4")]
+function ldap_control_paged_result ($ldap, int $pagesize, $iscritical = false, $cookie = ""): bool
 {}
 
 /**
@@ -1181,7 +1181,7 @@ function ldap_control_paged_result ($ldap, int $pagesize, $iscritical = false, $
  * @since 5.4
  * @removed 8.0
  */
-#[Deprecated(since: '7.4')]
+#[Deprecated(since: "7.4")]
 function ldap_control_paged_result_response ($ldap, $result, &$cookie = null, &$estimated = null): bool
 {}
 
@@ -1193,7 +1193,7 @@ function ldap_control_paged_result_response ($ldap, $result, &$cookie = null, &$
  * @return string
  * @since 5.6
  */
-function ldap_escape (string $value, string $ignore = '', int $flags = 0): string
+function ldap_escape (string $value, string $ignore = "", int $flags = 0): string
 {}
 
 /**
@@ -1269,7 +1269,7 @@ function ldap_escape (string $value, string $ignore = '', int $flags = 0): strin
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @since 5.4
  */
-function ldap_modify_batch ($ldap , string $dn , array $modifications_info, #[LanguageLevelTypeAware(['8.0' => 'null|array'], default: 'array')] $controls = []): bool
+function ldap_modify_batch ($ldap , string $dn , array $modifications_info, #[LanguageLevelTypeAware(["8.0" => "null|array"], default: "array")] $controls = []): bool
 {}
 
 /**
@@ -1421,7 +1421,7 @@ define('LDAP_OPT_DIAGNOSTIC_MESSAGE', 50);
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_MANAGEDSAIT', '2.16.840.1.113730.3.4.2');
+define("LDAP_CONTROL_MANAGEDSAIT", "2.16.840.1.113730.3.4.2");
 echo
 
 /**
@@ -1429,187 +1429,187 @@ echo
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_PROXY_AUTHZ', '2.16.840.1.113730.3.4.18');
+define("LDAP_CONTROL_PROXY_AUTHZ", "2.16.840.1.113730.3.4.18");
 
 /**
  * Control Constant - Subentries (» RFC 3672)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SUBENTRIES', '1.3.6.1.4.1.4203.1.10.1');
+define("LDAP_CONTROL_SUBENTRIES", "1.3.6.1.4.1.4203.1.10.1");
 
 /**
  * Control Constant - Filter returned values (» RFC 3876)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_VALUESRETURNFILTER', '1.2.826.0.1.3344810.2.3');
+define("LDAP_CONTROL_VALUESRETURNFILTER", "1.2.826.0.1.3344810.2.3");
 
 /**
  * Control Constant - Assertion (» RFC 4528)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_ASSERT', '1.3.6.1.1.12');
+define("LDAP_CONTROL_ASSERT", "1.3.6.1.1.12");
 
 /**
  * Control Constant - Pre read (» RFC 4527)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_PRE_READ', '1.3.6.1.1.13.1');
+define("LDAP_CONTROL_PRE_READ", "1.3.6.1.1.13.1");
 
 /**
  * Control Constant - Post read (» RFC 4527)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_POST_READ', '1.3.6.1.1.13.2');
+define("LDAP_CONTROL_POST_READ", "1.3.6.1.1.13.2");
 
 /**
  * Control Constant - Sort request (» RFC 2891)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SORTREQUEST', '1.2.840.113556.1.4.473');
+define("LDAP_CONTROL_SORTREQUEST", "1.2.840.113556.1.4.473");
 
 /**
  * Control Constant - Sort response (» RFC 2891)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SORTRESPONSE', '1.2.840.113556.1.4.474');
+define("LDAP_CONTROL_SORTRESPONSE", "1.2.840.113556.1.4.474");
 
 /**
  * Control Constant - Paged results (» RFC 2696)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_PAGEDRESULTS', '1.2.840.113556.1.4.319');
+define("LDAP_CONTROL_PAGEDRESULTS", "1.2.840.113556.1.4.319");
 
 /**
  * Control Constant - Content Synchronization Operation (» RFC 4533)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SYNC', '1.3.6.1.4.1.4203.1.9.1.1');
+define("LDAP_CONTROL_SYNC", "1.3.6.1.4.1.4203.1.9.1.1");
 
 /**
  * Control Constant - Content Synchronization Operation State (» RFC 4533)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SYNC_STATE', '1.3.6.1.4.1.4203.1.9.1.2');
+define("LDAP_CONTROL_SYNC_STATE", "1.3.6.1.4.1.4203.1.9.1.2");
 
 /**
  * Control Constant - Content Synchronization Operation Done (» RFC 4533)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_SYNC_DONE', '1.3.6.1.4.1.4203.1.9.1.3');
+define("LDAP_CONTROL_SYNC_DONE", "1.3.6.1.4.1.4203.1.9.1.3");
 
 /**
  * Control Constant - Don't Use Copy (» RFC 6171)
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_DONTUSECOPY', '1.3.6.1.1.22');
+define("LDAP_CONTROL_DONTUSECOPY", "1.3.6.1.1.22");
 
 /**
  * Control Constant - Password Policy Request
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_PASSWORDPOLICYREQUEST', '1.3.6.1.4.1.42.2.27.8.5.1');
+define("LDAP_CONTROL_PASSWORDPOLICYREQUEST", "1.3.6.1.4.1.42.2.27.8.5.1");
 
 /**
  * Control Constant - Password Policy Response
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_PASSWORDPOLICYRESPONSE', '1.3.6.1.4.1.42.2.27.8.5.1');
+define("LDAP_CONTROL_PASSWORDPOLICYRESPONSE", "1.3.6.1.4.1.42.2.27.8.5.1");
 
 /**
  * Control Constant - Active Directory Incremental Values
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_INCREMENTAL_VALUES', '1.2.840.113556.1.4.802');
+define("LDAP_CONTROL_X_INCREMENTAL_VALUES", "1.2.840.113556.1.4.802");
 
 /**
  * Control Constant - Active Directory Domain Scope
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_DOMAIN_SCOPE', '1.2.840.113556.1.4.1339');
+define("LDAP_CONTROL_X_DOMAIN_SCOPE", "1.2.840.113556.1.4.1339");
 
 /**
  * Control Constant - Active Directory Permissive Modify
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_PERMISSIVE_MODIFY', '1.2.840.113556.1.4.1413');
+define("LDAP_CONTROL_X_PERMISSIVE_MODIFY", "1.2.840.113556.1.4.1413");
 
 /**
  * Control Constant - Active Directory Search Options
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_SEARCH_OPTIONS', '1.2.840.113556.1.4.1340');
+define("LDAP_CONTROL_X_SEARCH_OPTIONS", "1.2.840.113556.1.4.1340");
 
 /**
  * Control Constant - Active Directory Tree Delete
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_TREE_DELETE', '1.2.840.113556.1.4.805');
+define("LDAP_CONTROL_X_TREE_DELETE", "1.2.840.113556.1.4.805");
 
 /**
  * Control Constant - Active Directory Extended DN
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_X_EXTENDED_DN', '1.2.840.113556.1.4.529');
+define("LDAP_CONTROL_X_EXTENDED_DN", "1.2.840.113556.1.4.529");
 
 /**
  * Control Constant - Virtual List View Request
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_VLVREQUEST', '2.16.840.1.113730.3.4.9');
+define("LDAP_CONTROL_VLVREQUEST", "2.16.840.1.113730.3.4.9");
 
 /**
  * Control Constant - Virtual List View Response
  * @link https://php.net/manual/en/ldap.constants.php
  * @since 7.3
  */
-define('LDAP_CONTROL_VLVRESPONSE', '2.16.840.1.113730.3.4.10');
+define("LDAP_CONTROL_VLVRESPONSE", "2.16.840.1.113730.3.4.10");
 
 
 /**
  * Extended Operation constant - Modify password
  */
-define('LDAP_EXOP_MODIFY_PASSWD', '1.3.6.1.4.1.4203.1.11.1');
+define("LDAP_EXOP_MODIFY_PASSWD", "1.3.6.1.4.1.4203.1.11.1");
 
 /**
  * Extended Operation Constant - Refresh
  */
-define('LDAP_EXOP_REFRESH', '1.3.6.1.4.1.1466.101.119.1');
+define("LDAP_EXOP_REFRESH", "1.3.6.1.4.1.1466.101.119.1");
 
 /**
  * Extended Operation constant - Start TLS
  */
-define('LDAP_EXOP_START_TLS', '1.3.6.1.4.1.1466.20037');
+define("LDAP_EXOP_START_TLS", "1.3.6.1.4.1.1466.20037");
 
 /**
  * Extended Operation Constant - Turn
  */
-define('LDAP_EXOP_TURN', '1.3.6.1.1.19');
+define("LDAP_EXOP_TURN", "1.3.6.1.1.19");
 
 /**
  * Extended Operation Constant - WHOAMI
  */
-define('LDAP_EXOP_WHO_AM_I', '1.3.6.1.4.1.4203.1.11.3');
+define("LDAP_EXOP_WHO_AM_I", "1.3.6.1.4.1.4203.1.11.3");
 
 // End of ldap v.
 ?>
