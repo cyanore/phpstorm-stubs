@@ -21,7 +21,7 @@
 	},
 	"autoload"    : {
 		"files": [
-			"../../vendors/phpstorm-stubs/PhpStormStubsMap.php"
+			"PhpStormStubsMap.php"
 		]
 	},
 	"autoload-dev": {
