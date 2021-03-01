@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="StubTests\" />
+      <excludePattern pattern="*.exe" />
+      <excludePattern pattern="lock" />
+      <excludePattern pattern="*-lock" />
+      <excludePattern pattern="*.lock" />
+      <excludePattern pattern="cache" />
+      <excludePattern pattern="*-cache" />
+      <excludePattern pattern="*.cache" />
+      <excludePattern pattern="bundle_*" />
+      <excludePattern pattern="bundle.*" />
+      <excludePattern pattern="*-bundle.*" />
+      <excludePattern pattern="*.bundle.*" />
+      <excludePattern pattern="chunk.*" />
+      <excludePattern pattern="*-chunk.*" />
+      <excludePattern pattern="*.chunk.*" />
+      <excludePattern pattern="min.*" />
+      <excludePattern pattern="*-min.*" />
+      <excludePattern pattern="*.min.*" />
+      <excludePattern pattern="map.*" />
+      <excludePattern pattern="*-map.*" />
+      <excludePattern pattern="*.map.*" />
+      <excludePattern pattern="dist.*" />
+      <excludePattern pattern="*-dist.*" />
+      <excludePattern pattern="*.dist.*" />
+      <excludePattern pattern="workspace.xml" />
+      <excludePattern pattern="*.sublime-project" />
+      <excludePattern pattern="*.sublime-workspace" />
+      <excludePattern pattern="*.code-workspace" />
+      <excludePattern pattern="phar.*" />
+      <excludePattern pattern="*-phar.*" />
+      <excludePattern pattern="*.phar.*" />
+      <excludePattern pattern="*.sublime" />
+      <excludePattern pattern=".vscode" />
+      <excludePattern pattern=".git" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

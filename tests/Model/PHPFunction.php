@@ -23,7 +23,7 @@ class PHPFunction extends BasePHPElement
     /**
      * @var PHPParameter[]
      */
-    public array $parameters = [];
+    protected array $parameters = [];
 
     /** @var string[] $returnTypesFromPhpDoc  */
     public array $returnTypesFromPhpDoc = [];
