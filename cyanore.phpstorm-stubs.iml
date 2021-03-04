@@ -36,7 +36,7 @@
       <excludePattern pattern="*.phar.*" />
       <excludePattern pattern="*.sublime" />
       <excludePattern pattern=".vscode" />
-      <excludePattern pattern=".git" />
+      <excludePattern pattern="index" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
