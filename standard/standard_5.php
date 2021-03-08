@@ -748,7 +748,7 @@ function fread ($stream, int $length): string|false
  * @param resource $context [optional]
  * @return resource|false a file pointer resource on success, or false on error.
  */
-function fopen (string $filename, string $mode, bool $use_include_path = false, $context)
+function fopen (#[ExpectedValues(['/dev/null','nul','php://stdin','php://stdout','php://stderr'])] string $filename, string $mode, bool $use_include_path = false, $context)
 {}
 
 /**
