@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace StubTests;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Exception;
+use RuntimeException;
 use StubTests\Model\PHPMethod;
 use StubTests\Model\StubProblemType;
 use StubTests\Parsers\Visitors\MetaOverrideFunctionsParser;
@@ -12,18 +13,19 @@ use StubTests\TestData\Providers\ReflectionStubsSingleton;
 use function array_filter;
 use function array_pop;
 
-class StubsMetaInternalTagTest extends TestCase
+class StubsMetaInternalTagTest extends BaseStubsTest
 {
-    private static array $overridenFunctionsInMeta;
+    private static array $overriddenFunctionsInMeta;
 
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
-        PhpStormStubsSingleton::getPhpStormStubs();
-        ReflectionStubsSingleton::getReflectionStubs();
-        self::$overridenFunctionsInMeta = (new MetaOverrideFunctionsParser())->overridenFunctions;
+        self::$overriddenFunctionsInMeta = (new MetaOverrideFunctionsParser())->overridenFunctions;
     }
 
+    /**
+     * @throws Exception
+     */
     public function testFunctionInternalMetaTag(): void
     {
         $functions = PhpStormStubsSingleton::getPhpStormStubs()->getFunctions();
@@ -39,6 +41,9 @@ class StubsMetaInternalTagTest extends TestCase
         }
     }
 
+    /**
+     * @throws RuntimeException
+     */
     public function testMethodsInternalMetaTag(): void
     {
         foreach (PhpStormStubsSingleton::getPhpStormStubs()->getClasses() as $className => $class) {
@@ -63,9 +68,13 @@ class StubsMetaInternalTagTest extends TestCase
         }
     }
 
+    /**
+     * @param string $elementName
+     * @throws Exception
+     */
     private static function checkInternalMetaInOverride(string $elementName): void
     {
-        self::assertContains($elementName, self::$overridenFunctionsInMeta,
+        self::assertContains($elementName, self::$overriddenFunctionsInMeta,
             "$elementName contains @meta in phpdoc but isn't added to 'override()' functions in meta file");
     }
 }

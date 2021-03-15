@@ -8,7 +8,6 @@ use phpDocumentor\Reflection\DocBlock\Tags\Link;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url;
 use phpDocumentor\Reflection\DocBlock\Tags\See;
 use phpDocumentor\Reflection\DocBlock\Tags\Since;
-use PHPUnit\Framework\TestCase;
 use StubTests\Model\BasePHPClass;
 use StubTests\Model\BasePHPElement;
 use StubTests\Model\PHPConst;
@@ -17,26 +16,19 @@ use StubTests\Model\PHPFunction;
 use StubTests\Model\PHPMethod;
 use StubTests\Model\Tags\RemovedTag;
 use StubTests\Parsers\Utils;
-use StubTests\TestData\Providers\PhpStormStubsSingleton;
-use StubTests\TestData\Providers\ReflectionStubsSingleton;
 use function trim;
 
-class StubsPhpDocTest extends TestCase
+class StubsPhpDocTest extends BaseStubsTest
 {
-    public static function setUpBeforeClass(): void
-    {
-        parent::setUpBeforeClass();
-        PhpStormStubsSingleton::getPhpStormStubs();
-        ReflectionStubsSingleton::getReflectionStubs();
-    }
-
     /**
      * @dataProvider \StubTests\TestData\Providers\Stubs\StubConstantsProvider::classConstantProvider
+     * @param BasePHPClass $class
+     * @param PHPConst $constant
      */
-    public static function testClassConstantsPHPDocs(string $className, PHPConst $constant): void
+    public static function testClassConstantsPHPDocs(BasePHPClass $class, PHPConst $constant): void
     {
         self::assertNull($constant->parseError, $constant->parseError ?: '');
-        self::checkPHPDocCorrectness($constant, "constant $className::$constant->name");
+        self::checkPHPDocCorrectness($constant, "constant $class->sourceFilePath/$class->name::$constant->name");
     }
 
     /**

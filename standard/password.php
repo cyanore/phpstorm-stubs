@@ -40,7 +40,7 @@
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Internal\LanguageLevelTypeAware;
 
-define('PASSWORD_DEFAULT', '2y');
+define("PASSWORD_DEFAULT", "2y");
 
 /**
  * <p>
@@ -55,7 +55,7 @@ define('PASSWORD_DEFAULT', '2y');
  * </li>
  * </ul>
  */
-define('PASSWORD_BCRYPT_DEFAULT_COST', 10);
+define("PASSWORD_BCRYPT_DEFAULT_COST", 10);
 
 /**
  * <p>
@@ -79,7 +79,7 @@ define('PASSWORD_BCRYPT_DEFAULT_COST', 10);
  * </li>
  * </ul>
  */
-define('PASSWORD_BCRYPT', '2y');
+define("PASSWORD_BCRYPT", '2y');
 
 /**
  *
@@ -161,8 +161,9 @@ define('PASSWORD_ARGON2_PROVIDER', 'standard');
  * </ul>
  * @since 5.5
  */
-#[ArrayShape(['algo' => 'int', 'algoName' => 'string', 'options' => 'array'])]
-function password_get_info (string $hash): ?array
+#[ArrayShape(["algo" => "int", "algoName" => "string", "options" => "array"])]
+#[LanguageLevelTypeAware(['8.0' => 'array'], default: '?array')]
+function password_get_info (string $hash)
 {}
 
 /**
@@ -182,7 +183,7 @@ function password_get_info (string $hash): ?array
  * @return string|false|null Returns the hashed password, or FALSE on failure, or null if the algorithm is invalid
  * @since 5.5
  */
-#[LanguageLevelTypeAware(['8.0' => 'string'], default: 'string|false|null')]
+#[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false|null")]
 function password_hash (string $password, string|int|null $algo, array $options = [])
 {}
 
