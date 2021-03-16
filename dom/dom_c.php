@@ -1099,7 +1099,7 @@ class DOMNodeList implements IteratorAggregate, Countable {
 
     /**
      * @since 8.0
-     * @return Traversable
+     * @return Iterator
      */
     public function getIterator(){}
 }
