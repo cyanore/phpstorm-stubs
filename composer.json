@@ -20,6 +20,10 @@
 		"phpunit/phpunit"                  : "@stable"
 	},
 	"autoload"    : {
+		"psr-4": {
+			"JetBrains\\PhpStorm\\"          : "meta/attributes/",
+			"JetBrains\\PhpStorm\\Internal\\": "meta/attributes/internal/"
+		},
 		"files": [
 			"PhpStormStubsMap.php"
 		]
