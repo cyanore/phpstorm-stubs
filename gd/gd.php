@@ -2835,8 +2835,8 @@ define('IMG_WEIGHTED4', 21);
  * @since 5.5
  */
 define('IMG_TRIANGLE', 20);
-
-define('IMG_TGA', 128);
+	
+	define( 'IMG_TGA', 128);
 
 /**
  * Return an image containing the affine tramsformed src image, using an optional clipping area
@@ -3056,5 +3056,5 @@ final class GdImage{
      * You cannot initialize a GdImage object except through helper functions.
      */
     private function __construct(){}
-    private function __clone(){}
+	private function __clone(){}
 }

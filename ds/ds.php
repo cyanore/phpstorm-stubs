@@ -451,8 +451,8 @@ namespace Ds {
      */
     class Vector implements Sequence
     {
-
-        const MIN_CAPACITY = 10;
+	
+	    const MIN_CAPACITY = 10;
 
         /**
          * Creates a new instance, using either a traversable object or an array for the initial values.
@@ -862,8 +862,8 @@ namespace Ds {
         {
         }
     }
-
-    class Deque implements Sequence
+	
+	class Deque implements Sequence
     {
         /**
          * Creates a new instance, using either a traversable object or an array for the initial values.
@@ -1277,8 +1277,8 @@ namespace Ds {
 
 
     }
-
-    class Map implements Collection
+	
+	class Map implements Collection
     {
         /**
          * Creates a new instance, using either a traversable object or an array for the initial values.
@@ -2731,7 +2731,7 @@ namespace Ds {
      */
     class PriorityQueue implements Collection
     {
-        const MIN_CAPACITY = 8;
+	    const MIN_CAPACITY = 8;
 
         /**
          * Count elements of an object
