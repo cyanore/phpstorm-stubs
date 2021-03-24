@@ -1,6 +1,7 @@
 <?php
 
 use JetBrains\PhpStorm\ArrayShape;
+use JetBrains\PhpStorm\Deprecated;
 
 /**
  * @since 5.5
@@ -384,6 +385,7 @@ class DateTime implements DateTimeInterface {
     /**
      * @removed 7.2
      */
+	#[Deprecated( since: '7.2')]
     const ATOM = 'Y-m-d\TH:i:sP';
 
     /**
