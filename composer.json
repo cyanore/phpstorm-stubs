@@ -39,5 +39,28 @@
 	},
 	"replace"     : {
 		"jetbrains/phpstorm-stubs": "self.version"
-	}
+	},
+	"repositories": [
+		{
+			"type"   : "path",
+			"url"    : "../../../../",
+			"options": {
+				"symlink": true
+			}
+		},
+		{
+			"type"   : "path",
+			"url"    : "../../../../projects/*/*",
+			"options": {
+				"symlink": true
+			}
+		},
+		{
+			"type"   : "path",
+			"url"    : "../../../../libraries/composer-packages/*/*",
+			"options": {
+				"symlink": true
+			}
+		}
+	]
 }
