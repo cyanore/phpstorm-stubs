@@ -38,6 +38,6 @@
 		"cs-fix": "php-cs-fixer fix -v --diff"
 	},
 	"replace"     : {
-		"jetbrains/phpstorm-stubs": "self.version"
+		"jetbrains/phpstorm-stubs": "*"
 	}
 }
