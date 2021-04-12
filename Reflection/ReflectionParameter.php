@@ -2,6 +2,7 @@
 
 use JetBrains\PhpStorm\Deprecated;
 use JetBrains\PhpStorm\Immutable;
+use JetBrains\PhpStorm\Internal\LanguageLevelTypeAware;
 use JetBrains\PhpStorm\Pure;
 
 /**
@@ -27,9 +28,7 @@ class ReflectionParameter implements Reflector
      * of the parameter (starting with zero), or a the parameter name as string.
      * @throws \ReflectionException if the function or parameter does not exist.
      */
-    public function __construct(callable $function, $param)
-    {
-    }
+    public function __construct(callable $function, $param) {}
 
     /**
      * Exports
@@ -44,9 +43,7 @@ class ReflectionParameter implements Reflector
      * @removed 8.0
      */
     #[Deprecated(since: '7.4')]
-    public static function export($function, $parameter, $return = false)
-    {
-    }
+    public static function export($function, $parameter, $return = false) {}
 
     /**
      * Returns the string representation of the ReflectionParameter object.
@@ -54,9 +51,7 @@ class ReflectionParameter implements Reflector
      * @link https://php.net/manual/en/reflectionparameter.tostring.php
      * @return string
      */
-    public function __toString()
-    {
-    }
+    public function __toString() {}
 
     /**
      * Gets parameter name
@@ -65,9 +60,7 @@ class ReflectionParameter implements Reflector
      * @return string The name of the reflected parameter.
      */
     #[Pure]
-	public function getName()
-    {
-    }
+    public function getName() {}
 
     /**
      * Checks if passed by reference
@@ -76,9 +69,7 @@ class ReflectionParameter implements Reflector
      * @return bool {@see true} if the parameter is passed in by reference, otherwise {@see false}
      */
     #[Pure]
-	public function isPassedByReference()
-    {
-    }
+    public function isPassedByReference() {}
 
     /**
      * Returns whether this parameter can be passed by value
@@ -88,9 +79,7 @@ class ReflectionParameter implements Reflector
      * Returns {@see null} in case of an error.
      * @since 5.4
      */
-    public function canBePassedByValue()
-    {
-    }
+    public function canBePassedByValue() {}
 
     /**
      * Gets declaring function
@@ -100,9 +89,7 @@ class ReflectionParameter implements Reflector
      * @since 5.2.3
      */
     #[Pure]
-	public function getDeclaringFunction()
-    {
-    }
+    public function getDeclaringFunction() {}
 
     /**
      * Gets declaring class
@@ -112,9 +99,7 @@ class ReflectionParameter implements Reflector
      * called on function.
      */
     #[Pure]
-	public function getDeclaringClass()
-    {
-    }
+    public function getDeclaringClass() {}
 
     /**
      * Gets the class type hinted for the parameter as a ReflectionClass object.
@@ -123,11 +108,9 @@ class ReflectionParameter implements Reflector
      * @return ReflectionClass|null A {@see ReflectionClass} object.
      * @see ReflectionParameter::getType()
      */
-    #[Deprecated(reason: 'Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.', since: '8.0')]
+    #[Deprecated(reason: "Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.", since: "8.0")]
     #[Pure]
-	public function getClass()
-    {
-    }
+    public function getClass() {}
 
     /**
      * Checks if the parameter has a type associated with it.
@@ -136,9 +119,7 @@ class ReflectionParameter implements Reflector
      * @return bool {@see true} if a type is specified, {@see false} otherwise.
      * @since 7.0
      */
-    public function hasType()
-    {
-    }
+    public function hasType() {}
 
     /**
      * Gets a parameter's type
@@ -149,9 +130,8 @@ class ReflectionParameter implements Reflector
      * @since 7.0
      */
     #[Pure]
-	public function getType()
-    {
-    }
+    #[LanguageLevelTypeAware(['7.1' => 'ReflectionNamedType|null', '8.0' => 'ReflectionNamedType|ReflectionUnionType|null'], default: 'ReflectionType|null')]
+    public function getType() {}
 
     /**
      * Checks if parameter expects an array
@@ -160,11 +140,9 @@ class ReflectionParameter implements Reflector
      * @return bool {@see true} if an array is expected, {@see false} otherwise.
      * @see ReflectionParameter::getType()
      */
-    #[Deprecated(reason: 'Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.', since: '8.0')]
+    #[Deprecated(reason: "Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.", since: "8.0")]
     #[Pure]
-	public function isArray()
-    {
-    }
+    public function isArray() {}
 
     /**
      * Returns whether parameter MUST be callable
@@ -175,11 +153,9 @@ class ReflectionParameter implements Reflector
      * @since 5.4
      * @see ReflectionParameter::getType()
      */
-    #[Deprecated(reason: 'Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.', since: '8.0')]
+    #[Deprecated(reason: "Use ReflectionParameter::getType() and the ReflectionType APIs should be used instead.", since: "8.0")]
     #[Pure]
-	public function isCallable()
-    {
-    }
+    public function isCallable() {}
 
     /**
      * Checks if null is allowed
@@ -188,9 +164,7 @@ class ReflectionParameter implements Reflector
      * @return bool Returns {@see true} if {@see null} is allowed,
      * otherwise {@see false}
      */
-    public function allowsNull()
-    {
-    }
+    public function allowsNull() {}
 
     /**
      * Gets parameter position
@@ -200,9 +174,7 @@ class ReflectionParameter implements Reflector
      * @since 5.2.3
      */
     #[Pure]
-	public function getPosition()
-    {
-    }
+    public function getPosition() {}
 
     /**
      * Checks if optional
@@ -212,9 +184,7 @@ class ReflectionParameter implements Reflector
      * @since 5.0.3
      */
     #[Pure]
-	public function isOptional()
-    {
-    }
+    public function isOptional() {}
 
     /**
      * Checks if a default value is available
@@ -224,9 +194,7 @@ class ReflectionParameter implements Reflector
      * @since 5.0.3
      */
     #[Pure]
-	public function isDefaultValueAvailable()
-    {
-    }
+    public function isDefaultValueAvailable() {}
 
     /**
      * Gets default parameter value
@@ -237,9 +205,7 @@ class ReflectionParameter implements Reflector
      * @since 5.0.3
      */
     #[Pure]
-	public function getDefaultValue()
-    {
-    }
+    public function getDefaultValue() {}
 
     /**
      * Returns whether the default value of this parameter is constant
@@ -249,9 +215,7 @@ class ReflectionParameter implements Reflector
      * @since 5.4.6
      */
     #[Pure]
-	public function isDefaultValueConstant()
-    {
-    }
+    public function isDefaultValueConstant() {}
 
     /**
      * Returns the default value's constant name if default value is constant or null
@@ -262,9 +226,7 @@ class ReflectionParameter implements Reflector
      * @since 5.4.6
      */
     #[Pure]
-	public function getDefaultValueConstantName()
-    {
-    }
+    public function getDefaultValueConstantName() {}
 
     /**
      * Returns whether this function is variadic
@@ -274,9 +236,7 @@ class ReflectionParameter implements Reflector
      * @since 5.6
      */
     #[Pure]
-	public function isVariadic()
-    {
-    }
+    public function isVariadic() {}
 
     /**
      * Returns information about whether the parameter is a promoted.
@@ -285,9 +245,7 @@ class ReflectionParameter implements Reflector
      * @since 8.0
      */
     #[Pure]
-	public function isPromoted()
-    {
-    }
+    public function isPromoted() {}
 
     /**
      * Returns an array of parameter attributes.
@@ -298,9 +256,7 @@ class ReflectionParameter implements Reflector
      * @since 8.0
      */
     #[Pure]
-	public function getAttributes(?string $name = null, int $flags = 0)
-    {
-    }
+    public function getAttributes(?string $name = null, int $flags = 0) {}
 
     /**
      * Clone
@@ -308,7 +264,5 @@ class ReflectionParameter implements Reflector
      * @link https://php.net/manual/en/reflectionparameter.clone.php
      * @return void
      */
-    final private function __clone()
-    {
-    }
+    final private function __clone() {}
 }

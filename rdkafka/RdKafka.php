@@ -13,9 +13,7 @@ abstract class RdKafka
      *
      * @return int
      */
-    public function addBrokers($broker_list)
-    {
-    }
+    public function addBrokers($broker_list) {}
 
     /**
      * @param bool  $all_topics
@@ -25,16 +23,12 @@ abstract class RdKafka
      * @throws Exception
      * @return Metadata
      */
-    public function getMetadata($all_topics, $only_topic = null, $timeout_ms)
-    {
-    }
+    public function getMetadata($all_topics, $only_topic = null, $timeout_ms = 0) {}
 
     /**
      * @return int
      */
-    public function getOutQLen()
-    {
-    }
+    public function getOutQLen() {}
 
     /**
      * @param string    $topic_name
@@ -42,37 +36,29 @@ abstract class RdKafka
      *
      * @return Topic
      */
-    public function newTopic($topic_name, ?TopicConf $topic_conf = null)
-    {
-    }
+    public function newTopic($topic_name, ?TopicConf $topic_conf = null) {}
 
     /**
      * @param int $timeout_ms
      *
      * @return void
      */
-    public function poll($timeout_ms)
-    {
-    }
+    public function poll($timeout_ms) {}
 
     /**
      * @param int $level
      *
      * @return void
      */
-    public function setLogLevel($level)
-    {
-    }
+    public function setLogLevel($level) {}
 
     /**
-     * @param TopicPartition[] $topicPartitions
+     * @param TopicPartition[] $topic_partitions
      * @param int $timeout_ms
      *
      * @return TopicPartition[]
      */
-    public function offsetsForTimes(array $topicPartitions, int $timeout_ms)
-    {
-    }
+    public function offsetsForTimes(array $topic_partitions, int $timeout_ms) {}
 
     /**
      * @param string $topic
@@ -83,25 +69,25 @@ abstract class RdKafka
      *
      * @return void
      */
-    public function queryWatermarkOffsets(string $topic, int $partition, int &$low, int &$high, int $timeout_ms)
-    {
-    }
+    public function queryWatermarkOffsets(string $topic, int $partition = 0, int &$low = 0, int &$high = 0, int $timeout_ms = 0) {}
 
     /**
      * @param int $purge_flags
      *
      * @return int
      */
-    public function purge(int $purge_flags)
-    {
-    }
+    public function purge(int $purge_flags) {}
 
     /**
      * @param int $timeout_ms
      *
      * @return int
      */
-    public function flush(int $timeout_ms)
-    {
-    }
+    public function flush(int $timeout_ms) {}
+
+    public function metadata($all_topics, $only_topic = false, $timeout_ms = 0) {}
+
+    public function setLogger($logger) {}
+
+    public function outqLen() {}
 }

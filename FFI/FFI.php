@@ -249,18 +249,14 @@ namespace FFI {
      *
      * @since 7.4
      */
-    class Exception extends \Error
-    {
-    }
+    class Exception extends \Error {}
 
     /**
      * Class ParserException
      *
      * @since 7.4
      */
-    class ParserException extends Exception
-    {
-    }
+    class ParserException extends Exception {}
 
     /**
      * Class CData
@@ -269,9 +265,7 @@ namespace FFI {
      *
      * @since 7.4
      */
-    class CData
-    {
-    }
+    class CData {}
 
     /**
      * Class CType
@@ -280,7 +274,5 @@ namespace FFI {
      *
      * @since 7.4
      */
-    class CType
-    {
-    }
+    class CType {}
 }

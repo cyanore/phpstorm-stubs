@@ -18,9 +18,7 @@ abstract class ReflectionType implements Stringable
      * @return bool Returns {@see true} if {@see null} is allowed, otherwise {@see false}
      * @since 7.0
      */
-    public function allowsNull()
-    {
-    }
+    public function allowsNull() {}
 
     /**
      * Checks if it is a built-in type
@@ -32,9 +30,7 @@ abstract class ReflectionType implements Stringable
      * class and moved to the {@see ReflectionNamedType} child.
      */
     #[Pure]
-	public function isBuiltin()
-    {
-    }
+    public function isBuiltin() {}
 
     /**
      * To string
@@ -44,17 +40,13 @@ abstract class ReflectionType implements Stringable
      * @since 7.0
      * @see ReflectionNamedType::getName()
      */
-    #[Deprecated(since: '7.1')]
-    public function __toString()
-    {
-    }
+    #[Deprecated(since: "7.1")]
+    public function __toString() {}
 
     /**
      * Cloning of this class is prohibited
      *
      * @return void
      */
-    final private function __clone()
-    {
-    }
+    final private function __clone() {}
 }

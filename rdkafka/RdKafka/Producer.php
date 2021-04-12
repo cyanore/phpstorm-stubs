@@ -7,9 +7,7 @@ class Producer extends \RdKafka
     /**
      * @param null|Conf $conf
      */
-    public function __construct(Conf $conf = null)
-    {
-    }
+    public function __construct(Conf $conf = null) {}
 
     /**
      * @param string    $topic_name
@@ -17,41 +15,31 @@ class Producer extends \RdKafka
      *
      * @return ProducerTopic
      */
-    public function newTopic($topic_name, ?TopicConf $topic_conf = null)
-    {
-    }
+    public function newTopic($topic_name, ?TopicConf $topic_conf = null) {}
 
     /**
-     * @param int $timeoutMs
+     * @param int $timeout_ms
      *
      * @return void
      */
-    public function initTransactions(int $timeoutMs)
-    {
-    }
+    public function initTransactions(int $timeout_ms) {}
 
     /**
      * @return void
      */
-    public function beginTransaction()
-    {
-    }
+    public function beginTransaction() {}
 
     /**
-     * @param int $timeoutMs
+     * @param int $timeout_ms
      *
      * @return void
      */
-    public function commitTransaction(int $timeoutMs)
-    {
-    }
+    public function commitTransaction(int $timeout_ms) {}
 
     /**
-     * @param int $timeoutMs
+     * @param int $timeout_ms
      *
      * @return void
      */
-    public function abortTransaction(int $timeoutMs)
-    {
-    }
+    public function abortTransaction(int $timeout_ms) {}
 }

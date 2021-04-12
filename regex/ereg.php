@@ -35,8 +35,8 @@ use JetBrains\PhpStorm\Deprecated;
  * @removed 7.0
  * @see preg_match()
  */
-#[Deprecated(reason: 'Use preg_match() instead', since: '5.3')]
-function ereg ($pattern, $string, ?array &$regs = null) {}
+#[Deprecated(reason: "Use preg_match() instead", since: "5.3")]
+function ereg($pattern, $string, ?array &$regs = null) {}
 
 /**
  * Replace regular expression
@@ -61,8 +61,8 @@ function ereg ($pattern, $string, ?array &$regs = null) {}
  * @removed 7.0
  * @see preg_replace()
  */
-#[Deprecated(reason: 'Use preg_replace() instead', since: '5.3')]
-function ereg_replace ($pattern, $replacement, $string) {}
+#[Deprecated(reason: "Use preg_replace() instead", since: "5.3")]
+function ereg_replace($pattern, $replacement, $string) {}
 
 /**
  * Case insensitive regular expression match
@@ -95,8 +95,8 @@ function ereg_replace ($pattern, $replacement, $string) {}
  * @removed 7.0
  * @see preg_match()
  */
-#[Deprecated(reason: 'Use preg_match() instead', since: '5.3')]
-function eregi ($pattern, $string, array &$regs = null) {}
+#[Deprecated(reason: "Use preg_match() instead", since: "5.3")]
+function eregi($pattern, $string, array &$regs = null) {}
 
 /**
  * Replace regular expression case insensitive
@@ -121,8 +121,8 @@ function eregi ($pattern, $string, array &$regs = null) {}
  * @removed 7.0
  * @see preg_replace()
  */
-#[Deprecated(reason: 'Use preg_replace() instead', since: '5.3')]
-function eregi_replace ($pattern, $replacement, $string) {}
+#[Deprecated(reason: "Use preg_replace() instead", since: "5.3")]
+function eregi_replace($pattern, $replacement, $string) {}
 
 /**
  * Split string into array by regular expression
@@ -164,8 +164,8 @@ function eregi_replace ($pattern, $replacement, $string) {}
  * @removed 7.0
  * @see preg_split()
  */
-#[Deprecated(reason: 'Use preg_split() instead', since: '5.3')]
-function split ($pattern, $string, $limit = -1) {}
+#[Deprecated(reason: "Use preg_split() instead", since: "5.3")]
+function split($pattern, $string, $limit = -1) {}
 
 /**
  * Split string into array by regular expression case insensitive
@@ -207,8 +207,8 @@ function split ($pattern, $string, $limit = -1) {}
  * @removed 7.0
  * @see preg_split()
  */
-#[Deprecated(reason: 'Use preg_split() instead', since: '5.3')]
-function spliti ($pattern, $string, $limit = -1) {}
+#[Deprecated(reason: "Use preg_split() instead", since: "5.3")]
+function spliti($pattern, $string, $limit = -1) {}
 
 /**
  * Make regular expression for case insensitive match
@@ -224,7 +224,6 @@ function spliti ($pattern, $string, $limit = -1) {}
  * @removed 7.0
  */
 #[Deprecated(since: '5.3')]
-function sql_regcase ($string) {}
+function sql_regcase($string) {}
 
 // End of ereg v.
-?>
