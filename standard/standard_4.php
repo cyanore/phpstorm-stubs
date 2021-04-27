@@ -1,10 +1,10 @@
 <?php
-
-use JetBrains\PhpStorm\ArrayShape;
-use JetBrains\PhpStorm\Deprecated;
-use JetBrains\PhpStorm\Pure;
-
-/**
+	
+	use JetBrains\PhpStorm\ArrayShape;
+	use JetBrains\PhpStorm\Deprecated;
+	use JetBrains\PhpStorm\Pure;
+	
+	/**
  * Get the last occurred error
  * @link https://php.net/manual/en/function.error-get-last.php
  * @return array|null an associative array describing the last error with keys "type",
@@ -808,7 +808,13 @@ function parse_ini_file(string $filename, bool $process_sections = false, int $s
  * and false on failure.
  */
 #[Pure]
-function parse_ini_string(string $ini_string, bool $process_sections = false, int $scanner_mode = INI_SCANNER_NORMAL): array|false {}
+function parse_ini_string( string $ini_string, bool $process_sections = false, #[\JetBrains\PhpStorm\ExpectedValues( [
+	INI_SCANNER_NORMAL,
+	INI_SCANNER_RAW,
+	INI_SCANNER_TYPED,
+] )] int $scanner_mode = INI_SCANNER_NORMAL )
+: array|false
+{}
 
 /**
  * Tells whether the file was uploaded via HTTP POST
