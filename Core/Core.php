@@ -881,7 +881,51 @@ function get_extension_funcs(string $extension): array|false {}
  * </p>
  * @return array
  */
-#[Pure(true)]
+#[Pure(true),ArrayShape([
+			                        'Core'       => 'array',
+			                        'calendar'   => 'array',
+			                        'date'       => 'array',
+			                        'filter'     => 'array',
+			                        'hash'       => 'array',
+			                        'iconv'      => 'array',
+			                        'json'       => 'array',
+			                        'pcre'       => 'array',
+			                        'readline'   => 'array',
+			                        'session'    => 'array',
+			                        'standard'   => 'array',
+			                        'tokenizer'  => 'array',
+			                        'zlib'       => 'array',
+			                        'libxml'     => 'array',
+			                        'dom'        => 'array',
+			                        'xml'        => 'array',
+			                        'ast'        => 'array',
+			                        'openssl'    => 'array',
+			                        'com_dotnet' => 'array',
+			                        'curl'       => 'array',
+			                        'enchant'    => 'array',
+			                        'fileinfo'   => 'array',
+			                        'ftp'        => 'array',
+			                        'gd'         => 'array',
+			                        'gmp'        => 'array',
+			                        'imap'       => 'array',
+			                        'intl'       => 'array',
+			                        'ldap'       => 'array',
+			                        'mbstring'   => 'array',
+			                        'exif'       => 'array',
+			                        'mysqli'     => 'array',
+			                        'odbc'       => 'array',
+			                        'pgsql'      => 'array',
+			                        'snmp'       => 'array',
+			                        'soap'       => 'array',
+			                        'sockets'    => 'array',
+			                        'sodium'     => 'array',
+			                        'sqlite3'    => 'array',
+			                        'tidy'       => 'array',
+			                        'xsl'        => 'array',
+			                        'zend-test'  => 'array',
+			                        'xdebug'     => 'array',
+			                        'user'       => 'array',
+                        	])]
 function get_defined_constants(bool $categorize = false): array {}
 
 /**
