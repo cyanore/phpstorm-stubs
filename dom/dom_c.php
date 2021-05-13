@@ -472,7 +472,57 @@ class DOMImplementation
     public function createDocument($namespace = null, $qualifiedName = null, DOMDocumentType $doctype = null) {}
 }
 
-class DOMNameSpaceNode {}
+class DOMNameSpaceNode  {
+	    /**
+         * @var string
+         * Returns the most accurate name for the current node type
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.nodename
+         */
+        public $nodeName;
+	    /**
+         * @var string
+         * Returns the most accurate name for the current node type
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.nodename
+         */
+        public $localName;
+        /**
+         * @var string
+         * The value of this node, depending on its type
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.nodevalue
+         */
+        public $nodeValue;
+        /**
+         * @var int
+         * Gets the type of the node. One of the predefined
+         * <a href="https://secure.php.net/manual/en/dom.constants.php">XML_xxx_NODE</a> constants
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.nodetype
+         */
+        public $nodeType;
+        /**
+         * @var DOMNode|DOMElement|null
+         * The parent of this node. If there is no such node, this returns NULL.
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.parentnode
+         */
+        public $parentNode;
+        /**
+         * @var DOMDocument|null
+         * The <classname>DOMDocument</classname> object associated with this node, or NULL if this node is a <classname>DOMDocument</classname>.
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.ownerdocument
+         */
+        public $ownerDocument;
+        /**
+         * @var string|null
+         * The namespace URI of this node, or NULL if it is unspecified.
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.namespaceuri
+         */
+        public $namespaceURI;
+        /**
+         * @var string|null
+         * The namespace prefix of this node, or NULL if it is unspecified.
+         * @link https://php.net/manual/en/class.domnode.php#domnode.props.prefix
+         */
+        public $prefix;
+}
 
 /**
  * The DOMDocumentFragment class
@@ -899,7 +949,35 @@ class DOMDocument extends DOMNode implements DOMParentNode
      * DOMDocument and issues E_STRICT
      * warning.
      */
-    public function loadXML($source, $options = null) {}
+    public function loadXML($source, #[\JetBrains\PhpStorm\ExpectedValues(flags:[
+    	\LIBXML_VERSION,
+		\LIBXML_DOTTED_VERSION,
+		\LIBXML_LOADED_VERSION,
+		\LIBXML_NOENT,
+		\LIBXML_DTDLOAD,
+		\LIBXML_DTDATTR,
+		\LIBXML_DTDVALID,
+		\LIBXML_NOERROR,
+		\LIBXML_NOWARNING,
+		\LIBXML_NOBLANKS,
+		\LIBXML_XINCLUDE,
+		\LIBXML_NSCLEAN,
+		\LIBXML_NOCDATA,
+		\LIBXML_NONET,
+		\LIBXML_PEDANTIC,
+		\LIBXML_COMPACT,
+		\LIBXML_BIGLINES,
+		\LIBXML_NOXMLDECL,
+		\LIBXML_PARSEHUGE,
+		\LIBXML_NOEMPTYTAG,
+		\LIBXML_SCHEMA_CREATE,
+		\LIBXML_HTML_NOIMPLIED,
+		\LIBXML_HTML_NODEFDTD,
+		\LIBXML_ERR_NONE,
+		\LIBXML_ERR_WARNING,
+		\LIBXML_ERR_ERROR,
+		\LIBXML_ERR_FATAL,
+])] $options = null) {}
 
     /**
      * Dumps the internal XML tree back into a string
