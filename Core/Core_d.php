@@ -174,6 +174,7 @@ define('PHP_VERSION_ID', 50306);
 define('PHP_ZTS', 0);
 define('PHP_DEBUG', 0);
 define('PHP_OS', "Linux");
+//define('PHP_OS', "WINNT");
 /**
  * The operating system family PHP was built for. Either of 'Windows', 'BSD', 'Darwin', 'Solaris', 'Linux' or 'Unknown'. Available as of PHP 7.2.0.
  * @since 7.2

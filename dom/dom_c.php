@@ -2128,7 +2128,7 @@ class DOMXPath
     /**
      * Register PHP functions as XPath functions
      * @link https://php.net/manual/en/domxpath.registerphpfunctions.php
-     * @param string|string[] $restrict [optional] <p>
+     * @param string|string[]|null $restrict [optional] <p>
      * Use this parameter to only allow certain functions to be called from XPath.
      * </p>
      * <p>
