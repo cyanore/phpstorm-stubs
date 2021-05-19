@@ -46,7 +46,7 @@ define('AMQP_EXCLUSIVE', 8);
 define('AMQP_AUTODELETE', 16);
 
 /**
- * Clients are not allowed to make specific queue bindings to exchanges defined with this flag.
+ * Client are not allowed to make specific queue bindings to exchanges defined with this flag.
  */
 define('AMQP_INTERNAL', 32);
 

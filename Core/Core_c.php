@@ -453,6 +453,10 @@ class Error implements Throwable
     public function __wakeup() {}
 }
 
+/**
+ * A ValueError is thrown when the type of an argument is correct but the value of it is incorrect.
+ * @link https://php.net/manual/en/class.valueerror.php
+ */
 class ValueError extends Error {}
 
 /**

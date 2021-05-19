@@ -17,7 +17,8 @@
 		"php"                              : "^8.0",
 		"nikic/php-parser"                 : "@stable",
 		"phpdocumentor/reflection-docblock": "@stable",
-		"phpunit/phpunit"                  : "@stable"
+		"phpunit/phpunit"                  : "@stable",
+		"friendsofphp/php-cs-fixer"        : "@stable"
 	},
 	"autoload"    : {
 		"psr-4": {
@@ -37,6 +38,8 @@
 		"cs"    : "php-cs-fixer fix -v --diff --dry-run",
 		"cs-fix": "php-cs-fixer fix -v --diff"
 	},
+	"minimum-stability": "dev",
+	"prefer-stable"    : true,
 	"replace"     : {
 		"jetbrains/phpstorm-stubs": "self.version"
 	}
