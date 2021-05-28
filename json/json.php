@@ -90,7 +90,17 @@ class JsonIncrementalParser
  * </p>
  * @return string|false a JSON encoded string on success or <b>FALSE</b> on failure.
  */
-function json_encode(mixed $value, int $flags = 0, int $depth = 512): string|false {}
+function json_encode(mixed $value,  #[\JetBrains\PhpStorm\ArrayShape([
+	JSON_HEX_TAG,
+	JSON_HEX_AMP,
+	JSON_HEX_APOS,
+	JSON_NUMERIC_CHECK,
+	JSON_PRETTY_PRINT,
+	JSON_UNESCAPED_SLASHES,
+	JSON_FORCE_OBJECT,
+	JSON_UNESCAPED_UNICODE,
+	JSON_THROW_ON_ERROR,
+])] int $flags = 0, int $depth = 512): string|false {}
 
 /**
  * (PHP 5 &gt;= 5.2.0, PECL json &gt;= 1.2.0)<br/>
@@ -128,7 +138,13 @@ function json_encode(mixed $value, int $flags = 0, int $depth = 512): string|fal
  * <i>json</i> cannot be decoded or if the encoded
  * data is deeper than the recursion limit.
  */
-function json_decode(string $json, ?bool $associative = false, int $depth = 512, int $flags = 0): mixed {}
+function json_decode(string $json, ?bool $associative = false, int $depth = 512, #[\JetBrains\PhpStorm\ArrayShape([
+	JSON_BIGINT_AS_STRING,
+	JSON_INVALID_UTF8_IGNORE,
+	JSON_INVALID_UTF8_SUBSTITUTE,
+	JSON_OBJECT_AS_ARRAY,
+	JSON_THROW_ON_ERROR,
+])] int $flags = 0): mixed {}
 
 /**
  * Returns the last error occurred
