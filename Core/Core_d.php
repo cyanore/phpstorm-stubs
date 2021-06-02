@@ -204,6 +204,7 @@ define('PHP_CONFIG_FILE_PATH', "/etc/php5/cli");
 define('PHP_CONFIG_FILE_SCAN_DIR', "/etc/php5/cli/conf.d");
 define('PHP_SHLIB_SUFFIX', "so");
 define('PHP_EOL', "\n");
+//define('PHP_EOL', "\r\n");
 define('SUHOSIN_PATCH', 1);
 define('SUHOSIN_PATCH_VERSION', "0.9.10");
 define('PHP_MAXPATHLEN', 4096);
