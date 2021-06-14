@@ -806,7 +806,13 @@ function shell_exec(string $command): string|false|null {}
  * proc_close when you are finished with it. On failure
  * returns false.
  */
-function proc_open(array|string $command, array $descriptor_spec, &$pipes, ?string $cwd, ?array $env_vars, ?array $options) {}
+function proc_open(array|string $command, array $descriptor_spec, &$pipes, ?string $cwd, ?array $env_vars, #[ArrayShape([
+	'suppress_errors'=>'bool',
+	'bypass_shell'=>'bool',
+	'blocking_pipes'=>'bool',
+	'create_process_group'=>'bool',
+	'create_new_console'=>'bool',
+	])]?array $options) {}
 
 /**
  * Close a process opened by {@see proc_open} and return the exit code of that process

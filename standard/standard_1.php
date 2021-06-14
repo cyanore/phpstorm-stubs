@@ -257,8 +257,19 @@ function dirname(string $path, int $levels = 1): string {}
  * If options is used, this function will return a
  * string if not all elements are requested.
  */
-#[Pure]
-function pathinfo(string $path, int $flags = PATHINFO_ALL): array|string {}
+#[Pure,ArrayShape([
+    'dirname'=>'string',
+    'basename'=>'string',
+    'extension'=>'string',
+    'filename'=>'string',
+])]
+function pathinfo(string $path, #[\JetBrains\PhpStorm\ExpectedValues(flags:[
+	PATHINFO_DIRNAME,
+	PATHINFO_BASENAME,
+	PATHINFO_EXTENSION,
+	PATHINFO_FILENAME,
+	PATHINFO_ALL,
+])] int $flags = PATHINFO_ALL): array|string {}
 
 /**
  * Un-quotes a quoted string
