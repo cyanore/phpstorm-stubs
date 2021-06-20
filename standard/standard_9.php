@@ -257,7 +257,12 @@ function array_rand(array $array, int $num = 1): array|string|int {}
  * @meta
  */
 #[Pure]
-function array_unique(array $array, int $flags = SORT_STRING): array {}
+function array_unique(array $array, #[\JetBrains\PhpStorm\ExpectedValues(flags:[
+	SORT_REGULAR,
+	SORT_NUMERIC,
+	SORT_STRING,
+	SORT_LOCALE_STRING
+])]int $flags = SORT_STRING): array {}
 
 /**
  * Computes the intersection of arrays
