@@ -523,6 +523,27 @@ function array_diff_key(array $array1, array $array2, array ...$_): array {}
 function array_diff_ukey(array $array1, array $array2, array $_ = null, callable $key_compare_func): array {}
 
 /**
+ * Computes the difference of arrays using a callback function on the keys for comparison
+ * @link https://php.net/manual/en/function.array-diff-ukey.php
+ * @param array $array1 <p>
+ * The array to compare from
+ * </p>
+ * @param array ...$arrays <p>
+ * An array to compare against
+ * </p>
+ * @param callback $key_compare_func <p>
+ * callback function to use.
+ * The callback function must return an integer less than, equal
+ * to, or greater than zero if the first argument is considered to
+ * be respectively less than, equal to, or greater than the second.
+ * </p>
+ * @return array an array containing all the entries from
+ * array1 that are not present in any of the other arrays.
+ * @meta
+ */
+function array_diff_ukey(array $array, array ...$arrays, callable $key_compare_func): array {}
+
+/**
  * Computes the difference of arrays by using a callback function for data comparison
  * @link https://php.net/manual/en/function.array-udiff.php
  * @param array $array1 <p>
@@ -546,6 +567,32 @@ function array_diff_ukey(array $array1, array $array2, array $_ = null, callable
  * @meta
  */
 function array_udiff(array $array1, array $array2, array $_ = null, callable $data_compare_func): array {}
+
+
+/**
+ * Computes the difference of arrays by using a callback function for data comparison
+ * @link https://php.net/manual/en/function.array-udiff.php
+ * @param array $array1 <p>
+ * The first array.
+ * </p>
+ * @param array ...$arrays <p>
+ * The second array.
+ * </p>
+ * @param callback $data_compare_func <p>
+ * The callback comparison function.
+ * </p>
+ * <p>
+ * The user supplied callback function is used for comparison.
+ * It must return an integer less than, equal to, or greater than zero if
+ * the first argument is considered to be respectively less than, equal
+ * to, or greater than the second.
+ * </p>
+ * @return array an array containing all the values of array1
+ * that are not present in any of the other arguments.
+ * @meta
+ */
+function array_udiff(array $array, array ...$arrays, callable $value_compare_func): array{}
+
 
 /**
  * Computes the difference of arrays with additional index check
@@ -595,6 +642,37 @@ function array_diff_assoc(array $array1, array $array2, array ...$_): array {}
  * @meta
  */
 function array_udiff_assoc(array $array1, array $array2, array $_ = null, callable $data_compare_func): array {}
+
+/**
+ * Computes the difference of arrays with additional index check, compares data by a callback function
+ * @link https://php.net/manual/en/function.array-udiff-assoc.php
+ * @param array $array1 <p>
+ * The first array.
+ * </p>
+ * @param array ...$arrays <p>
+ * The second array.
+ * </p>
+ * @param callback $data_compare_func <p>
+ * The callback comparison function.
+ * </p>
+ * <p>
+ * The user supplied callback function is used for comparison.
+ * It must return an integer less than, equal to, or greater than zero if
+ * the first argument is considered to be respectively less than, equal
+ * to, or greater than the second.
+ * </p>
+ * @return array array_udiff_assoc returns an array
+ * containing all the values from array1
+ * that are not present in any of the other arguments.
+ * Note that the keys are used in the comparison unlike
+ * array_diff and array_udiff.
+ * The comparison of arrays' data is performed by using an user-supplied
+ * callback. In this aspect the behaviour is opposite to the behaviour of
+ * array_diff_assoc which uses internal function for
+ * comparison.
+ * @meta
+ */
+function array_udiff_assoc(array $array, array ...$arrays, callable $data_compare_func): array {}
 
 /**
  * Computes the difference of arrays with additional index check which is performed by a user supplied callback function
@@ -656,6 +734,45 @@ function array_diff_uassoc(array $array1, array $array2, array $_ = null, callab
  * @meta
  */
 function array_udiff_uassoc(array $array1, array $array2, array $_ = null, callable $data_compare_func, callable $key_compare_func): array {}
+
+/**
+ * Computes the difference of arrays with additional index check, compares data and indexes by a callback function
+ * @link https://php.net/manual/en/function.array-udiff-uassoc.php
+ * @param array $array1 <p>
+ * The first array.
+ * </p>
+ * @param array $array2 <p>
+ * The second array.
+ * </p>
+ * @param array ...$_ [optional]
+ * @param callback $data_compare_func <p>
+ * The callback comparison function.
+ * </p>
+ * <p>
+ * The user supplied callback function is used for comparison.
+ * It must return an integer less than, equal to, or greater than zero if
+ * the first argument is considered to be respectively less than, equal
+ * to, or greater than the second.
+ * </p>
+ * <p>
+ * The comparison of arrays' data is performed by using an user-supplied
+ * callback : data_compare_func. In this aspect
+ * the behaviour is opposite to the behaviour of
+ * array_diff_assoc which uses internal function for
+ * comparison.
+ * </p>
+ * @param callback $key_compare_func <p>
+ * The comparison of keys (indices) is done also by the callback function
+ * key_compare_func. This behaviour is unlike what
+ * array_udiff_assoc does, since the latter compares
+ * the indices by using an internal function.
+ * </p>
+ * @return array an array containing all the values from
+ * array1 that are not present in any of the other
+ * arguments.
+ * @meta
+ */
+function array_udiff_uassoc(array $array, array ...$arrays, callable $data_compare_func, callable $key_compare_func): array {}
 
 /**
  * Calculate the sum of values in an array

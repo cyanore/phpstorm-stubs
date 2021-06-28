@@ -103,7 +103,7 @@ function strval(mixed $value): string {}
  */
 #[Pure]
 #[ExpectedValues([
-    "boolean", "integer", "double", "string", "array", "object", "resource", "NULL", "unknown type", "resource (closed)"
+    "boolean", "integer", "double", "string", "array", "object", "resource", "NULL", "unknown type", "resource (closed)",
 ])]
 function gettype(mixed $value): string {}
 
