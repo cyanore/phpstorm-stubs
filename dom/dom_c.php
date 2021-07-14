@@ -986,7 +986,7 @@ class DOMDocument extends DOMNode implements DOMParentNode
      * Use this parameter to output only a specific node without XML declaration
      * rather than the entire document.
      * </p>
-     * @param int $options [optional] <p>
+     * @param int|null $options [optional] <p>
      * Additional Options. Currently only LIBXML_NOEMPTYTAG is supported.
      * </p>
      * @return string|false the XML, or false if an error occurred.
